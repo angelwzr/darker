@@ -35,6 +35,33 @@ namespace darker
             tb = (TaskbarIcon)FindResource("MyNotifyIcon");
         }
 
+        private const string RegistryKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
+
+        private const string RegSysMode = "SystemUsesLightTheme";
+        private const string RegAppMode = "AppsUseLightTheme";
+
+        private enum WindowsTheme
+        {
+            Light,
+            Dark
+        }
+
+        private static WindowsTheme GetWindowsTheme()
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
+            {
+                object registryValueObject = key?.GetValue(RegSysMode);
+                if (registryValueObject == null)
+                {
+                    return WindowsTheme.Light;
+                }
+
+                int registryValue = (int)registryValueObject;
+
+                return registryValue > 0 ? WindowsTheme.Light : WindowsTheme.Dark;
+            }
+        }
+
 
         private void DarkCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
@@ -43,10 +70,10 @@ namespace darker
 
         private void DarkCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            using RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPath);
             {
-                key.SetValue("SystemUsesLightTheme", $"0", RegistryValueKind.DWord);
-                key.SetValue("AppsUseLightTheme", $"0", RegistryValueKind.DWord);
+                key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
+                key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
                 key.Close();
             }
         }
@@ -58,10 +85,10 @@ namespace darker
 
         private void LightCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            using RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize");
+            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPath);
             {
-                key.SetValue("SystemUsesLightTheme", $"1", RegistryValueKind.DWord);
-                key.SetValue("AppsUseLightTheme", $"1", RegistryValueKind.DWord);
+                key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
+                key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
                 key.Close();
             }
         }
@@ -73,5 +100,13 @@ namespace darker
             this.Close();
         }
 
+        private void AboutItem_Click(object sender, RoutedEventArgs e)
+        {
+            string title = "WPF NotifyIcon";
+            string text = "This is a standard balloon";
+
+            //show balloon with built-in icon
+            MyNotifyIcon.ShowBalloonTip(title, text, BalloonIcon.Info);
+        }
     }
 }

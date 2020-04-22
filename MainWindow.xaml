@@ -16,6 +16,7 @@
     <Grid>
         
     <tb:TaskbarIcon
+      x:Name="MyNotifyIcon"
       ToolTipText="darker" 
       IconSource="/icons/day_w.ico"
       Visibility="Visible"
@@ -27,7 +28,7 @@
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Run at startup"/>
-                    <MenuItem Header="About"/>
+                    <MenuItem Header="About" Click="AboutItem_Click"/>
                     <MenuItem Header="Exit" Click="ExitMenuItem_Click"/>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
