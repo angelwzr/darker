@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 
 namespace darker
 {
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -25,6 +26,7 @@ namespace darker
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private TaskbarIcon tb;
@@ -62,25 +64,15 @@ namespace darker
             }
         }
 
-
-        private void DarkCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-        }
-
         private void DarkCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
+
             using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPath);
             {
                 key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
                 key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
                 key.Close();
             }
-        }
-
-        private void LightCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
         }
 
         private void LightCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -109,4 +101,22 @@ namespace darker
             MyNotifyIcon.ShowBalloonTip(title, text, BalloonIcon.Info);
         }
     }
+
+    public static class darkerCommands
+    {
+        public static readonly RoutedUICommand Dark = new RoutedUICommand
+            (
+                "Dark",
+                "Dark",
+                typeof(darkerCommands)
+            );
+
+        public static readonly RoutedUICommand Light = new RoutedUICommand
+            (
+                "Light",
+                "Light",
+                typeof(darkerCommands)
+            );
+    }
+
 }

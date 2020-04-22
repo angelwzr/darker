@@ -9,8 +9,9 @@
         Title="MainWindow" Height="450" Width="800" Visibility="Hidden">
 
     <Window.CommandBindings>
-        <CommandBinding Command="ApplicationCommands.Redo" Executed="DarkCommand_Executed" CanExecute="DarkCommand_CanExecute" />
-        <CommandBinding Command="ApplicationCommands.Undo" Executed="LightCommand_Executed" CanExecute="LightCommand_CanExecute" />
+        <CommandBinding Command="local:darkerCommands.Dark" Executed="DarkCommand_Executed"/>
+
+        <CommandBinding Command="local:darkerCommands.Light" Executed="LightCommand_Executed"/>
     </Window.CommandBindings>
 
     <Grid>
@@ -20,9 +21,9 @@
       ToolTipText="darker" 
       IconSource="/icons/day_w.ico"
       Visibility="Visible"
-      LeftClickCommand="ApplicationCommands.Redo"
+      LeftClickCommand="local:darkerCommands.Dark"
       LeftClickCommandParameter="Switch to Dark theme"
-      DoubleClickCommand="ApplicationCommands.Undo"
+      DoubleClickCommand="local:darkerCommands.Light"
       DoubleClickCommandParameter="Switch to Light theme">
         
             <tb:TaskbarIcon.ContextMenu>
