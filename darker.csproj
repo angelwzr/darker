@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="icons\day_w.ico" />
+    <None Remove="Resources\day_w.ico" />
+    <None Remove="Resources\night_b.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,7 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="icons\day_w.ico" />
+    <Resource Include="Resources\day_w.ico">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\night_b.ico" />
   </ItemGroup>
 
 </Project>

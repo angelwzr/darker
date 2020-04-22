@@ -10,7 +10,6 @@
 
     <Window.CommandBindings>
         <CommandBinding Command="local:darkerCommands.Dark" Executed="DarkCommand_Executed"/>
-
         <CommandBinding Command="local:darkerCommands.Light" Executed="LightCommand_Executed"/>
     </Window.CommandBindings>
 
@@ -19,7 +18,7 @@
     <tb:TaskbarIcon
       x:Name="MyNotifyIcon"
       ToolTipText="darker" 
-      IconSource="/icons/day_w.ico"
+      IconSource="pack://application:,,,/Resources/day_w.ico"
       Visibility="Visible"
       LeftClickCommand="local:darkerCommands.Dark"
       LeftClickCommandParameter="Switch to Dark theme"

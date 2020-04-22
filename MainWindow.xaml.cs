@@ -73,6 +73,8 @@ namespace darker
                 key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
                 key.Close();
             }
+            
+            MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
         }
 
         private void LightCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -83,6 +85,8 @@ namespace darker
                 key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
                 key.Close();
             }
+            
+            MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
         }
 
 
