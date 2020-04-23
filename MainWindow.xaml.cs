@@ -23,6 +23,7 @@ namespace darker
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -37,8 +38,7 @@ namespace darker
             tb = (TaskbarIcon)FindResource("MyNotifyIcon");
         }
 
-        private const string RegistryKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
-
+        private const string RegistryKeyPathTheme = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
         private const string RegSysMode = "SystemUsesLightTheme";
         private const string RegAppMode = "AppsUseLightTheme";
 
@@ -50,7 +50,7 @@ namespace darker
 
         private static WindowsTheme GetWindowsTheme()
         {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPath))
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme))
             {
                 object registryValueObject = key?.GetValue(RegSysMode);
                 if (registryValueObject == null)
@@ -64,10 +64,26 @@ namespace darker
             }
         }
 
+        private void AutoS_Checked(object sender, RoutedEventArgs e)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
+            {
+                key.SetValue("darker", System.Reflection.Assembly.GetExecutingAssembly().Location);
+            }
+        }
+
+        private void AutoS_Unchecked(object sender, RoutedEventArgs e)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
+            {
+                key.DeleteValue("darker", false);
+            }
+        }
+
         private void DarkCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
-            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPath);
+            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
             {
                 key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
                 key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
@@ -79,7 +95,7 @@ namespace darker
 
         private void LightCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPath);
+            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
             {
                 key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
                 key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);

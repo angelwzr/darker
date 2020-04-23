@@ -14,8 +14,8 @@
     </Window.CommandBindings>
 
     <Grid>
-        
-    <tb:TaskbarIcon
+
+        <tb:TaskbarIcon
       x:Name="MyNotifyIcon"
       ToolTipText="darker" 
       IconSource="pack://application:,,,/Resources/day_w.ico"
@@ -24,12 +24,12 @@
       LeftClickCommandParameter="Switch to Dark theme"
       DoubleClickCommand="local:darkerCommands.Light"
       DoubleClickCommandParameter="Switch to Light theme">
-        
+
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Run at startup"/>
+                    <MenuItem x:Name="AutoS" Header="Run at startup" IsCheckable="true" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
                     <MenuItem Header="About" Click="AboutItem_Click"/>
-                    <MenuItem Header="Exit" Click="ExitMenuItem_Click"/>
+                    <MenuItem Header="Exit" FontWeight="Bold" Click="ExitMenuItem_Click"/>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
     </tb:TaskbarIcon>

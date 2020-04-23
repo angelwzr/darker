@@ -10,7 +10,7 @@
 
             <!-- Globally declared notify icon -->
             <tb:TaskbarIcon x:Key="MyNotifyIcon"
-                  IconSource="pack://application:,,,/Resources/day_w.icoo"
+                  IconSource="pack://application:,,,/Resources/day_w.ico"
                   ToolTipText="darker" />
         </ResourceDictionary>
     </Application.Resources>
