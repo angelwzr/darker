@@ -27,7 +27,7 @@ namespace darker
         public MainWindow()
         {
             InitializeComponent();
-
+            ChecForAutostart();
         }
 
         private TaskbarIcon tb;
@@ -38,6 +38,19 @@ namespace darker
             tb = (TaskbarIcon)FindResource("MyNotifyIcon");
         }
 
+        //windows startup
+        private void ChecForAutostart()
+        {
+            RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+            if (reg != null)
+            {
+                string sVal = reg.GetValue("darker", "").ToString();
+                AutoS.IsChecked = sVal == System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
+                reg.Close();
+            }
+        }
+
+        //theme detection
         private const string RegistryKeyPathTheme = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
         private const string RegSysMode = "SystemUsesLightTheme";
         private const string RegAppMode = "AppsUseLightTheme";
@@ -64,11 +77,12 @@ namespace darker
             }
         }
 
+        //launch on startup button
         private void AutoS_Checked(object sender, RoutedEventArgs e)
         {
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
             {
-                key.SetValue("darker", System.Reflection.Assembly.GetExecutingAssembly().Location);
+                key.SetValue("darker", System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
             }
         }
 
@@ -80,6 +94,7 @@ namespace darker
             }
         }
 
+        //theme switching buttons
         private void DarkCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
@@ -105,13 +120,14 @@ namespace darker
             MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
         }
 
-
+        //exti button
         void ExitMenuItem_Click(object sender, RoutedEventArgs e)
         {
             // Close this window
             this.Close();
         }
 
+        //about button
         private void AboutItem_Click(object sender, RoutedEventArgs e)
         {
             string title = "WPF NotifyIcon";
@@ -122,6 +138,7 @@ namespace darker
         }
     }
 
+    //commancds for theme switching launch
     public static class darkerCommands
     {
         public static readonly RoutedUICommand Dark = new RoutedUICommand
