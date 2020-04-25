@@ -27,10 +27,21 @@ namespace darker
         public MainWindow()
         {
             InitializeComponent();
+            CheckWin();
             ChecForAutostart();
         }
 
         private TaskbarIcon tb;
+
+        //check Windows version
+        private void CheckWin()
+        {
+            if (Environment.OSVersion.Version.Major < 10 && Environment.OSVersion.Version.Minor > 0)
+            {
+                MessageBox.Show("This app is designed for Windows 10 only. Please consider upgrading your OS.");
+                Application.Current.Shutdown();
+            }
+        }
 
         private void InitApplication()
         {
