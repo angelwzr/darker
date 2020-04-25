@@ -6,7 +6,7 @@
         xmlns:tb="http://www.hardcodet.net/taskbar" 
         xmlns:local="clr-namespace:darker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Visibility="Hidden">
+        Title="darker" Visibility="Hidden">
 
     <Window.CommandBindings>
         <CommandBinding Command="local:darkerCommands.Dark" Executed="DarkCommand_Executed"/>
@@ -28,7 +28,9 @@
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
                     <MenuItem x:Name="AutoS" Header="Run at startup" IsCheckable="true" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
+                    <MenuItem Header="Theme settings" Click="SettingsItem_Click"/>
                     <MenuItem Header="About" Click="AboutItem_Click"/>
+                    <Separator/>
                     <MenuItem Header="Exit" FontWeight="Bold" Click="ExitMenuItem_Click"/>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>

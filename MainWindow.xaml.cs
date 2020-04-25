@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace darker
         {
             InitializeComponent();
             CheckWin();
-            ChecForAutostart();
+            CheckForAutostart();
         }
 
         private TaskbarIcon tb;
@@ -38,7 +39,7 @@ namespace darker
         {
             if (Environment.OSVersion.Version.Major < 10 && Environment.OSVersion.Version.Minor > 0)
             {
-                MessageBox.Show("This app is designed for Windows 10 only. Please consider upgrading your OS.");
+                MessageBox.Show("This app is designed for Windows 10 only. Please consider upgrading your OS.", "Unsupported OS");
                 Application.Current.Shutdown();
             }
         }
@@ -50,7 +51,7 @@ namespace darker
         }
 
         //windows startup
-        private void ChecForAutostart()
+        private void CheckForAutostart()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
             if (reg != null)
@@ -61,31 +62,35 @@ namespace darker
             }
         }
 
-        //theme detection
+        //theme reg keys
         private const string RegistryKeyPathTheme = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
         private const string RegSysMode = "SystemUsesLightTheme";
         private const string RegAppMode = "AppsUseLightTheme";
+        private const string RegColPMode = "ColorPrevalence";
 
-        private enum WindowsTheme
+        //theme switching buttons
+        private void DarkCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            Light,
-            Dark
+
+            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+            {
+                key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
+                key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
+                key.Close();
+            }
+            MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
         }
 
-        private static WindowsTheme GetWindowsTheme()
+        private void LightCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme))
+            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
             {
-                object registryValueObject = key?.GetValue(RegSysMode);
-                if (registryValueObject == null)
-                {
-                    return WindowsTheme.Light;
-                }
-
-                int registryValue = (int)registryValueObject;
-
-                return registryValue > 0 ? WindowsTheme.Light : WindowsTheme.Dark;
+                key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
+                key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
+                key.SetValue(RegColPMode, $"0", RegistryValueKind.DWord);
+                key.Close();
             }
+            MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
         }
 
         //launch on startup button
@@ -105,48 +110,25 @@ namespace darker
             }
         }
 
-        //theme switching buttons
-        private void DarkCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        //settings button
+        private void SettingsItem_Click(object sender, RoutedEventArgs e)
         {
-
-            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
-            {
-                key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
-                key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
-                key.Close();
-            }
-            
-            MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
-        }
-
-        private void LightCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
-            {
-                key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
-                key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
-                key.Close();
-            }
-            
-            MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
-        }
-
-        //exti button
-        void ExitMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            // Close this window
-            this.Close();
+            Process.Start(new ProcessStartInfo("ms-settings:colors") { UseShellExecute = true });
         }
 
         //about button
         private void AboutItem_Click(object sender, RoutedEventArgs e)
         {
-            string title = "WPF NotifyIcon";
-            string text = "This is a standard balloon";
-
-            //show balloon with built-in icon
-            MyNotifyIcon.ShowBalloonTip(title, text, BalloonIcon.Info);
+            About subWindow = new About();
+            subWindow.Show();
         }
+
+        //exit button
+        void ExitMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
     }
 
     //commancds for theme switching launch
