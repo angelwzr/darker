@@ -6,16 +6,23 @@ This simple tray app for Windows 10 allows you to switch system theme (Dark/Ligh
 - Dark theme — click on the tray icon **once**.
 - Light theme — click on the tray icon **twice**.
 
-You also can set it to auto start with Windows.
+You can also set it to auto start with Windows.
 
 ### Requirements
 
 - .NET Core Runtime 3.1 ([download](https://dotnet.microsoft.com/download/dotnet-core/current/runtime))
 
-### Acknowledgements
+### Current status
 
-- [Hardcodet NotifyIcon for WPF](https://github.com/hardcodet/wpf-notifyicon)
+The app is basically done. There are some things I want to fix or change in the future:
+
+- Check for system theme on app start so the tray icon will be in the right state
+- Change the click/double click scenario to one click only
 
 ### Notes
 
 The app will work on all Windows 10 versions with Dark and Light mode for apps support. Light theme for system was first introduced in Windows 10 1903 so you'll need to be using this OS version or newer for proper switching. 
+
+### Acknowledgements
+
+- [Hardcodet NotifyIcon for WPF](https://github.com/hardcodet/wpf-notifyicon)
