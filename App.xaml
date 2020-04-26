@@ -1,8 +1,8 @@
 ﻿<Application x:Class="darker.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:darker"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:darker">
+             <!--StartupUri="MainWindow.xaml"-->
     <Application.Resources>
         <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -10,7 +10,7 @@
 
             <!-- Globally declared notify icon -->
             <tb:TaskbarIcon x:Key="MyNotifyIcon"
-                  IconSource="pack://application:,,,/Resources/day_w.ico"
+                  IconSource="pack://application:,,,/Resources/icon.ico"
                   ToolTipText="darker" />
         </ResourceDictionary>
     </Application.Resources>
