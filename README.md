@@ -1,5 +1,5 @@
 # darker
-![app demo](https://mswin.me/cdn/darkeranim.gif)
+<img src="https://mswin.me/cdn/darkeranim.gif" alt="app demo" style="zoom:70%;" />
 
 This simple tray app for Windows 10 allows you to switch system theme (Dark/Light) with a click, which may be helpful when you have to take a lot of screenshots so you won't need to go to the Settings app page every time to change it. 
 
