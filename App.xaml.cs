@@ -16,7 +16,7 @@ namespace darker
     {
 
         // give the mutex a  unique name
-        private const string MutexName = "##||ThisApp||##";
+        private const string MutexName = "##||darker||##";
         // declare the mutex
         private readonly Mutex _mutex;
         // overload the constructor

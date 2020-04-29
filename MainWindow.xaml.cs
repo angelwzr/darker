@@ -32,8 +32,6 @@ namespace darker
             CheckForAutostart();
         }
 
-        private TaskbarIcon tb;
-
         //check Windows version
         private void CheckWin()
         {
@@ -42,12 +40,6 @@ namespace darker
                 MessageBox.Show("This app is designed for Windows 10 only. Please consider upgrading your OS.", "Unsupported OS");
                 Application.Current.Shutdown();
             }
-        }
-
-        private void InitApplication()
-        {
-            //initialize NotifyIcon
-            tb = (TaskbarIcon)FindResource("MyNotifyIcon");
         }
 
         //windows startup
@@ -69,7 +61,7 @@ namespace darker
         private const string RegColPMode = "ColorPrevalence";
 
         //theme switching buttons
-        private void DarkCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        private void DarkCommand(object sender, RoutedEventArgs e)
         {
 
             using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
@@ -81,7 +73,7 @@ namespace darker
             MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
         }
 
-        private void LightCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        private void LightCommand(object sender, RoutedEventArgs e)
         {
             using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
             {
@@ -111,42 +103,24 @@ namespace darker
         }
 
         //settings button
-        private void SettingsItem_Click(object sender, RoutedEventArgs e)
+        private void Settings_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("ms-settings:colors") { UseShellExecute = true });
         }
 
         //about button
-        private void AboutItem_Click(object sender, RoutedEventArgs e)
+        private void About_Click(object sender, RoutedEventArgs e)
         {
             About subWindow = new About();
             subWindow.Show();
         }
 
         //exit button
-        void ExitMenuItem_Click(object sender, RoutedEventArgs e)
+        void Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-    }
-
-    //commancds for theme switching launch
-    public static class darkerCommands
-    {
-        public static readonly RoutedUICommand Dark = new RoutedUICommand
-            (
-                "Dark",
-                "Dark",
-                typeof(darkerCommands)
-            );
-
-        public static readonly RoutedUICommand Light = new RoutedUICommand
-            (
-                "Light",
-                "Light",
-                typeof(darkerCommands)
-            );
     }
 
 }
