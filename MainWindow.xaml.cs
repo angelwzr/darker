@@ -60,46 +60,66 @@ namespace darker
         private const string RegAppMode = "AppsUseLightTheme";
         private const string RegColPMode = "ColorPrevalence";
 
-        //theme switching buttons
-        private void DarkCommand(object sender, RoutedEventArgs e)
+        //get current theme
+        private enum WindowsTheme
         {
-
-            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
-            {
-                key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
-                key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
-                key.Close();
-            }
-            MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
+            Light,
+            Dark
         }
 
-        private void LightCommand(object sender, RoutedEventArgs e)
+        private static WindowsTheme GetWindowsTheme()
         {
-            using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+            using RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme);
+            object registryValueObject = key.GetValue(RegSysMode);
+            if (registryValueObject == null)
             {
-                key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
-                key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
-                key.SetValue(RegColPMode, $"0", RegistryValueKind.DWord);
-                key.Close();
+                return WindowsTheme.Light;
             }
-            MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
+
+            int registryValue = (int)registryValueObject;
+
+            return registryValue > 0 ? WindowsTheme.Light : WindowsTheme.Dark;
+
+        }
+
+        //theme switching buttons
+        private void ThemeCycle(object sender, RoutedEventArgs e)
+        {
+            WindowsTheme theme = GetWindowsTheme();
+            if (theme == WindowsTheme.Light)
+            {
+                using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+                {
+                    key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
+                    key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
+                    key.Close();
+                }
+                MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
+            }
+            else
+            {
+                using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+                {
+                    key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
+                    key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
+                    key.SetValue(RegColPMode, $"0", RegistryValueKind.DWord);
+                    key.Close();
+                }
+                MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
+            }
         }
 
         //launch on startup button
         private void AutoS_Checked(object sender, RoutedEventArgs e)
         {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
-            {
-                key.SetValue("darker", System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
-            }
+            using RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+            key.SetValue("darker", System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
         }
 
         private void AutoS_Unchecked(object sender, RoutedEventArgs e)
         {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
-            {
-                key.DeleteValue("darker", false);
-            }
+            using RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
+            key.DeleteValue("darker", false);
         }
 
         //settings button
@@ -120,7 +140,6 @@ namespace darker
         {
             Application.Current.Shutdown();
         }
-
     }
 
 }

@@ -1,12 +1,8 @@
 # darker
-<img src="https://mswin.me/cdn/darkeranim.gif" alt="app demo" style="zoom:70%;" />
 
-This simple tray app for Windows 10 allows you to switch system theme (Dark/Light) with a click, which may be helpful when you have to take a lot of screenshots so you won't need to go to the Settings app page every time to change it. 
+![app demo](https://mswin.me/cdn/darkeranim.gif)
 
-- Dark theme — click on the tray icon **once**.
-- Light theme — click on the tray icon **twice**.
-
-You can also set it to auto start with Windows.
+This simple tray app for Windows 10 allows you to switch system theme (Dark/Light) with a click, which may be helpful when you have to take a lot of screenshots so you won't need to go to the Settings app page every time to change it. You can also set it to auto start with Windows.
 
 ### Requirements
 
@@ -17,7 +13,6 @@ You can also set it to auto start with Windows.
 The app is basically done. There are some things I want to fix or change in the future:
 
 - Check for system theme on app start so the tray icon will be in the right state
-- Change the click/double click scenario to one click only
 
 ### Notes
 
