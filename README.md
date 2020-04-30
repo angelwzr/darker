@@ -16,7 +16,7 @@ The app is basically done. There are some things I want to fix or change in the 
 
 ### Notes
 
-The app will work on all Windows 10 versions with Dark and Light mode for apps support. Light theme for system was first introduced in Windows 10 1903 so you'll need to be using this OS version or newer for proper switching. 
+The app will work on all Windows 10 versions with Dark and Light mode for apps support. Light theme for system was first introduced in Windows 10 1903 so you'll need to be using this OS version or newer for proper switching. High contrast themes are not supported.
 
 ### Acknowledgements
 
