@@ -17,7 +17,7 @@
         <StackPanel Margin="5" Grid.Row="1" HorizontalAlignment="Center">
             <Separator/>
             <TextBlock Margin="5" Text="darker by Roman Linev"/>
-            <TextBlock Margin="5" Text="version 1.0.0"/>
+            <TextBlock Margin="5" Text="Version 1.0.0"/>
             <TextBlock Margin="5">
             <Run>Visit the project page on</Run>
             <Hyperlink NavigateUri="https://github.com/angelwzr/darker" RequestNavigate="About_RequestNavigate">GitHub</Hyperlink>

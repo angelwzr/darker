@@ -7,9 +7,6 @@ using System.Windows.Media.Imaging;
 namespace darker
 {
 
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
 
@@ -118,7 +115,7 @@ namespace darker
         private void About_Click(object sender, RoutedEventArgs e)
         {
             About abWindow = new About();
-            abWindow.Show();
+            abWindow.ShowDialog();
         }
 
         //exit button
