@@ -15,6 +15,7 @@ namespace darker
         {
             InitializeComponent();
             CheckForAutostart();
+            IconHandler();
         }
 
         //start with windows windows
@@ -26,6 +27,19 @@ namespace darker
                 string sVal = reg.GetValue("darker", "").ToString();
                 AutoS.IsChecked = sVal == System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
                 reg.Close();
+            }
+        }
+
+        private void IconHandler()
+        {
+            WindowsTheme theme = GetWindowsTheme();
+            if (theme == WindowsTheme.Light)
+            {
+                MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
+            }
+            else
+            {
+                MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
             }
         }
 
@@ -67,7 +81,6 @@ namespace darker
                     key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
                     key.Close();
                 }
-                MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
             }
             else
             {
@@ -78,8 +91,8 @@ namespace darker
                     key.SetValue(RegColPMode, $"0", RegistryValueKind.DWord);
                     key.Close();
                 }
-                MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
             }
+            IconHandler();
         }
 
         //launch on startup button

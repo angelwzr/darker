@@ -10,9 +10,10 @@ This simple tray app for Windows 10 allows you to switch system theme (Dark/Ligh
 
 ### Current status
 
-The app is basically done. There are some things I want to fix or change in the future:
+The app is basically done. There are some things I want to fix, change or add in the future:
 
-- Check for system theme on app start so the tray icon will be in the right state
+- Make context menu look native
+- Localization support
 
 ### Notes
 
