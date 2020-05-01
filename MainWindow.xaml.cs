@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -16,9 +17,7 @@ namespace darker
             CheckForAutostart();
         }
 
-        //check Windows version
-
-        //windows startup
+        //start with windows windows
         private void CheckForAutostart()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
@@ -56,7 +55,7 @@ namespace darker
             return registryValue > 0 ? WindowsTheme.Light : WindowsTheme.Dark;
         }
 
-        //theme switching buttons
+        //theme switching button
         private void ThemeCycle(object sender, RoutedEventArgs e)
         {
             WindowsTheme theme = GetWindowsTheme();
@@ -105,8 +104,7 @@ namespace darker
         //about button
         private void About_Click(object sender, RoutedEventArgs e)
         {
-            About abWindow = new About();
-            abWindow.ShowDialog();
+            OpenWindow<About>();
         }
 
         //exit button
@@ -114,6 +112,24 @@ namespace darker
         {
             Application.Current.Shutdown();
         }
+        
+        //about window single instance management
+        public static void OpenWindow<T>() where T : Window
+        {
+            var windows = System.Windows.Application.Current.Windows.Cast<Window>();
+            var any = windows.Any(s => s is T);
+            if (any)
+            {
+                var abWindow = windows.Where(s => s is T).ToList()[0];
+                if (abWindow.WindowState == WindowState.Minimized)
+                abWindow.WindowState = WindowState.Normal;
+                abWindow.Focus();
+            }
+            else
+            {
+                var abWindow = (Window)Activator.CreateInstance(typeof(T));
+                abWindow.Show();
+            }
+        }
     }
-
 }
