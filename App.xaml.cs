@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Windows;
 
 namespace darker
@@ -17,6 +18,8 @@ namespace darker
         bool createdNew;
         public App()
         {
+            //check Windows version before anything else
+            CheckWin();
             // overloaded mutex constructor which outs a boolean
             // telling if the mutex is new or not.
             // see http://msdn.microsoft.com/en-us/library/System.Threading.Mutex.aspx
@@ -35,6 +38,16 @@ namespace darker
             // is constructed and visible
             MainWindow mw = new MainWindow();
             mw.Hide();
+        }
+
+        //actual Windows version check code
+        private void CheckWin()
+        {
+            if (Environment.OSVersion.Version.Major < 10 && Environment.OSVersion.Version.Minor > 0)
+            {
+                MessageBox.Show("This app is designed for Windows 10 only. Please consider upgrading your OS.", "Unsupported OS");
+                Application.Current.Shutdown();
+            }
         }
 
     }
