@@ -10,7 +10,7 @@
         Visibility="Hidden">
     <Grid>
         <tb:TaskbarIcon
-      x:Name="MyNotifyIcon"
+      x:Name="darkerIcon"
       ToolTipText="darker" 
       IconSource="pack://application:,,,/Resources/day_w.ico"
       Visibility="Visible"

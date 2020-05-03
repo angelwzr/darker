@@ -18,7 +18,7 @@ namespace darker
             IconHandler();
         }
 
-        //start with windows windows
+        //start with Windows
         private void CheckForAutostart()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
@@ -27,19 +27,6 @@ namespace darker
                 string sVal = reg.GetValue("darker", "").ToString();
                 AutoS.IsChecked = sVal == System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
                 reg.Close();
-            }
-        }
-
-        private void IconHandler()
-        {
-            WindowsTheme theme = GetWindowsTheme();
-            if (theme == WindowsTheme.Light)
-            {
-                MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
-            }
-            else
-            {
-                MyNotifyIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
             }
         }
 
@@ -67,6 +54,20 @@ namespace darker
             int registryValue = (int)registryValueObject;
 
             return registryValue > 0 ? WindowsTheme.Light : WindowsTheme.Dark;
+        }
+
+        //setting the right icon for each theme
+        private void IconHandler()
+        {
+            WindowsTheme theme = GetWindowsTheme();
+            if (theme == WindowsTheme.Light)
+            {
+                darkerIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
+            }
+            else
+            {
+                darkerIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
+            }
         }
 
         //theme switching button
