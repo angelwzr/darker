@@ -9,21 +9,21 @@
         Title="darker"
         Visibility="Hidden">
     <Grid>
-        <tb:TaskbarIcon
+      <tb:TaskbarIcon
       x:Name="darkerIcon"
       ToolTipText="darker" 
       IconSource="pack://application:,,,/Resources/day_w.ico"
       Visibility="Visible"
       TrayLeftMouseDown="ThemeCycle">
             <tb:TaskbarIcon.ContextMenu>
-                <ContextMenu>
-                    <MenuItem x:Name="AutoS" Header="Run at startup" IsCheckable="true" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
-                    <MenuItem Header="Theme settings" Click="Settings_Click"/>
-                    <MenuItem Header="About" Click="About_Click"/>
+                <ContextMenu x:Uid="ContextMenu">
+                    <MenuItem x:Uid="AutoS" x:Name="AutoS" Header="Run at startup" IsCheckable="true" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
+                    <MenuItem x:Uid="SettingsButton" Header="Theme settings" Click="Settings_Click"/>
+                    <MenuItem x:Uid="AboutButton" Header="About" Click="About_Click"/>
                     <Separator/>
-                    <MenuItem Header="Exit" FontWeight="Bold" Click="Exit_Click"/>
+                    <MenuItem x:Uid="ExitButton" Header="Exit" FontWeight="Bold" Click="Exit_Click"/>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
-        </tb:TaskbarIcon>
+      </tb:TaskbarIcon>
     </Grid>
 </Window>

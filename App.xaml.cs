@@ -9,7 +9,6 @@ namespace darker
     /// </summary>
     public partial class App : Application
     {
-
         // give the mutex a  unique name
         private const string MutexName = "##||darker||##";
         // declare the mutex
@@ -45,6 +44,5 @@ namespace darker
                 Application.Current.Shutdown();
             }
         }
-
     }
 }

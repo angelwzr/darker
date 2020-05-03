@@ -8,18 +8,18 @@
         Title="About" Height="250" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition x:Uid="RowDefinition_1" Height="1*"/>
+            <RowDefinition x:Uid="RowDefinition_2" Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Margin="5" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Image Source="/Resources/icon.ico"/>
+            <Image x:Uid="LogoImage" Source="/Resources/icon.ico"/>
         </StackPanel>
         <StackPanel Margin="5" Grid.Row="1" HorizontalAlignment="Center">
             <Separator/>
-            <TextBlock Margin="5" Text="darker by Roman Linev"/>
-            <TextBlock Margin="5" Text="Version 1.0.0"/>
-            <TextBlock Margin="5">
-            <Run>Visit the project page on</Run>
+            <TextBlock x:Uid="AuthorText" HorizontalAlignment="Center" Margin="5" Text="darker by Roman Linev"/>
+            <TextBlock x:Uid="VersionText" HorizontalAlignment="Center" Margin="5" Text="Version 1.0.0"/>
+            <TextBlock x:Uid="GHText" HorizontalAlignment="Center" Margin="5">
+            <Run x:Uid="VistText" Text="Visit the project page on"/>
             <Hyperlink NavigateUri="https://github.com/angelwzr/darker" RequestNavigate="About_RequestNavigate">GitHub</Hyperlink>
             </TextBlock>
         </StackPanel>

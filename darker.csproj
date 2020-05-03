@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-
+  
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove=".gitignore" />
     <None Remove="README.md" />
     <None Remove="Resources\day_w.ico" />
     <None Remove="Resources\icon.ico" />
@@ -21,11 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\day_w.ico">
-      <CopyToOutputDirectory></CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Resources\day_w.ico" />
     <Resource Include="Resources\icon.ico" />
     <Resource Include="Resources\night_b.ico" />
   </ItemGroup>
-
+  
 </Project>
