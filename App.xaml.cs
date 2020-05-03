@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Windows;
+using darker.Properties;
 
 namespace darker
 {
@@ -40,7 +41,7 @@ namespace darker
         {
             if (Environment.OSVersion.Version.Major < 10 && Environment.OSVersion.Version.Minor > 0)
             {
-                MessageBox.Show("This app is designed for Windows 10 only. Please consider upgrading your OS.", "Unsupported OS");
+                MessageBox.Show("This app is designed for Windows 10 only. Please consider upgrading your OS.", "darker");
                 Application.Current.Shutdown();
             }
         }

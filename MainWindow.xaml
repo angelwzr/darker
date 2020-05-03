@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:tb="http://www.hardcodet.net/taskbar" 
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        xmlns:res="clr-namespace:darker.Properties"
         xmlns:local="clr-namespace:darker"
         mc:Ignorable="d"
         Title="darker"
@@ -17,11 +18,11 @@
       TrayLeftMouseDown="ThemeCycle">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Uid="ContextMenu">
-                    <MenuItem x:Uid="AutoS" x:Name="AutoS" Header="Run at startup" IsCheckable="true" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
-                    <MenuItem x:Uid="SettingsButton" Header="Theme settings" Click="Settings_Click"/>
-                    <MenuItem x:Uid="AboutButton" Header="About" Click="About_Click"/>
+                    <MenuItem x:Uid="AutoS" x:Name="AutoS" Header="{x:Static res:Resources.AutoSButton}" IsCheckable="true" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
+                    <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}" Click="Settings_Click"/>
+                    <MenuItem x:Uid="AboutButton" Header="{x:Static res:Resources.AboutButton}" Click="About_Click"/>
                     <Separator/>
-                    <MenuItem x:Uid="ExitButton" Header="Exit" FontWeight="Bold" Click="Exit_Click"/>
+                    <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" FontWeight="Bold" Click="Exit_Click"/>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
       </tb:TaskbarIcon>
