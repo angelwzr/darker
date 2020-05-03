@@ -20,22 +20,18 @@ namespace darker
         {
             //check Windows version before anything else
             CheckWin();
-            // overloaded mutex constructor which outs a boolean
-            // telling if the mutex is new or not.
-            // see http://msdn.microsoft.com/en-us/library/System.Threading.Mutex.aspx
+            //allow single instance of the app only
             _mutex = new Mutex(true, MutexName, out createdNew);
             if (!createdNew)
             {
-                // if the mutex already exists, notify and quit
                 MessageBox.Show("This program is already running", "darker");
                 Application.Current.Shutdown(0);
             }
         }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             if (!createdNew) return;
-            // overload the OnStartup so that the main window 
-            // is constructed and visible
             MainWindow mw = new MainWindow();
             mw.Hide();
         }

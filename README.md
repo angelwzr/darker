@@ -1,5 +1,7 @@
 # darker
 
+[![CodeFactor](https://www.codefactor.io/repository/github/angelwzr/darker/badge/master)](https://www.codefactor.io/repository/github/angelwzr/darker/overview/master)
+
 ![app demo](https://mswin.me/cdn/darkeranim.gif)
 
 This simple tray app for Windows 10 allows you to switch system theme (Dark/Light) with a click, which may be helpful when you have to take a lot of screenshots so you won't need to go to the Settings app page every time to change it. You can also set it to auto start with Windows.
