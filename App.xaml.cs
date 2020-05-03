@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Reflection;
+using System.Resources;
 using System.Threading;
 using System.Windows;
-using darker.Properties;
 
 namespace darker
 {
@@ -10,11 +11,9 @@ namespace darker
     /// </summary>
     public partial class App : Application
     {
-        // give the mutex a  unique name
+        //mutex
         private const string MutexName = "##||darker||##";
-        // declare the mutex
         private readonly Mutex _mutex;
-        // overload the constructor
         bool createdNew;
         public App()
         {
@@ -24,7 +23,8 @@ namespace darker
             _mutex = new Mutex(true, MutexName, out createdNew);
             if (!createdNew)
             {
-                MessageBox.Show("This program is already running", "darker");
+                var resourceManager = new ResourceManager(typeof(darker.Properties.Resources));
+                MessageBox.Show(resourceManager.GetString("RunningAppMessage"), resourceManager.GetString("AppName"));
                 Application.Current.Shutdown(0);
             }
         }
@@ -41,7 +41,8 @@ namespace darker
         {
             if (Environment.OSVersion.Version.Major < 10 && Environment.OSVersion.Version.Minor > 0)
             {
-                MessageBox.Show("This app is designed for Windows 10 only. Please consider upgrading your OS.", "darker");
+                var resourceManager = new ResourceManager(typeof(darker.Properties.Resources));
+                MessageBox.Show(resourceManager.GetString("OSVersionMessage"), resourceManager.GetString("AppName"));
                 Application.Current.Shutdown();
             }
         }
