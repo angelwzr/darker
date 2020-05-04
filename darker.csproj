@@ -7,6 +7,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <Authors>Roman Linev</Authors>
+    <RepositoryUrl>https://github.com/angelwzr/darker</RepositoryUrl>
   </PropertyGroup>
   <ItemGroup>
     <None Remove=".gitignore" />
