@@ -25,24 +25,30 @@
 </head>
 
 <body>
-    <div class="w3-display-middle w3-center">
-        <div class="w3-container">
-            <h2>Indroducing <b>darker</b></h2>
-            <picture>
-                <source srcset="assets\img\device-dark.png" media="(prefers-color-scheme: dark)" />
-                <source srcset="assets\img\device-light.png"
-                    media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
-                <img src="assets\img\device-light.png" id="appdemoimg" alt="Surface" style="width:85%" />
-            </picture>
-            <p>Join the Dark side. Or the Light side. It doesn't matter.<br>Either way, you can do it with just one
-                click.</p>
+    <div class="w3-content">
+        <div class="w3-display-middle w3-center">
+            <div class="w3-container">
+                <h2>Indroducing <b>darker</b></h2>
+                <picture>
+                    <source srcset="assets\img\device-dark.png" media="(prefers-color-scheme: dark)" />
+                    <source srcset="assets\img\device-light.png"
+                        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+                    <img src="assets\img\device-light.png" id="appdemoimg" alt="Surface" style="width:85%" />
+                </picture>
+                <p class="w3-large">Join the Dark side. Or the Light side. It doesn't matter.<br>Either way, you can do
+                    it
+                    with just one
+                    click.</p>
+            </div>
+            <button id="darkbtn" class="w3-button w3-dark-grey w3-padding-large"
+                onclick="location.href='https://github.com/angelwzr/darker/releases'">
+                <i class="fa fa-windows"></i> Download for Windows 10</button>
+            <button id="lightbtn" class="w3-button w3-light-grey w3-padding-large"
+                onclick="location.href='https://github.com/angelwzr/darker/releases'">
+                <i class="fa fa-windows"></i> Download for Windows 10</button>
+            <p class="w3-small">...or try it right here:</p>
+            <dark-mode-toggle></dark-mode-toggle>
         </div>
-        <button id="darkbtn" class="w3-button w3-dark-grey w3-padding-large"
-            onclick="location.href='https://github.com/angelwzr/darker/releases'">
-            <i class="fa fa-windows"></i> Download for Windows 10</button>
-        <button id="lightbtn" class="w3-button w3-light-grey w3-padding-large"
-            onclick="location.href='https://github.com/angelwzr/darker/releases'">
-            <i class="fa fa-windows"></i> Download for Windows 10</button>
     </div>
 </body>
 <script>
@@ -55,5 +61,6 @@
     }
 </script>
 <script src="https://kit.fontawesome.com/5e3d4f8999.js" crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
 
 </html>

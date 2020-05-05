@@ -12,4 +12,17 @@ body {
   align-items: center;
   flex-direction: column;
   font-family: sans-serif;
+  --duration: 0.5s;
+  --timing: ease;
+  color: var(--color);
+  background-color: var(--background-color);
+  transition:
+  color var(--duration) var(--timing),
+  background-color var(--duration) var(--timing);
+}
+
+
+dark-mode-toggle {
+  --dark-mode-toggle-light-icon: url("assets/img/night_b.png");
+  --dark-mode-toggle-dark-icon: url("assets/img/day_w.png");
 }
