@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,37 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutButton" xml:space="preserve">
-    <value>Про програму</value>
-  </data>
-  <data name="AboutWindowTitle" xml:space="preserve">
-    <value>Про програму</value>
-  </data>
-  <data name="AuthorText" xml:space="preserve">
-    <value>Роман Лінев</value>
-  </data>
-  <data name="AutoSButton" xml:space="preserve">
-    <value>Запускати автоматично</value>
-  </data>
-  <data name="ExitButton" xml:space="preserve">
-    <value>Вихід</value>
-  </data>
-  <data name="SettingsButton" xml:space="preserve">
-    <value>Налаштування теми</value>
-  </data>
-  <data name="VersionText" xml:space="preserve">
-    <value>darker 1.0.0.0</value>
-  </data>
-  <data name="VisitText" xml:space="preserve">
-    <value>Сторінка проекту на</value>
-  </data>
-  <data name="OSVersionMessage" xml:space="preserve">
-    <value>Цей додаток працює лише на Windows 10. Задумайтесь щодо необхідності оновлення ОС.</value>
-  </data>
-  <data name="RunningAppMessage" xml:space="preserve">
-    <value>Додаток вже запущено.</value>
-  </data>
-  <data name="AppName" xml:space="preserve">
-    <value>darker</value>
-  </data>
 </root>

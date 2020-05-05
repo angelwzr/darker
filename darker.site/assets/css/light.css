@@ -1,7 +1,7 @@
 /* light.css: 👉 dark-on-light */
 :root {
   --color: #000000;
-  --background-color: #ffffff;
+  --background-color: #dddddd;
 }
 
 #darkbtn {
