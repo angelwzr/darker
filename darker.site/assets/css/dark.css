@@ -6,4 +6,10 @@
 
 #lightbtn {
   display:none;
+  visibility: hidden;
+}
+
+#devlight {
+  display:none;
+  visibility: hidden;
 }
