@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Darker is a simple tray app for Windows 10 that allows you to switch system theme (Dark/Light) with one click, so you won't need to go to the Settings app page every time to change it.">
+    <meta name="keywords" content="Dark mode, Windows 10, customization, tray app, Windows themes">
+    <meta name="author" content="Roman Linev">
+    <meta property="og:title" content="darker">
+    <meta property="og:description" content="Darker is a simple tray app for Windows 10 theme switching.">
+    <meta property="og:image" content="https://mswin.me/darker/assets/img/social.png">
+    <meta property="og:url" content="https://mswin.me/darker/">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>darker — a one click theme changer for Windows 10</title>
+    <link rel="icon" href="assets\img\icon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="assets/css/light.css"
+        media="(prefers-color-scheme: no-preference), (prefers-color-scheme: light)">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/w3.css">
+</head>
+
+<body>
+    <div class="w3-display-middle w3-center">
+        <div class="w3-container">
+            <div>
+                <picture>
+                    <source srcset="assets\img\device-dark.png" media="(prefers-color-scheme: dark)" />
+                    <source srcset="assets\img\device-light.png"
+                        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" />
+                    <img src="assets\img\device-light.png" id="appdemoimg" alt="Surface" style="width:100%" />
+                </picture>
+            </div>
+            <h2>Indroducing darker</h2>
+            <p>Join the Dark side. Or the Light side. It doesn't matter.<br>Either way, you can do it with just one
+                click.</p>
+        </div>
+        <button id="darkbtn" class="w3-button w3-dark-grey w3-padding-large"
+            onclick="location.href='https://github.com/angelwzr/darker/releases'">
+            <i class="fa fa-windows"></i> Download for Windows 10</button>
+        <button id="lightbtn" class="w3-button w3-light-grey w3-padding-large"
+            onclick="location.href='https://github.com/angelwzr/darker/releases'">
+            <i class="fa fa-windows"></i> Download for Windows 10</button>
+    </div>
+</body>
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+        document.documentElement.style.display = 'none';
+        document.head.insertAdjacentHTML(
+            'beforeend',
+            '<link rel="stylesheet" href="assets/css/light.css" onload="document.documentElement.style.display = \'\'">'
+        );
+    }
+</script>
+<script src="https://kit.fontawesome.com/5e3d4f8999.js" crossorigin="anonymous"></script>
+
+</html>

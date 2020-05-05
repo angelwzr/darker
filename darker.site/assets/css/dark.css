@@ -1,0 +1,9 @@
+/* dark.css: 👉 light-on-dark */
+:root {
+  --color: #ffffff;
+  --background-color: #393232;
+}
+
+#lightbtn {
+  display:none;
+}
