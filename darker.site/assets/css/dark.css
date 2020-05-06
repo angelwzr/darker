@@ -9,6 +9,11 @@
   visibility: hidden;
 }
 
+#ghlightbtn {
+  display:none;
+  visibility: hidden;
+}
+
 #devlight {
   display:none;
   visibility: hidden;

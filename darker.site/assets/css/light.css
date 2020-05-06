@@ -9,6 +9,11 @@
   visibility: hidden;
 }
 
+#ghdarkbtn {
+  display:none;
+  visibility: hidden;
+}
+
 #devdark {
   display:none;
   visibility: hidden;
