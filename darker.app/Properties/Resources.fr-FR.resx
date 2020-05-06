@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,4 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutButton" xml:space="preserve">
+    <value>À propos</value>
+  </data>
+  <data name="AboutWindowTitle" xml:space="preserve">
+    <value>À propos</value>
+  </data>
+  <data name="AuthorText" xml:space="preserve">
+    <value>Roman Linev</value>
+  </data>
+  <data name="AutoSButton" xml:space="preserve">
+    <value>Lancer automatiquement au démarrage</value>
+  </data>
+  <data name="ExitButton" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+  <data name="SettingsButton" xml:space="preserve">
+    <value>Réglages du thème</value>
+  </data>
+  <data name="VersionText" xml:space="preserve">
+    <value>darker 1.0.0.0</value>
+  </data>
+  <data name="VisitText" xml:space="preserve">
+    <value>Visiter la page du projet sur</value>
+  </data>
+  <data name="OSVersionMessage" xml:space="preserve">
+    <value>Ce logiciel est conçu uniquement pour Windows 10. Envisagez de mettre à jour votre OS.</value>
+  </data>
+  <data name="RunningAppMessage" xml:space="preserve">
+    <value>Ce logiciel est déjà en cours d'exécution.</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>darker</value>
+  </data>
 </root>
