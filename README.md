@@ -6,11 +6,11 @@ This simple tray app for Windows 10 allows you to switch system theme (Dark/Ligh
 
 ### Requirements
 
-- .NET Core Runtime 3.1 ([download](https://dotnet.microsoft.com/download/dotnet-core/current/runtime))
+- .NET Core Desktop Runtime 3.1 ([download](https://dotnet.microsoft.com/download/dotnet-core/current/runtime))
 
 ### Current status and future plans
 
-Version 1.0 is available for download right now.
+Version 1.0 is available for [download right now](https://github.com/angelwzr/darker/releases).
 
 These are some things I want to fix, change or add in the future:
 
