@@ -15,7 +15,7 @@
       ToolTipText="{x:Static res:Resources.AppName}" 
       IconSource="pack://application:,,,/Resources/day_w.ico"
       Visibility="Visible"
-      TrayLeftMouseDown="ThemeCycle">
+      TrayLeftMouseDown="MagicHandler">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Uid="ContextMenu">
                     <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}" Click="Settings_Click"/>

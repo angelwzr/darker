@@ -31,6 +31,12 @@ namespace darker
             Dark
         }
 
+        private enum AppsTheme
+        {
+            Light,
+            Dark
+        }
+
         private static WindowsTheme GetWindowsTheme()
         {
             using RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme);
@@ -42,6 +48,19 @@ namespace darker
             int registryValue = (int)registryValueObject;
 
             return registryValue > 0 ? WindowsTheme.Light : WindowsTheme.Dark;
+        }
+
+        private static AppsTheme GetAppsTheme()
+        {
+            using RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme);
+            object registryValueObject = key.GetValue(RegAppMode);
+            if (registryValueObject == null)
+            {
+                return AppsTheme.Light;
+            }
+            int registryValue = (int)registryValueObject;
+
+            return registryValue > 0 ? AppsTheme.Light : AppsTheme.Dark;
         }
 
         //setting the right icon for each theme
@@ -58,8 +77,8 @@ namespace darker
             }
         }
 
-        //theme switching button
-        private void ThemeCycle(object sender, RoutedEventArgs e)
+        //system theme switching
+        private void SysThemeHandler()
         {
             WindowsTheme theme = GetWindowsTheme();
             if (theme == WindowsTheme.Light)
@@ -67,7 +86,6 @@ namespace darker
                 using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
                 {
                     key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
-                    key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
                     key.Close();
                 }
             }
@@ -76,11 +94,39 @@ namespace darker
                 using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
                 {
                     key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
-                    key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
                     key.SetValue(RegColPMode, $"0", RegistryValueKind.DWord);
                     key.Close();
                 }
             }
+        }
+
+        //apps theme switching
+        private void AppThemeHandler()
+        {
+            AppsTheme apptheme = GetAppsTheme();
+            if (apptheme == AppsTheme.Light)
+            {
+                using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+                {
+                    key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
+                    key.Close();
+                }
+            }
+            else
+            {
+                using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+                {
+                    key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
+                    key.Close();
+                }
+            }
+        }
+
+        //do the magic on tray icon click
+        private void MagicHandler(object sender, RoutedEventArgs e)
+        {
+            SysThemeHandler();
+            AppThemeHandler();
             IconHandler();
         }
 
