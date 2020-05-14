@@ -12,7 +12,7 @@
     <Grid>
       <tb:TaskbarIcon
       x:Name="darkerIcon"
-      ToolTipText="darker" 
+      ToolTipText="{x:Static res:Resources.AppName}" 
       IconSource="pack://application:,,,/Resources/day_w.ico"
       Visibility="Visible"
       TrayLeftMouseDown="ThemeCycle">
