@@ -4,44 +4,32 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:darker"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:res="clr-namespace:darker.Properties"
         mc:Ignorable="d"
-        Title="{x:Static res:Resources.SettingsButton}" Height="300" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid>
-        <TabControl>
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="General"/>
-                    </StackPanel>
-                </TabItem.Header>
+        ui:WindowHelper.UseModernWindowStyle="True"
+        ui:ThemeManager.IsThemeAware="True"
+        Title="{x:Static res:Resources.SettingsButton}" Height="450" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        <Grid>
+            <TabControl>
+            <TabItem Header="General">
                 <StackPanel Margin="10">
-                    <Label FontWeight="Bold">Theme changing options</Label>
-                    <RadioButton GroupName="switchconly" IsChecked="True">Change both system and app theme</RadioButton>
-                    <RadioButton GroupName="switchconly">Change only system</RadioButton>
-                    <RadioButton GroupName="switchconly">Change only apps</RadioButton>
-                </StackPanel>
-            </TabItem>
-            <TabItem IsEnabled="False">
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Schedule"/>
+                        <Label FontWeight="Bold">Theme changing options</Label>
+                        <RadioButton GroupName="switchconly" IsChecked="True">Change both system and app theme</RadioButton>
+                        <RadioButton GroupName="switchconly">Change only system</RadioButton>
+                        <RadioButton GroupName="switchconly">Change only apps</RadioButton>
                     </StackPanel>
-                </TabItem.Header>
+                </TabItem>
+            <TabItem Header="Schedule">
                 <StackPanel Margin="10">
-                    <Label Content="Placeholder page for scheduling options" />
-                </StackPanel>
-            </TabItem>
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Other"/>
+                        <Label Content="Placeholder page for scheduling options" />
                     </StackPanel>
-                </TabItem.Header>
+                </TabItem>
+            <TabItem Header="Other">
                 <StackPanel Margin="10">
-                    <CheckBox x:Uid="AutoS" x:Name="AutoS" Content="{x:Static res:Resources.AutoSButton}" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
-                </StackPanel>
-            </TabItem>
-        </TabControl>
-    </Grid>
+                        <CheckBox x:Uid="AutoS" x:Name="AutoS" Content="{x:Static res:Resources.AutoSButton}" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
+                    </StackPanel>
+                </TabItem>
+            </TabControl>
+        </Grid>
 </Window>

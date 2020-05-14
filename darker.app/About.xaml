@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:darker"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:res="clr-namespace:darker.Properties"
         mc:Ignorable="d"
+        ui:WindowHelper.UseModernWindowStyle="True"
         Title="{x:Static res:Resources.AboutButton}" Height="250" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid.RowDefinitions>

@@ -26,6 +26,7 @@
   <ItemGroup>
     <PackageReference Include="Hardcodet.Wpf.TaskbarNotification.Core" Version="2.0.0" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
+    <PackageReference Include="ModernWpfUI" Version="0.8.3" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\day_w.ico">

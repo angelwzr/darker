@@ -6,7 +6,9 @@
         xmlns:tb="http://www.hardcodet.net/taskbar"
         xmlns:res="clr-namespace:darker.Properties"
         xmlns:local="clr-namespace:darker"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
         mc:Ignorable="d"
+        ui:WindowHelper.UseModernWindowStyle="True"
         Title="{x:Static res:Resources.AppName}"
         Visibility="Hidden">
     <Grid>
@@ -18,12 +20,24 @@
       TrayLeftMouseDown="MagicHandler">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Uid="ContextMenu">
-                    <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}" Click="Settings_Click"/>
-                    <MenuItem x:Uid="AboutButton" Header="{x:Static res:Resources.AboutButton}" Click="About_Click"/>
+                    <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}" Click="Settings_Click">
+                        <MenuItem.Icon>
+                            <ui:FontIcon Glyph="&#xE713;" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Uid="AboutButton" Header="{x:Static res:Resources.AboutButton}" Click="About_Click">
+                        <MenuItem.Icon>
+                            <ui:FontIcon Glyph="&#xE946;" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <Separator/>
-                    <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" FontWeight="Bold" Click="Exit_Click"/>
+                    <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" Click="Exit_Click">
+                        <MenuItem.Icon>
+                            <ui:FontIcon Glyph="&#xEDAE;" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
-      </tb:TaskbarIcon>
+    </tb:TaskbarIcon>
     </Grid>
 </Window>
