@@ -18,7 +18,6 @@
       TrayLeftMouseDown="ThemeCycle">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Uid="ContextMenu">
-                    <MenuItem x:Uid="AutoS" x:Name="AutoS" Header="{x:Static res:Resources.AutoSButton}" IsCheckable="true" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
                     <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}" Click="Settings_Click"/>
                     <MenuItem x:Uid="AboutButton" Header="{x:Static res:Resources.AboutButton}" Click="About_Click"/>
                     <Separator/>

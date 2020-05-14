@@ -14,21 +14,10 @@ namespace darker
         public MainWindow()
         {
             InitializeComponent();
-            CheckForAutostart();
             IconHandler();
         }
 
-        //start with Windows
-        private void CheckForAutostart()
-        {
-            RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
-            if (reg != null)
-            {
-                string sVal = reg.GetValue("darker", "").ToString();
-                AutoS.IsChecked = sVal == System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
-                reg.Close();
-            }
-        }
+
 
         //theme reg keys
         private const string RegistryKeyPathTheme = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
@@ -96,19 +85,6 @@ namespace darker
             IconHandler();
         }
 
-        //launch on startup button
-        private void AutoS_Checked(object sender, RoutedEventArgs e)
-        {
-            using RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-            key.SetValue("darker", System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
-        }
-
-        private void AutoS_Unchecked(object sender, RoutedEventArgs e)
-        {
-            using RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-            key.DeleteValue("darker", false);
-        }
-
         //settings button
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
@@ -126,7 +102,7 @@ namespace darker
         {
             Application.Current.Shutdown();
         }
-        
+
         //window single instance management
         public static void OpenWindow<T>() where T : Window
         {
@@ -136,7 +112,7 @@ namespace darker
             {
                 var subWindow = windows.Where(s => s is T).ToList()[0];
                 if (subWindow.WindowState == WindowState.Minimized)
-                subWindow.WindowState = WindowState.Normal;
+                    subWindow.WindowState = WindowState.Normal;
                 subWindow.Focus();
             }
             else

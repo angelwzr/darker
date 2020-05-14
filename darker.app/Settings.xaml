@@ -39,7 +39,7 @@
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel Margin="10">
-                    <CheckBox Content="Run on Windows startup"/>
+                    <CheckBox x:Uid="AutoS" x:Name="AutoS" Content="{x:Static res:Resources.AutoSButton}" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
                 </StackPanel>
             </TabItem>
         </TabControl>
