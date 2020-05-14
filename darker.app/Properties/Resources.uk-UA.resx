@@ -132,9 +132,6 @@
   <data name="SettingsButton" xml:space="preserve">
     <value>Налаштування</value>
   </data>
-  <data name="VersionText" xml:space="preserve">
-    <value>darker 1.1.0.0</value>
-  </data>
   <data name="VisitText" xml:space="preserve">
     <value>Сторінка проекту на</value>
   </data>

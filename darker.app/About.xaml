@@ -17,7 +17,7 @@
         </StackPanel>
         <StackPanel Margin="5" Grid.Row="1" HorizontalAlignment="Center">
             <Separator/>
-            <TextBlock x:Uid="VersionText" HorizontalAlignment="Center" Margin="5" Text="{x:Static res:Resources.VersionText}"/>
+            <TextBlock x:Name="VersionText" HorizontalAlignment="Center" Margin="5" Text=""/>
             <TextBlock x:Uid="AuthorText" HorizontalAlignment="Center" Margin="5" Text="{x:Static res:Resources.AuthorText}"/>
             <TextBlock x:Uid="GHText" HorizontalAlignment="Center" Margin="5">
             <Run x:Uid="VisitText" Text="{x:Static res:Resources.VisitText}"/>

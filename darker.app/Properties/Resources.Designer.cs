@@ -133,15 +133,6 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to darker 1.1.0.0.
-        /// </summary>
-        public static string VersionText {
-            get {
-                return ResourceManager.GetString("VersionText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Visit the project page on.
         /// </summary>
         public static string VisitText {

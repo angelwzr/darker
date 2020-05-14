@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Reflection;
+using System.Resources;
 using System.Windows;
 
 namespace darker
@@ -11,7 +13,12 @@ namespace darker
         public About()
         {
             InitializeComponent();
+
+            var assembly = Assembly.GetExecutingAssembly();
+            var assemblyVersion = assembly.GetName().Version;
+            VersionText.Text = ($"darker {assemblyVersion}");
         }
+
 
         private void About_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
