@@ -19,7 +19,6 @@ namespace darker
             VersionText.Text = ($"darker {assemblyVersion}");
         }
 
-
         private void About_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });

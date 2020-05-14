@@ -6,8 +6,42 @@
         xmlns:local="clr-namespace:darker"
         xmlns:res="clr-namespace:darker.Properties"
         mc:Ignorable="d"
-        Title="{x:Static res:Resources.SettingsButton}" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="{x:Static res:Resources.SettingsButton}" Height="300" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="General"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel Margin="10">
+                    <Label FontWeight="Bold">Theme changing options</Label>
+                    <RadioButton GroupName="switchconly" IsChecked="True">Change both system and app theme</RadioButton>
+                    <RadioButton GroupName="switchconly">Change only system</RadioButton>
+                    <RadioButton GroupName="switchconly">Change only apps</RadioButton>
+                </StackPanel>
+            </TabItem>
+            <TabItem IsEnabled="False">
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Schedule"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel Margin="10">
+                    <Label Content="Placeholder page for scheduling options" />
+                </StackPanel>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Other"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <StackPanel Margin="10">
+                    <CheckBox Content="Run on Windows startup"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
