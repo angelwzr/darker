@@ -1,6 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Reflection;
+﻿using System;
 using System.Resources;
 using System.Threading;
 using System.Windows;
