@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:darker"
         xmlns:res="clr-namespace:darker.Properties"
         mc:Ignorable="d"
-        Title="{x:Static res:Resources.AboutWindowTitle}" Height="250" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+        Title="{x:Static res:Resources.AboutButton}" Height="250" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>

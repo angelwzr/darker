@@ -112,7 +112,7 @@ namespace darker
         //settings button
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo("ms-settings:colors") { UseShellExecute = true });
+            OpenWindow<Settings>();
         }
 
         //about button
@@ -127,22 +127,22 @@ namespace darker
             Application.Current.Shutdown();
         }
         
-        //about window single instance management
+        //window single instance management
         public static void OpenWindow<T>() where T : Window
         {
             var windows = System.Windows.Application.Current.Windows.Cast<Window>();
             var any = windows.Any(s => s is T);
             if (any)
             {
-                var abWindow = windows.Where(s => s is T).ToList()[0];
-                if (abWindow.WindowState == WindowState.Minimized)
-                abWindow.WindowState = WindowState.Normal;
-                abWindow.Focus();
+                var subWindow = windows.Where(s => s is T).ToList()[0];
+                if (subWindow.WindowState == WindowState.Minimized)
+                subWindow.WindowState = WindowState.Normal;
+                subWindow.Focus();
             }
             else
             {
-                var abWindow = (Window)Activator.CreateInstance(typeof(T));
-                abWindow.Show();
+                var subWindow = (Window)Activator.CreateInstance(typeof(T));
+                subWindow.Show();
             }
         }
     }

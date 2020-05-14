@@ -120,9 +120,6 @@
   <data name="AboutButton" xml:space="preserve">
     <value>Про програму</value>
   </data>
-  <data name="AboutWindowTitle" xml:space="preserve">
-    <value>Про програму</value>
-  </data>
   <data name="AuthorText" xml:space="preserve">
     <value>Роман Лінев</value>
   </data>
@@ -133,10 +130,10 @@
     <value>Вихід</value>
   </data>
   <data name="SettingsButton" xml:space="preserve">
-    <value>Налаштування теми</value>
+    <value>Налаштування</value>
   </data>
   <data name="VersionText" xml:space="preserve">
-    <value>darker 1.0.0.0</value>
+    <value>darker 1.1.0.0</value>
   </data>
   <data name="VisitText" xml:space="preserve">
     <value>Сторінка проекту на</value>

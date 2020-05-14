@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutWindowTitle" xml:space="preserve">
-    <value>О программе</value>
-  </data>
   <data name="AuthorText" xml:space="preserve">
     <value>Роман Линев</value>
   </data>
@@ -130,10 +127,10 @@
     <value>Выход</value>
   </data>
   <data name="SettingsButton" xml:space="preserve">
-    <value>Настройки темы</value>
+    <value>Параметры</value>
   </data>
   <data name="VersionText" xml:space="preserve">
-    <value>darker 1.0.0.0</value>
+    <value>darker 1.10.0</value>
   </data>
   <data name="VisitText" xml:space="preserve">
     <value>Страница проекта на</value>

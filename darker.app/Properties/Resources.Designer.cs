@@ -70,15 +70,6 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to About.
-        /// </summary>
-        public static string AboutWindowTitle {
-            get {
-                return ResourceManager.GetString("AboutWindowTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to darker.
         /// </summary>
         public static string AppName {
@@ -133,7 +124,7 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Theme settings.
+        ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string SettingsButton {
             get {
@@ -142,7 +133,7 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to darker 1.0.0.0.
+        ///   Looks up a localized string similar to darker 1.1.0.0.
         /// </summary>
         public static string VersionText {
             get {
