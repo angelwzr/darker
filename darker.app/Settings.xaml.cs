@@ -1,4 +1,6 @@
 ﻿using Microsoft.Win32;
+using System.Diagnostics;
+using System.Reflection;
 using System.Windows;
 
 namespace darker
@@ -13,6 +15,10 @@ namespace darker
             InitializeComponent();
             //check for autostart with Windows key
             CheckForAutostart();
+            //handle version text on about tab
+            var assembly = Assembly.GetExecutingAssembly();
+            var assemblyVersion = assembly.GetName().Version;
+            VersionText.Text = ($"darker {assemblyVersion}");
         }
 
         //start with Windows checkbox
@@ -39,5 +45,13 @@ namespace darker
             using RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
             key.DeleteValue("darker", false);
         }
+
+        //handle GH link navigation
+        private void About_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+            e.Handled = true;
+        }
+
     }
 }

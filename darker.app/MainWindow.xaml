@@ -12,7 +12,7 @@
         Title="{x:Static res:Resources.AppName}"
         Visibility="Hidden">
     <Grid>
-      <tb:TaskbarIcon
+        <tb:TaskbarIcon
       x:Name="darkerIcon"
       ToolTipText="{x:Static res:Resources.AppName}" 
       IconSource="pack://application:,,,/Resources/day_w.ico"
@@ -25,11 +25,6 @@
                             <ui:FontIcon Glyph="&#xE713;" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Uid="AboutButton" Header="{x:Static res:Resources.AboutButton}" Click="About_Click">
-                        <MenuItem.Icon>
-                            <ui:FontIcon Glyph="&#xE946;" />
-                        </MenuItem.Icon>
-                    </MenuItem>
                     <Separator/>
                     <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" Click="Exit_Click">
                         <MenuItem.Icon>
@@ -38,6 +33,6 @@
                     </MenuItem>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
-    </tb:TaskbarIcon>
+        </tb:TaskbarIcon>
     </Grid>
 </Window>

@@ -16,8 +16,6 @@ namespace darker
             IconHandler();
         }
 
-
-
         //theme reg keys
         private const string RegistryKeyPathTheme = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
         private const string RegSysMode = "SystemUsesLightTheme";
@@ -134,12 +132,6 @@ namespace darker
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
             OpenWindow<Settings>();
-        }
-
-        //about button
-        private void About_Click(object sender, RoutedEventArgs e)
-        {
-            OpenWindow<About>();
         }
 
         //exit button
