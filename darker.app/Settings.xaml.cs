@@ -20,11 +20,11 @@ namespace darker
             var assemblyVersion = assembly.GetName().Version;
             VersionText.Text = $"darker {assemblyVersion}";
             //ThemeMode radiobuttons check
-            if (AppSettings.Default.ThemeMode.Equals("1"))
+            if (App.AppSettings.Default.ThemeMode.Equals("1"))
                 Both.IsChecked = checked(true);
-            else if (AppSettings.Default.ThemeMode.Equals("2"))
+            else if (App.AppSettings.Default.ThemeMode.Equals("2"))
                 SysOnly.IsChecked = checked(true);
-            else if (AppSettings.Default.ThemeMode.Equals("3")) AppsOnly.IsChecked = checked(true);
+            else if (App.AppSettings.Default.ThemeMode.Equals("3")) AppsOnly.IsChecked = checked(true);
         }
 
         //start with Windows checkbox
@@ -63,20 +63,20 @@ namespace darker
 
         private void Both_OnChecked(object sender, RoutedEventArgs e)
         {
-            AppSettings.Default.ThemeMode = "1";
-            AppSettings.Default.Save();
+            App.AppSettings.Default.ThemeMode = "1";
+            App.AppSettings.Default.Save();
         }
 
         private void SysOnly_OnChecked(object sender, RoutedEventArgs e)
         {
-            AppSettings.Default.ThemeMode = "2";
-            AppSettings.Default.Save();
+            App.AppSettings.Default.ThemeMode = "2";
+            App.AppSettings.Default.Save();
         }
 
         private void AppsOnly_OnChecked(object sender, RoutedEventArgs e)
         {
-            AppSettings.Default.ThemeMode = "3";
-            AppSettings.Default.Save();
+            App.AppSettings.Default.ThemeMode = "3";
+            App.AppSettings.Default.Save();
         }
     }
 }

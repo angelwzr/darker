@@ -25,12 +25,10 @@ namespace darker
             CheckWin();
             //allow single instance of the app only
             _mutex = new Mutex(true, MutexName, out _createdNew);
-            if (!_createdNew)
-            {
-                var resourceManager = new ResourceManager(typeof(Properties.Resources));
-                MessageBox.Show(resourceManager.GetString("RunningAppMessage"), resourceManager.GetString("AppName"));
-                Current.Shutdown(0);
-            }
+            if (_createdNew) return;
+            var resourceManager = new ResourceManager(typeof(Properties.Resources));
+            MessageBox.Show(resourceManager.GetString("RunningAppMessage"), resourceManager.GetString("AppName"));
+            Current.Shutdown(0);
         }
 
         protected override void OnStartup(StartupEventArgs e)
@@ -43,32 +41,28 @@ namespace darker
         //actual Windows version check code
         private void CheckWin()
         {
-            if (Environment.OSVersion.Version.Major < 10 && Environment.OSVersion.Version.Minor > 0)
+            if (Environment.OSVersion.Version.Major >= 10 || Environment.OSVersion.Version.Minor <= 0) return;
+            var resourceManager = new ResourceManager(typeof(Properties.Resources));
+            MessageBox.Show(resourceManager.GetString("OSVersionMessage"), resourceManager.GetString("AppName"));
+            Current.Shutdown();
+        }
+
+        //implementing application settings
+        public class AppSettings
+        {
+            private AppSettings()
             {
-                var resourceManager = new ResourceManager(typeof(Properties.Resources));
-                MessageBox.Show(resourceManager.GetString("OSVersionMessage"), resourceManager.GetString("AppName"));
-                Current.Shutdown();
+                // marked as private to prevent outside classes from creating new.
             }
-        }
-    }
 
-    //implementing application settings
-    public class AppSettings
-    {
-        private AppSettings()
-        {
-            // marked as private to prevent outside classes from creating new.
-        }
+            private static string _jsonSource;
+            private static AppSettings _appSettings = null;
 
-        private static string _jsonSource;
-        private static AppSettings _appSettings = null;
-
-        public static AppSettings Default
-        {
-            get
+            public static AppSettings Default
             {
-                if (_appSettings == null)
+                get
                 {
+                    if (_appSettings != null) return _appSettings;
                     var builder = new ConfigurationBuilder()
                         .SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
                         .AddJsonFile("appsettings.json", false, true);
@@ -78,21 +72,21 @@ namespace darker
                     var config = builder.Build();
                     _appSettings = new AppSettings();
                     config.Bind(_appSettings);
+
+                    return _appSettings;
                 }
-
-                return _appSettings;
             }
+
+            public void Save()
+            {
+                // open config file
+                var json = JsonConvert.SerializeObject(_appSettings);
+
+                //write string to file
+                File.WriteAllText(_jsonSource, json);
+            }
+
+            public string ThemeMode { get; set; }
         }
-
-        public void Save()
-        {
-            // open config file
-            var json = JsonConvert.SerializeObject(_appSettings);
-
-            //write string to file
-            File.WriteAllText(_jsonSource, json);
-        }
-
-        public string ThemeMode { get; set; }
     }
 }

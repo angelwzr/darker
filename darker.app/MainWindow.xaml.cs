@@ -13,9 +13,9 @@ namespace darker
             InitializeComponent();
             IconHandler();
 
-            var t = AppSettings.Default.ThemeMode;
-            AppSettings.Default.ThemeMode = "1";
-            AppSettings.Default.Save();
+            var t = App.AppSettings.Default.ThemeMode;
+            App.AppSettings.Default.ThemeMode = "1";
+            App.AppSettings.Default.Save();
         }
 
         //theme reg keys
@@ -61,7 +61,9 @@ namespace darker
         private void IconHandler()
         {
             var theme = GetWindowsTheme();
-            darkerIcon.IconSource = theme == WindowsTheme.Light ? new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico")) : new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
+            darkerIcon.IconSource = theme == WindowsTheme.Light
+                ? new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"))
+                : new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
         }
 
         //system theme switching
@@ -120,8 +122,8 @@ namespace darker
             IconHandler();
         }
 
-            //code for changing both system and apps theme
-            private void ChangeBoth()
+        //code for changing both system and apps theme
+        private void ChangeBoth()
         {
             SysThemeHandler();
             AppThemeHandler();
@@ -144,11 +146,11 @@ namespace darker
         //do the magic on tray icon click
         private void MagicHandler(object sender, RoutedEventArgs e)
         {
-            if (AppSettings.Default.ThemeMode.Equals("1"))
+            if (App.AppSettings.Default.ThemeMode.Equals("1"))
                 ChangeBoth();
-            else if (AppSettings.Default.ThemeMode.Equals("2"))
+            else if (App.AppSettings.Default.ThemeMode.Equals("2"))
                 ChangeSys();
-            else if (AppSettings.Default.ThemeMode.Equals("3")) ChangeApps();
+            else if (App.AppSettings.Default.ThemeMode.Equals("3")) ChangeApps();
         }
 
         //reset button
@@ -187,6 +189,5 @@ namespace darker
                 subWindow.Show();
             }
         }
-
     }
 }
