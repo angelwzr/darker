@@ -6,10 +6,8 @@ using System.Windows.Media.Imaging;
 
 namespace darker
 {
-
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
@@ -37,26 +35,20 @@ namespace darker
 
         private static WindowsTheme GetWindowsTheme()
         {
-            using RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme);
-            object registryValueObject = key.GetValue(RegSysMode);
-            if (registryValueObject == null)
-            {
-                return WindowsTheme.Light;
-            }
-            int registryValue = (int)registryValueObject;
+            using var key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme);
+            var registryValueObject = key.GetValue(RegSysMode);
+            if (registryValueObject == null) return WindowsTheme.Light;
+            var registryValue = (int) registryValueObject;
 
             return registryValue > 0 ? WindowsTheme.Light : WindowsTheme.Dark;
         }
 
         private static AppsTheme GetAppsTheme()
         {
-            using RegistryKey key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme);
-            object registryValueObject = key.GetValue(RegAppMode);
-            if (registryValueObject == null)
-            {
-                return AppsTheme.Light;
-            }
-            int registryValue = (int)registryValueObject;
+            using var key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme);
+            var registryValueObject = key.GetValue(RegAppMode);
+            if (registryValueObject == null) return AppsTheme.Light;
+            var registryValue = (int) registryValueObject;
 
             return registryValue > 0 ? AppsTheme.Light : AppsTheme.Dark;
         }
@@ -64,24 +56,20 @@ namespace darker
         //setting the right icon for each theme
         private void IconHandler()
         {
-            WindowsTheme theme = GetWindowsTheme();
+            var theme = GetWindowsTheme();
             if (theme == WindowsTheme.Light)
-            {
                 darkerIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
-            }
             else
-            {
                 darkerIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
-            }
         }
 
         //system theme switching
         private void SysThemeHandler()
         {
-            WindowsTheme theme = GetWindowsTheme();
+            var theme = GetWindowsTheme();
             if (theme == WindowsTheme.Light)
             {
-                using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+                using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
                 {
                     key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
                     key.Close();
@@ -89,7 +77,7 @@ namespace darker
             }
             else
             {
-                using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+                using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
                 {
                     key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
                     key.SetValue(RegColPMode, $"0", RegistryValueKind.DWord);
@@ -101,10 +89,10 @@ namespace darker
         //apps theme switching
         private void AppThemeHandler()
         {
-            AppsTheme apptheme = GetAppsTheme();
+            var apptheme = GetAppsTheme();
             if (apptheme == AppsTheme.Light)
             {
-                using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+                using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
                 {
                     key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
                     key.Close();
@@ -112,7 +100,7 @@ namespace darker
             }
             else
             {
-                using RegistryKey key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+                using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
                 {
                     key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
                     key.Close();
@@ -135,7 +123,7 @@ namespace darker
         }
 
         //exit button
-        void Exit_Click(object sender, RoutedEventArgs e)
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
@@ -143,7 +131,7 @@ namespace darker
         //window single instance management
         public static void OpenWindow<T>() where T : Window
         {
-            var windows = System.Windows.Application.Current.Windows.Cast<Window>();
+            var windows = Application.Current.Windows.Cast<Window>();
             var any = windows.Any(s => s is T);
             if (any)
             {
@@ -154,7 +142,7 @@ namespace darker
             }
             else
             {
-                var subWindow = (Window)Activator.CreateInstance(typeof(T));
+                var subWindow = (Window) Activator.CreateInstance(typeof(T));
                 subWindow.Show();
             }
         }

@@ -13,7 +13,8 @@ namespace darker
         //mutex
         private const string MutexName = "##||darker||##";
         private readonly Mutex _mutex;
-        bool createdNew;
+        private bool createdNew;
+
         public App()
         {
             //check Windows version before anything else
@@ -22,16 +23,16 @@ namespace darker
             _mutex = new Mutex(true, MutexName, out createdNew);
             if (!createdNew)
             {
-                var resourceManager = new ResourceManager(typeof(darker.Properties.Resources));
+                var resourceManager = new ResourceManager(typeof(Properties.Resources));
                 MessageBox.Show(resourceManager.GetString("RunningAppMessage"), resourceManager.GetString("AppName"));
-                Application.Current.Shutdown(0);
+                Current.Shutdown(0);
             }
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             if (!createdNew) return;
-            MainWindow mw = new MainWindow();
+            var mw = new MainWindow();
             mw.Hide();
         }
 
@@ -40,9 +41,9 @@ namespace darker
         {
             if (Environment.OSVersion.Version.Major < 10 && Environment.OSVersion.Version.Minor > 0)
             {
-                var resourceManager = new ResourceManager(typeof(darker.Properties.Resources));
+                var resourceManager = new ResourceManager(typeof(Properties.Resources));
                 MessageBox.Show(resourceManager.GetString("OSVersionMessage"), resourceManager.GetString("AppName"));
-                Application.Current.Shutdown();
+                Current.Shutdown();
             }
         }
     }

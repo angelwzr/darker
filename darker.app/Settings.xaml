@@ -7,33 +7,36 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:res="clr-namespace:darker.Properties"
         mc:Ignorable="d"
-        ui:WindowHelper.UseModernWindowStyle="True"
-        ui:ThemeManager.IsThemeAware="True"
-        Title="{x:Static res:Resources.SettingsButton}" Height="450" Width="600" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="{x:Static res:Resources.SettingsButton}" Height="450" Width="600" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl>
-            <TabItem Header="General">
+            <TabItem Header="General" IsSelected="True">
                 <StackPanel Margin="10">
-                    <Label FontWeight="Bold">Theme changing options</Label>
+                    <Label FontWeight="Bold">Tray button behavior</Label>
                     <RadioButton GroupName="switchconly" IsChecked="True">Change both system and app theme</RadioButton>
                     <RadioButton GroupName="switchconly">Change only system</RadioButton>
                     <RadioButton GroupName="switchconly">Change only apps</RadioButton>
-                    <Label FontWeight="Bold">App options</Label>
-                    <CheckBox x:Uid="AutoS" x:Name="AutoS" Content="{x:Static res:Resources.AutoSButton}" Checked="AutoS_Checked" Unchecked="AutoS_Unchecked"/>
+                    <Label FontWeight="Bold">App settings</Label>
+                    <CheckBox x:Uid="AutoS" x:Name="AutoS" Content="{x:Static res:Resources.AutoSButton}"
+                              Checked="AutoS_Checked" Unchecked="AutoS_Unchecked" />
                 </StackPanel>
             </TabItem>
-            <TabItem Header="Schedule">
+            <TabItem Header="Schedule" Visibility="Collapsed">
                 <StackPanel Margin="10">
                     <Label Content="Placeholder page for scheduling options" />
                 </StackPanel>
             </TabItem>
             <TabItem Header="{x:Static res:Resources.AboutButton}">
                 <StackPanel Margin="10">
-                    <TextBlock x:Name="VersionText" Text="ver"/>
-                    <TextBlock x:Uid="AuthorText" Text="{x:Static res:Resources.AuthorText}"/>
+                    <TextBlock x:Name="VersionText" Text="ver" />
+                    <TextBlock x:Uid="AuthorText" Text="{x:Static res:Resources.AuthorText}" />
                     <TextBlock x:Uid="GHText">
-            <Run x:Uid="VisitText" Text="{x:Static res:Resources.VisitText}"/>
-            <Hyperlink NavigateUri="https://github.com/angelwzr/darker" RequestNavigate="About_RequestNavigate">GitHub</Hyperlink>
+                        <Run x:Uid="VisitText" Text="{x:Static res:Resources.VisitText}" />
+                        <Hyperlink NavigateUri="https://github.com/angelwzr/darker"
+                                   RequestNavigate="Link_RequestNavigate">
+                            GitHub
+                        </Hyperlink>
                     </TextBlock>
                 </StackPanel>
             </TabItem>
