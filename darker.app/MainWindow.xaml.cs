@@ -12,6 +12,10 @@ namespace darker
         {
             InitializeComponent();
             IconHandler();
+
+            var t = AppSettings.Default.ThemeMode;
+            AppSettings.Default.ThemeMode = "1";
+            AppSettings.Default.Save();
         }
 
         //theme reg keys
@@ -57,10 +61,7 @@ namespace darker
         private void IconHandler()
         {
             var theme = GetWindowsTheme();
-            if (theme == WindowsTheme.Light)
-                darkerIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"));
-            else
-                darkerIcon.IconSource = new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
+            darkerIcon.IconSource = theme == WindowsTheme.Light ? new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico")) : new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
         }
 
         //system theme switching
@@ -108,12 +109,52 @@ namespace darker
             }
         }
 
-        //do the magic on tray icon click
-        private void MagicHandler(object sender, RoutedEventArgs e)
+        //reset theme settings
+        private void ResetTheme()
+        {
+            using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
+            key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
+            key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
+            key.SetValue(RegColPMode, $"0", RegistryValueKind.DWord);
+            key.Close();
+            IconHandler();
+        }
+
+            //code for changing both system and apps theme
+            private void ChangeBoth()
         {
             SysThemeHandler();
             AppThemeHandler();
             IconHandler();
+        }
+
+        //code for changing only system theme
+        private void ChangeSys()
+        {
+            SysThemeHandler();
+            IconHandler();
+        }
+
+        //code for changing only apps theme
+        private void ChangeApps()
+        {
+            AppThemeHandler();
+        }
+
+        //do the magic on tray icon click
+        private void MagicHandler(object sender, RoutedEventArgs e)
+        {
+            if (AppSettings.Default.ThemeMode.Equals("1"))
+                ChangeBoth();
+            else if (AppSettings.Default.ThemeMode.Equals("2"))
+                ChangeSys();
+            else if (AppSettings.Default.ThemeMode.Equals("3")) ChangeApps();
+        }
+
+        //reset button
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            ResetTheme();
         }
 
         //settings button
@@ -146,5 +187,6 @@ namespace darker
                 subWindow.Show();
             }
         }
+
     }
 }

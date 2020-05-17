@@ -12,11 +12,11 @@
     <Grid>
         <TabControl>
             <TabItem Header="General" IsSelected="True">
-                <StackPanel Margin="10">
+                <StackPanel Margin="10" HorizontalAlignment="Left">
                     <Label FontWeight="Bold">Tray button behavior</Label>
-                    <RadioButton GroupName="switchconly" IsChecked="True">Change both system and app theme</RadioButton>
-                    <RadioButton GroupName="switchconly">Change only system</RadioButton>
-                    <RadioButton GroupName="switchconly">Change only apps</RadioButton>
+                    <RadioButton x:Name="Both" GroupName="ThemeModeSel" Checked="Both_OnChecked">Change both system and app theme</RadioButton>
+                    <RadioButton x:Name="SysOnly" GroupName="ThemeModeSel" Checked="SysOnly_OnChecked">Change only system</RadioButton>
+                    <RadioButton x:Name="AppsOnly" GroupName="ThemeModeSel" Checked="AppsOnly_OnChecked">Change only apps</RadioButton>
                     <Label FontWeight="Bold">App settings</Label>
                     <CheckBox x:Uid="AutoS" x:Name="AutoS" Content="{x:Static res:Resources.AutoSButton}"
                               Checked="AutoS_Checked" Unchecked="AutoS_Unchecked" />
