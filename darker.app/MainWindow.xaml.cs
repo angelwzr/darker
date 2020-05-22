@@ -12,10 +12,6 @@ namespace darker
         {
             InitializeComponent();
             IconHandler();
-
-            var t = App.AppSettings.Default.ThemeMode;
-            App.AppSettings.Default.ThemeMode = "1";
-            App.AppSettings.Default.Save();
         }
 
         //theme reg keys

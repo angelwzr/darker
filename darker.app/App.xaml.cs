@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Reflection;
 using System.Resources;
+using System.Text.Json;
 using System.Threading;
 using System.Windows;
 
@@ -80,7 +80,7 @@ namespace darker
             public void Save()
             {
                 // open config file
-                var json = JsonConvert.SerializeObject(_appSettings);
+                var json = JsonSerializer.Serialize(_appSettings);
 
                 //write string to file
                 File.WriteAllText(_jsonSource, json);
