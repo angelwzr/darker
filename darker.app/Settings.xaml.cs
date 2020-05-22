@@ -30,7 +30,7 @@ namespace darker
         //start with Windows checkbox
         private void CheckForAutostart()
         {
-            var reg = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
+            using var reg = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
             if (reg != null)
             {
                 var sVal = reg.GetValue("darker", "").ToString();
