@@ -165,4 +165,7 @@
   <data name="ChangeOnlySRadio" xml:space="preserve">
     <value>Изменять вид только системы</value>
   </data>
+  <data name="AutoUButton" xml:space="preserve">
+    <value>Разрешить автоматическое обновление</value>
+  </data>
 </root>

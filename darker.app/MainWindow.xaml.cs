@@ -56,7 +56,7 @@ namespace darker
             {
                 settingsWindow = new SettingsWindow();
                 settingsWindow.Show();
-            } 
+            }
             else
             {
                 settingsWindow.Focus();

@@ -12,11 +12,16 @@
         <TabControl>
             <TabItem Header="{x:Static res:Resources.GeneralTab}" IsSelected="True">
                 <StackPanel Margin="5" HorizontalAlignment="Left">
-                    <Label FontWeight="Bold" Content="{x:Static res:Resources.BehaveHeader}"/>
-                    <RadioButton x:Name="Both" GroupName="ThemeModeSel" Checked="Both_OnChecked" Content="{x:Static res:Resources.ChangeBothRadio}"/>
-                    <RadioButton x:Name="SysOnly" GroupName="ThemeModeSel" Checked="SysOnly_OnChecked" Content="{x:Static res:Resources.ChangeOnlySRadio}"/>
-                    <RadioButton x:Name="AppsOnly" GroupName="ThemeModeSel" Checked="AppsOnly_OnChecked" Content="{x:Static res:Resources.ChangeOnlyARadio}"/>
-                    <Label FontWeight="Bold" Content="{x:Static res:Resources.AppSetHeader}"/>
+                    <Label FontWeight="Bold" Content="{x:Static res:Resources.BehaveHeader}" />
+                    <RadioButton x:Name="Both" GroupName="ThemeModeSel" Checked="Both_OnChecked"
+                                 Content="{x:Static res:Resources.ChangeBothRadio}" />
+                    <RadioButton x:Name="SysOnly" GroupName="ThemeModeSel" Checked="SysOnly_OnChecked"
+                                 Content="{x:Static res:Resources.ChangeOnlySRadio}" />
+                    <RadioButton x:Name="AppsOnly" GroupName="ThemeModeSel" Checked="AppsOnly_OnChecked"
+                                 Content="{x:Static res:Resources.ChangeOnlyARadio}" />
+                    <Label FontWeight="Bold" Content="{x:Static res:Resources.AppSetHeader}" />
+                    <CheckBox x:Uid="AutoU" x:Name="AutoU" Content="{x:Static res:Resources.AutoUButton}"
+                              Checked="AutoU_OnChecked" Unchecked="AutoU_OnUnchecked" />
                     <CheckBox x:Uid="AutoS" x:Name="AutoS" Content="{x:Static res:Resources.AutoSButton}"
                               Checked="AutoS_Checked" Unchecked="AutoS_Unchecked" />
                 </StackPanel>
@@ -30,7 +35,7 @@
                         <Hyperlink NavigateUri="https://github.com/angelwzr/darker"
                                    RequestNavigate="Link_RequestNavigate">
                             <Hyperlink.Inlines>
-                                <Run Text="GitHub"/>
+                                <Run Text="GitHub" />
                             </Hyperlink.Inlines>
                         </Hyperlink>
                     </TextBlock>

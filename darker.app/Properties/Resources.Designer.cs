@@ -106,6 +106,15 @@ namespace darker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allow autoupdate.
+        /// </summary>
+        public static string AutoUButton {
+            get {
+                return ResourceManager.GetString("AutoUButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to On icon click:.
         /// </summary>
         public static string BehaveHeader {

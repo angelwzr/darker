@@ -10,7 +10,8 @@ namespace darker
     /// </summary>
     public class AppSettings
     {
-        private static string _settingsPath = $"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}\\appsettings.json";
+        private static string _settingsPath =
+            $"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}\\appsettings.json";
 
         private static AppSettings _appSettings = null;
 
@@ -27,7 +28,7 @@ namespace darker
         {
             get
             {
-                if (_appSettings != null) 
+                if (_appSettings != null)
                     return _appSettings;
 
                 if (File.Exists(_settingsPath))

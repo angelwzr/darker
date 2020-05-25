@@ -18,9 +18,9 @@ namespace darker
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //check for autostart with Windows key
+            //Check for autostart with Windows key
             CheckForAutostart();
-            //handle version text on about tab
+            //Handle version text on about tab
             var assembly = Assembly.GetExecutingAssembly();
             var assemblyVersion = assembly.GetName().Version;
             VersionText.Text = $"darker {assemblyVersion}";
@@ -39,9 +39,21 @@ namespace darker
                     AppsOnly.IsChecked = true;
                     break;
             }
+
+            //AutoU checkbox check
+            switch (AppSettings.Default.IsAutoUpdateEnabled)
+            {
+                case true:
+                    AutoU.IsChecked = true;
+                    break;
+
+                case false:
+                    AutoU.IsChecked = false;
+                    break;
+            }
         }
 
-        //start with Windows checkbox
+        //Start with Windows checkbox
         private void CheckForAutostart()
         {
             using var reg = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run");
@@ -53,7 +65,7 @@ namespace darker
             }
         }
 
-        //launch on startup button
+        //Launch on startup button
         private void AutoS_Checked(object sender, RoutedEventArgs e)
         {
             using var key =
@@ -68,13 +80,14 @@ namespace darker
             key.DeleteValue("darker", false);
         }
 
-        //handle GH link navigation
+        //Handle GH link navigation
         private void Link_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) {UseShellExecute = true});
             e.Handled = true;
         }
 
+        //Buttons settings file interactions
         private void Both_OnChecked(object sender, RoutedEventArgs e)
         {
             AppSettings.Default.ThemeMode = SettingsThemeMode.Both;
@@ -90,6 +103,18 @@ namespace darker
         private void AppsOnly_OnChecked(object sender, RoutedEventArgs e)
         {
             AppSettings.Default.ThemeMode = SettingsThemeMode.OnlyApps;
+            AppSettings.Default.Save();
+        }
+
+        private void AutoU_OnChecked(object sender, RoutedEventArgs e)
+        {
+            AppSettings.Default.IsAutoUpdateEnabled = true;
+            AppSettings.Default.Save();
+        }
+
+        private void AutoU_OnUnchecked(object sender, RoutedEventArgs e)
+        {
+            AppSettings.Default.IsAutoUpdateEnabled = false;
             AppSettings.Default.Save();
         }
     }

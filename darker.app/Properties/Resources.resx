@@ -165,4 +165,7 @@
   <data name="ChangeOnlyARadio" xml:space="preserve">
     <value>Change only apps</value>
   </data>
+  <data name="AutoUButton" xml:space="preserve">
+    <value>Allow autoupdate</value>
+  </data>
 </root>
