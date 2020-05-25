@@ -144,4 +144,25 @@
   <data name="AppName" xml:space="preserve">
     <value>darker</value>
   </data>
+  <data name="ResetButton" xml:space="preserve">
+    <value>Reset theme</value>
+  </data>
+  <data name="GeneralTab" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="BehaveHeader" xml:space="preserve">
+    <value>On icon click:</value>
+  </data>
+  <data name="AppSetHeader" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="ChangeBothRadio" xml:space="preserve">
+    <value>Change both system and app theme</value>
+  </data>
+  <data name="ChangeOnlySRadio" xml:space="preserve">
+    <value>Change only system</value>
+  </data>
+  <data name="ChangeOnlyARadio" xml:space="preserve">
+    <value>Change only apps</value>
+  </data>
 </root>

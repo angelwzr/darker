@@ -9,20 +9,15 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <TabControl>
-            <TabItem Header="General" IsSelected="True">
+            <TabItem Header="{x:Static res:Resources.GeneralTab}" IsSelected="True">
                 <StackPanel Margin="10" HorizontalAlignment="Left">
-                    <Label FontWeight="Bold">Tray button behavior</Label>
-                    <RadioButton x:Name="Both" GroupName="ThemeModeSel" Checked="Both_OnChecked">Change both system and app theme</RadioButton>
-                    <RadioButton x:Name="SysOnly" GroupName="ThemeModeSel" Checked="SysOnly_OnChecked">Change only system</RadioButton>
-                    <RadioButton x:Name="AppsOnly" GroupName="ThemeModeSel" Checked="AppsOnly_OnChecked">Change only apps</RadioButton>
-                    <Label FontWeight="Bold">App settings</Label>
+                    <Label FontWeight="Bold" Content="{x:Static res:Resources.BehaveHeader}"/>
+                    <RadioButton x:Name="Both" GroupName="ThemeModeSel" Checked="Both_OnChecked" Content="{x:Static res:Resources.ChangeBothRadio}"/>
+                    <RadioButton x:Name="SysOnly" GroupName="ThemeModeSel" Checked="SysOnly_OnChecked" Content="{x:Static res:Resources.ChangeOnlySRadio}"/>
+                    <RadioButton x:Name="AppsOnly" GroupName="ThemeModeSel" Checked="AppsOnly_OnChecked" Content="{x:Static res:Resources.ChangeOnlyARadio}"/>
+                    <Label FontWeight="Bold" Content="{x:Static res:Resources.AppSetHeader}"/>
                     <CheckBox x:Uid="AutoS" x:Name="AutoS" Content="{x:Static res:Resources.AutoSButton}"
                               Checked="AutoS_Checked" Unchecked="AutoS_Unchecked" />
-                </StackPanel>
-            </TabItem>
-            <TabItem Header="Schedule" Visibility="Collapsed">
-                <StackPanel Margin="10">
-                    <Label Content="Placeholder page for scheduling options" />
                 </StackPanel>
             </TabItem>
             <TabItem Header="{x:Static res:Resources.AboutButton}">

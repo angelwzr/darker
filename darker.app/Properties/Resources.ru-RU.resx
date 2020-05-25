@@ -144,4 +144,25 @@
   <data name="OSVersionMessage" xml:space="preserve">
     <value>Это приложение работает только в Windows 10. Задумайтесь об обновлении ОС.</value>
   </data>
+  <data name="ResetButton" xml:space="preserve">
+    <value>Сбросить тему</value>
+  </data>
+  <data name="GeneralTab" xml:space="preserve">
+    <value>Основные</value>
+  </data>
+  <data name="BehaveHeader" xml:space="preserve">
+    <value>При нажатии иконки:</value>
+  </data>
+  <data name="AppSetHeader" xml:space="preserve">
+    <value>Приложение</value>
+  </data>
+  <data name="ChangeBothRadio" xml:space="preserve">
+    <value>Изменять вид системы и приложений</value>
+  </data>
+  <data name="ChangeOnlyARadio" xml:space="preserve">
+    <value>Изменять вид только приложений</value>
+  </data>
+  <data name="ChangeOnlySRadio" xml:space="preserve">
+    <value>Изменять вид только системы</value>
+  </data>
 </root>

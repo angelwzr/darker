@@ -79,6 +79,15 @@ namespace darker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        public static string AppSetHeader {
+            get {
+                return ResourceManager.GetString("AppSetHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Roman Linev.
         /// </summary>
         public static string AuthorText {
@@ -97,6 +106,42 @@ namespace darker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to On icon click:.
+        /// </summary>
+        public static string BehaveHeader {
+            get {
+                return ResourceManager.GetString("BehaveHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change both system and app theme.
+        /// </summary>
+        public static string ChangeBothRadio {
+            get {
+                return ResourceManager.GetString("ChangeBothRadio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change only apps.
+        /// </summary>
+        public static string ChangeOnlyARadio {
+            get {
+                return ResourceManager.GetString("ChangeOnlyARadio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change only system.
+        /// </summary>
+        public static string ChangeOnlySRadio {
+            get {
+                return ResourceManager.GetString("ChangeOnlySRadio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string ExitButton {
@@ -106,11 +151,29 @@ namespace darker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string GeneralTab {
+            get {
+                return ResourceManager.GetString("GeneralTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This app is designed for Windows 10 only. Please consider upgrading your OS..
         /// </summary>
         public static string OSVersionMessage {
             get {
                 return ResourceManager.GetString("OSVersionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset theme.
+        /// </summary>
+        public static string ResetButton {
+            get {
+                return ResourceManager.GetString("ResetButton", resourceCulture);
             }
         }
         

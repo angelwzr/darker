@@ -17,7 +17,7 @@
             TrayLeftMouseDown="MagicHandler">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Uid="ContextMenu">
-                    <MenuItem x:Uid="ResetButton" Header="Reset theme"
+                    <MenuItem x:Uid="ResetButton" Header="{x:Static res:Resources.ResetButton}"
                               Click="Reset_Click" />
                     <Separator />
                     <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}"
