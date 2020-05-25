@@ -19,7 +19,7 @@ namespace darker
             // marked as private to prevent outside classes from creating new.
         }
 
-        public SettingsThemeMode ThemeMode { get; set; }
+        public SettingsThemeMode ThemeMode { get; set; } = SettingsThemeMode.Both;
 
         public bool IsAutoUpdateEnabled { get; set; } = true;
 
@@ -30,8 +30,15 @@ namespace darker
                 if (_appSettings != null) 
                     return _appSettings;
 
-                var json = File.ReadAllText(_settingsPath);
-                _appSettings = JsonSerializer.Deserialize<AppSettings>(json);
+                if (File.Exists(_settingsPath))
+                {
+                    var json = File.ReadAllText(_settingsPath);
+                    _appSettings = JsonSerializer.Deserialize<AppSettings>(json);
+                }
+                else
+                {
+                    _appSettings = new AppSettings();
+                }
 
                 return _appSettings;
             }
