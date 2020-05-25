@@ -7,8 +7,7 @@
         xmlns:res="clr-namespace:darker.Properties"
         mc:Ignorable="d"
         Title="{x:Static res:Resources.AppName}"
-        Visibility="Hidden"
-        Loaded="Window_Loaded">
+        Visibility="Hidden">
     <Grid>
         <tb:TaskbarIcon
             x:Name="darkerIcon"
