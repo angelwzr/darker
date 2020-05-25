@@ -11,7 +11,7 @@
     <Grid>
         <TabControl>
             <TabItem Header="{x:Static res:Resources.GeneralTab}" IsSelected="True">
-                <StackPanel Margin="10" HorizontalAlignment="Left">
+                <StackPanel Margin="5" HorizontalAlignment="Left">
                     <Label FontWeight="Bold" Content="{x:Static res:Resources.BehaveHeader}"/>
                     <RadioButton x:Name="Both" GroupName="ThemeModeSel" Checked="Both_OnChecked" Content="{x:Static res:Resources.ChangeBothRadio}"/>
                     <RadioButton x:Name="SysOnly" GroupName="ThemeModeSel" Checked="SysOnly_OnChecked" Content="{x:Static res:Resources.ChangeOnlySRadio}"/>
@@ -29,7 +29,9 @@
                         <Run x:Uid="VisitText" Text="{x:Static res:Resources.VisitText}" />
                         <Hyperlink NavigateUri="https://github.com/angelwzr/darker"
                                    RequestNavigate="Link_RequestNavigate">
-                            GitHub
+                            <Hyperlink.Inlines>
+                                <Run Text="GitHub"/>
+                            </Hyperlink.Inlines>
                         </Hyperlink>
                     </TextBlock>
                 </StackPanel>

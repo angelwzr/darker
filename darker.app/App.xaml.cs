@@ -1,9 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.IO;
-using System.Reflection;
+﻿using System;
 using System.Resources;
-using System.Text.Json;
 using System.Threading;
 using System.Windows;
 
