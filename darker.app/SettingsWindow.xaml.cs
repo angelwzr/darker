@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using darker.Models;
+using Microsoft.Win32;
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
@@ -6,13 +7,17 @@ using System.Windows;
 namespace darker
 {
     /// <summary>
-    /// Interaction logic for Settings.xaml
+    /// Interaction logic for SettingsWindow.xaml
     /// </summary>
-    public partial class Settings : Window
+    public partial class SettingsWindow : Window
     {
-        public Settings()
+        public SettingsWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
             //check for autostart with Windows key
             CheckForAutostart();
             //handle version text on about tab
@@ -20,11 +25,20 @@ namespace darker
             var assemblyVersion = assembly.GetName().Version;
             VersionText.Text = $"darker {assemblyVersion}";
             //ThemeMode radiobuttons check
-            if (App.AppSettings.Default.ThemeMode.Equals("1"))
-                Both.IsChecked = checked(true);
-            else if (App.AppSettings.Default.ThemeMode.Equals("2"))
-                SysOnly.IsChecked = checked(true);
-            else if (App.AppSettings.Default.ThemeMode.Equals("3")) AppsOnly.IsChecked = checked(true);
+            switch (AppSettings.Default.ThemeMode)
+            {
+                case SettingsThemeMode.Both:
+                    Both.IsChecked = true;
+                    break;
+
+                case SettingsThemeMode.OnlySystem:
+                    SysOnly.IsChecked = true;
+                    break;
+
+                case SettingsThemeMode.OnlyApps:
+                    AppsOnly.IsChecked = true;
+                    break;
+            }
         }
 
         //start with Windows checkbox
@@ -63,20 +77,20 @@ namespace darker
 
         private void Both_OnChecked(object sender, RoutedEventArgs e)
         {
-            App.AppSettings.Default.ThemeMode = "1";
-            App.AppSettings.Default.Save();
+            AppSettings.Default.ThemeMode = SettingsThemeMode.Both;
+            AppSettings.Default.Save();
         }
 
         private void SysOnly_OnChecked(object sender, RoutedEventArgs e)
         {
-            App.AppSettings.Default.ThemeMode = "2";
-            App.AppSettings.Default.Save();
+            AppSettings.Default.ThemeMode = SettingsThemeMode.OnlySystem;
+            AppSettings.Default.Save();
         }
 
         private void AppsOnly_OnChecked(object sender, RoutedEventArgs e)
         {
-            App.AppSettings.Default.ThemeMode = "3";
-            App.AppSettings.Default.Save();
+            AppSettings.Default.ThemeMode = SettingsThemeMode.OnlyApps;
+            AppSettings.Default.Save();
         }
     }
 }

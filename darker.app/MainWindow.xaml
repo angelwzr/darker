@@ -7,14 +7,15 @@
         xmlns:res="clr-namespace:darker.Properties"
         mc:Ignorable="d"
         Title="{x:Static res:Resources.AppName}"
-        Visibility="Hidden">
+        Visibility="Hidden"
+        Loaded="Window_Loaded">
     <Grid>
         <tb:TaskbarIcon
             x:Name="darkerIcon"
             ToolTipText="{x:Static res:Resources.AppName}"
             IconSource="pack://application:,,,/Resources/day_w.ico"
             Visibility="Visible"
-            TrayLeftMouseDown="MagicHandler">
+            TrayLeftMouseDown="TrayIconClick">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Uid="ContextMenu">
                     <MenuItem x:Uid="ResetButton" Header="{x:Static res:Resources.ResetButton}"

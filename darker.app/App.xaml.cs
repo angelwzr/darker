@@ -46,47 +46,5 @@ namespace darker
             MessageBox.Show(resourceManager.GetString("OSVersionMessage"), resourceManager.GetString("AppName"));
             Current.Shutdown();
         }
-
-        //implementing application settings
-        public class AppSettings
-        {
-            private AppSettings()
-            {
-                // marked as private to prevent outside classes from creating new.
-            }
-
-            private static string _jsonSource;
-            private static AppSettings _appSettings = null;
-
-            public static AppSettings Default
-            {
-                get
-                {
-                    if (_appSettings != null) return _appSettings;
-                    var builder = new ConfigurationBuilder()
-                        .SetBasePath(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location))
-                        .AddJsonFile("appsettings.json", false, true);
-
-                    _jsonSource = $"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}\\appsettings.json";
-
-                    var config = builder.Build();
-                    _appSettings = new AppSettings();
-                    config.Bind(_appSettings);
-
-                    return _appSettings;
-                }
-            }
-
-            public void Save()
-            {
-                // open config file
-                var json = JsonSerializer.Serialize(_appSettings);
-
-                //write string to file
-                File.WriteAllText(_jsonSource, json);
-            }
-
-            public string ThemeMode { get; set; }
-        }
     }
 }

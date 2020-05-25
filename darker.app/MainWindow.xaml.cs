@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using darker.Helpers;
+using darker.Models;
 using System;
 using System.Linq;
 using System.Windows;
@@ -11,160 +12,72 @@ namespace darker
         public MainWindow()
         {
             InitializeComponent();
-            IconHandler();
         }
 
-        //theme reg keys
-        private const string RegistryKeyPathTheme = @"Software\Microsoft\Windows\CurrentVersion\Themes\Personalize";
-        private const string RegSysMode = "SystemUsesLightTheme";
-        private const string RegAppMode = "AppsUseLightTheme";
-        private const string RegColPMode = "ColorPrevalence";
-
-        //get current theme
-        private enum WindowsTheme
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Light,
-            Dark
+            SetTrayIcon();
         }
 
-        private enum AppsTheme
+        private void TrayIconClick(object sender, RoutedEventArgs e)
         {
-            Light,
-            Dark
-        }
+            var themeSettings = AppSettings.Default.ThemeMode;
 
-        private static WindowsTheme GetWindowsTheme()
-        {
-            using var key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme);
-            var registryValueObject = key.GetValue(RegSysMode);
-            if (registryValueObject == null) return WindowsTheme.Light;
-            var registryValue = (int) registryValueObject;
-
-            return registryValue > 0 ? WindowsTheme.Light : WindowsTheme.Dark;
-        }
-
-        private static AppsTheme GetAppsTheme()
-        {
-            using var key = Registry.CurrentUser.OpenSubKey(RegistryKeyPathTheme);
-            var registryValueObject = key.GetValue(RegAppMode);
-            if (registryValueObject == null) return AppsTheme.Light;
-            var registryValue = (int) registryValueObject;
-
-            return registryValue > 0 ? AppsTheme.Light : AppsTheme.Dark;
-        }
-
-        //setting the right icon for each theme
-        private void IconHandler()
-        {
-            var theme = GetWindowsTheme();
-            darkerIcon.IconSource = theme == WindowsTheme.Light
-                ? new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"))
-                : new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
-        }
-
-        //system theme switching
-        private void SysThemeHandler()
-        {
-            var theme = GetWindowsTheme();
-            if (theme == WindowsTheme.Light)
+            switch (themeSettings)
             {
-                using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
-                {
-                    key.SetValue(RegSysMode, $"0", RegistryValueKind.DWord);
-                    key.Close();
-                }
-            }
-            else
-            {
-                using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
-                {
-                    key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
-                    key.SetValue(RegColPMode, $"0", RegistryValueKind.DWord);
-                    key.Close();
-                }
+                case SettingsThemeMode.Both:
+                    ThemeHelper.SwitchWindowsTheme();
+                    ThemeHelper.SwitchAppsTheme();
+                    SetTrayIcon();
+                    break;
+
+                case SettingsThemeMode.OnlySystem:
+                    ThemeHelper.SwitchWindowsTheme();
+                    SetTrayIcon();
+                    break;
+
+                case SettingsThemeMode.OnlyApps:
+                    ThemeHelper.SwitchAppsTheme();
+                    break;
             }
         }
 
-        //apps theme switching
-        private void AppThemeHandler()
-        {
-            var apptheme = GetAppsTheme();
-            if (apptheme == AppsTheme.Light)
-            {
-                using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
-                {
-                    key.SetValue(RegAppMode, $"0", RegistryValueKind.DWord);
-                    key.Close();
-                }
-            }
-            else
-            {
-                using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
-                {
-                    key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
-                    key.Close();
-                }
-            }
-        }
-
-        //reset theme settings
-        private void ResetTheme()
-        {
-            using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
-            key.SetValue(RegSysMode, $"1", RegistryValueKind.DWord);
-            key.SetValue(RegAppMode, $"1", RegistryValueKind.DWord);
-            key.SetValue(RegColPMode, $"0", RegistryValueKind.DWord);
-            key.Close();
-            IconHandler();
-        }
-
-        //code for changing both system and apps theme
-        private void ChangeBoth()
-        {
-            SysThemeHandler();
-            AppThemeHandler();
-            IconHandler();
-        }
-
-        //code for changing only system theme
-        private void ChangeSys()
-        {
-            SysThemeHandler();
-            IconHandler();
-        }
-
-        //code for changing only apps theme
-        private void ChangeApps()
-        {
-            AppThemeHandler();
-        }
-
-        //do the magic on tray icon click
-        private void MagicHandler(object sender, RoutedEventArgs e)
-        {
-            if (App.AppSettings.Default.ThemeMode.Equals("1"))
-                ChangeBoth();
-            else if (App.AppSettings.Default.ThemeMode.Equals("2"))
-                ChangeSys();
-            else if (App.AppSettings.Default.ThemeMode.Equals("3")) ChangeApps();
-        }
-
-        //reset button
+        //Reset menu item
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
-            ResetTheme();
+            RegistryThemeHelper.ResetTheme();
+            SetTrayIcon();
         }
 
-        //settings button
+        //Settings menu item
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            OpenWindow<Settings>();
+            var settingsWindow = Application.Current.Windows.OfType<SettingsWindow>().FirstOrDefault();
+            if (settingsWindow == null)
+            {
+                settingsWindow = new SettingsWindow();
+                settingsWindow.Show();
+            } 
+            else
+            {
+                settingsWindow.Focus();
+            }
         }
 
-        //exit button
+        //Exit menu item
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        //Setting the right icon for each theme
+        private void SetTrayIcon()
+        {
+            var theme = RegistryThemeHelper.GetWindowsTheme();
+
+            darkerIcon.IconSource = theme == UITheme.Light
+                ? new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"))
+                : new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
         }
 
         //window single instance management
