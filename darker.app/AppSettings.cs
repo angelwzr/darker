@@ -21,6 +21,8 @@ namespace darker
 
         public SettingsThemeMode ThemeMode { get; set; }
 
+        public bool IsAutoUpdateEnabled { get; set; } = true;
+
         public static AppSettings Default
         {
             get

@@ -13,6 +13,9 @@ namespace darker
         {
             InitializeComponent();
             SetTrayIcon();
+
+            if (AppSettings.Default.IsAutoUpdateEnabled)
+                UpdateHelper.CheckForUpdates();
         }
 
         private void TrayIconClick(object sender, RoutedEventArgs e)
