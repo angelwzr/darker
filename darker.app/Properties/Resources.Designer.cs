@@ -106,7 +106,7 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Allow autoupdate.
+        ///   Looks up a localized string similar to Allow automatic updates.
         /// </summary>
         public static string AutoUButton {
             get {
@@ -201,6 +201,15 @@ namespace darker.Properties {
         public static string SettingsButton {
             get {
                 return ResourceManager.GetString("SettingsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme settings.
+        /// </summary>
+        public static string SysThemeControlLink {
+            get {
+                return ResourceManager.GetString("SysThemeControlLink", resourceCulture);
             }
         }
         

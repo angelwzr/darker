@@ -121,7 +121,7 @@
     <value>Роман Линев</value>
   </data>
   <data name="AutoSButton" xml:space="preserve">
-    <value>Запускать автоматически</value>
+    <value>Запускать при старте системы</value>
   </data>
   <data name="ExitButton" xml:space="preserve">
     <value>Выход</value>
@@ -145,10 +145,10 @@
     <value>Это приложение работает только в Windows 10. Задумайтесь об обновлении ОС.</value>
   </data>
   <data name="ResetButton" xml:space="preserve">
-    <value>Сбросить тему</value>
+    <value>Сброс темы</value>
   </data>
   <data name="GeneralTab" xml:space="preserve">
-    <value>Основные</value>
+    <value>Общие</value>
   </data>
   <data name="BehaveHeader" xml:space="preserve">
     <value>При нажатии иконки:</value>
@@ -167,5 +167,8 @@
   </data>
   <data name="AutoUButton" xml:space="preserve">
     <value>Разрешить автоматическое обновление</value>
+  </data>
+  <data name="SysThemeControlLink" xml:space="preserve">
+    <value>Настройки темы</value>
   </data>
 </root>

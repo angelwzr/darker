@@ -166,6 +166,9 @@
     <value>Change only apps</value>
   </data>
   <data name="AutoUButton" xml:space="preserve">
-    <value>Allow autoupdate</value>
+    <value>Allow automatic updates</value>
+  </data>
+  <data name="SysThemeControlLink" xml:space="preserve">
+    <value>Theme settings</value>
   </data>
 </root>
