@@ -147,4 +147,28 @@
   <data name="SysThemeControlLink" xml:space="preserve">
     <value>Réglages du thème</value>
   </data>
+  <data name="ResetButton" xml:space="preserve">
+    <value>Réinitialiser le thème</value>
+  </data>
+  <data name="GeneralTab" xml:space="preserve">
+    <value>Général</value>
+  </data>
+  <data name="BehaveHeader" xml:space="preserve">
+    <value>Lorsque vous appuyez sur l'icône:</value>
+  </data>
+  <data name="AppSetHeader" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="ChangeBothRadio" xml:space="preserve">
+    <value>Changer l'apparence du système et des applications</value>
+  </data>
+  <data name="ChangeOnlySRadio" xml:space="preserve">
+    <value>Changer l'apparence du système uniquement</value>
+  </data>
+  <data name="ChangeOnlyARadio" xml:space="preserve">
+    <value>Changer l'apparence des applications uniquement</value>
+  </data>
+  <data name="AutoUButton" xml:space="preserve">
+    <value>Activer les mises à jour automatiques</value>
+  </data>
 </root>
