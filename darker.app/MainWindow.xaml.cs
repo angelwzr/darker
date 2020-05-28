@@ -79,7 +79,7 @@ namespace darker
                 : new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
         }
 
-        //window single instance management
+        //Single instance management for app windows
         public static void OpenWindow<T>() where T : Window
         {
             var windows = Application.Current.Windows.Cast<Window>();

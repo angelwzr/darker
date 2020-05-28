@@ -10,16 +10,16 @@ namespace darker
     /// </summary>
     public partial class App : Application
     {
-        //mutex
+        //Mutex
         private const string MutexName = "##||darker||##";
         private readonly Mutex _mutex;
         private readonly bool _createdNew;
 
         public App()
         {
-            //check Windows version before anything else
+            //Check Windows version before anything else
             CheckWin();
-            //allow single instance of the app only
+            //Allow single instance of the app only
             _mutex = new Mutex(true, MutexName, out _createdNew);
             if (_createdNew) return;
             var resourceManager = new ResourceManager(typeof(Properties.Resources));
@@ -34,7 +34,7 @@ namespace darker
             mw.Hide();
         }
 
-        //actual Windows version check code
+        //Actual Windows version check code
         private void CheckWin()
         {
             if (Environment.OSVersion.Version.Major >= 10 || Environment.OSVersion.Version.Minor <= 0) return;
