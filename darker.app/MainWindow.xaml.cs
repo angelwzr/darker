@@ -93,7 +93,7 @@ namespace darker
             }
             else
             {
-                var subWindow = (Window) Activator.CreateInstance(typeof(T));
+                var subWindow = (Window)Activator.CreateInstance(typeof(T));
                 subWindow.Show();
             }
         }
