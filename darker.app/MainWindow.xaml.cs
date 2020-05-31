@@ -27,6 +27,7 @@ namespace darker
                 case SettingsThemeMode.Both:
                     ThemeHelper.SwitchWindowsTheme();
                     ThemeHelper.SwitchAppsTheme();
+                    SetDarkerAppTheme();
                     SetTrayIcon();
                     break;
 
@@ -37,6 +38,7 @@ namespace darker
 
                 case SettingsThemeMode.OnlyApps:
                     ThemeHelper.SwitchAppsTheme();
+                    SetDarkerAppTheme();
                     break;
             }
         }
@@ -46,6 +48,7 @@ namespace darker
         {
             RegistryThemeHelper.ResetTheme();
             SetTrayIcon();
+            SetDarkerAppTheme();
         }
 
         //Settings menu item
@@ -77,6 +80,22 @@ namespace darker
             darkerIcon.IconSource = theme == UITheme.Light
                 ? new BitmapImage(new Uri(@"pack://application:,,,/Resources/night_b.ico"))
                 : new BitmapImage(new Uri(@"pack://application:,,,/Resources/day_w.ico"));
+        }
+
+        private void SetDarkerAppTheme()
+        {
+            var theme = RegistryThemeHelper.GetAppsTheme();
+            if (theme == UITheme.Light)
+            {
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("/Resources/Themes/LightTheme.xaml", UriKind.Relative) });
+            }
+            else
+            {
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("/Resources/Themes/DarkTheme.xaml", UriKind.Relative) });
+            }
+
         }
 
         //Single instance management for app windows
