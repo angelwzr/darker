@@ -148,7 +148,7 @@
     <value>Сброс темы</value>
   </data>
   <data name="GeneralTab" xml:space="preserve">
-    <value>Общие</value>
+    <value>Основное</value>
   </data>
   <data name="BehaveHeader" xml:space="preserve">
     <value>При нажатии иконки:</value>

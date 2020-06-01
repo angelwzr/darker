@@ -147,4 +147,28 @@
   <data name="SysThemeControlLink" xml:space="preserve">
     <value>Налаштування теми</value>
   </data>
+  <data name="ResetButton" xml:space="preserve">
+    <value>Скинути тему</value>
+  </data>
+  <data name="GeneralTab" xml:space="preserve">
+    <value>Головне</value>
+  </data>
+  <data name="BehaveHeader" xml:space="preserve">
+    <value>Якщо клацнути піктограму:</value>
+  </data>
+  <data name="AppSetHeader" xml:space="preserve">
+    <value>Додаток</value>
+  </data>
+  <data name="ChangeBothRadio" xml:space="preserve">
+    <value>Змінювати вигляд системи і додатків</value>
+  </data>
+  <data name="ChangeOnlySRadio" xml:space="preserve">
+    <value>Змінювати вид тільки системи</value>
+  </data>
+  <data name="ChangeOnlyARadio" xml:space="preserve">
+    <value>Змінювати вигляд тільки додатків</value>
+  </data>
+  <data name="AutoUButton" xml:space="preserve">
+    <value>Дозволити автоматичне оновлення</value>
+  </data>
 </root>

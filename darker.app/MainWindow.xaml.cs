@@ -13,6 +13,7 @@ namespace darker
         {
             InitializeComponent();
             SetTrayIcon();
+            SetDarkerAppTheme();
 
             if (AppSettings.Default.IsAutoUpdateEnabled)
                 UpdateHelper.CheckForUpdates();
@@ -84,8 +85,8 @@ namespace darker
 
         private void SetDarkerAppTheme()
         {
-            var theme = RegistryThemeHelper.GetAppsTheme();
-            if (theme == UITheme.Light)
+            var apptheme = RegistryThemeHelper.GetAppsTheme();
+            if (apptheme == UITheme.Light)
             {
                 Application.Current.Resources.MergedDictionaries.Clear();
                 Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("/Resources/Themes/LightTheme.xaml", UriKind.Relative) });
@@ -95,7 +96,6 @@ namespace darker
                 Application.Current.Resources.MergedDictionaries.Clear();
                 Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("/Resources/Themes/DarkTheme.xaml", UriKind.Relative) });
             }
-
         }
 
         //Single instance management for app windows

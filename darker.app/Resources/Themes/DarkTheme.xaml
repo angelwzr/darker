@@ -31,13 +31,13 @@
     <SolidColorBrush x:Key="ControlMouseOverGlythColour"         Color="#FFD7D7D7" />
     <SolidColorBrush x:Key="ControlSelectedGlythColour"          Color="#FFC8C8C8" />
     <SolidColorBrush x:Key="ControlDisabledGlythColour"          Color="#FFA0A0A0" />
-    
+
     <!-- Colourful theme  Colours -->
     <SolidColorBrush x:Key="ControlPrimaryColourBackground"          Color="#FF2084E8" />
     <SolidColorBrush x:Key="ControlPrimaryColourBorderBrush"         Color="#FF3294E8" />
     <SolidColorBrush x:Key="ControlBrightPrimaryColourBackground"    Color="#FF3296FA"/>
     <SolidColorBrush x:Key="ControlBrightPrimaryColourBorderBrush"   Color="#FF50A4FA" />
-    
+
     <!-- Setup Stuff -->
 
     <!-- Focus Visual -->
@@ -1940,7 +1940,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-   
+
 
     <!-- -_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_- -->
 
@@ -2063,18 +2063,18 @@
                                         Background="{TemplateBinding Background}" 
                                         Grid.Column="1">
                                     <Track x:Name="PART_Track" Grid.Column="1" >
-                                    <Track.DecreaseRepeatButton>
-                                        <RepeatButton Command="{x:Static ScrollBar.PageLeftCommand}" Style="{StaticResource RepeatButtonTransparent}"/>
-                                    </Track.DecreaseRepeatButton>
-                                    <Track.IncreaseRepeatButton>
-                                        <RepeatButton Command="{x:Static ScrollBar.PageRightCommand}" Style="{StaticResource RepeatButtonTransparent}"/>
-                                    </Track.IncreaseRepeatButton>
-                                    <Track.Thumb>
-                                        <Thumb Style="{DynamicResource ScrollBarThumbHorizontal}"/>
-                                    </Track.Thumb>
-                                </Track>
+                                        <Track.DecreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static ScrollBar.PageLeftCommand}" Style="{StaticResource RepeatButtonTransparent}"/>
+                                        </Track.DecreaseRepeatButton>
+                                        <Track.IncreaseRepeatButton>
+                                            <RepeatButton Command="{x:Static ScrollBar.PageRightCommand}" Style="{StaticResource RepeatButtonTransparent}"/>
+                                        </Track.IncreaseRepeatButton>
+                                        <Track.Thumb>
+                                            <Thumb Style="{DynamicResource ScrollBarThumbHorizontal}"/>
+                                        </Track.Thumb>
+                                    </Track>
                                 </Border>
-                                
+
                                 <Button x:Name="PART_LineRightButton" Grid.Column="2" Command="{x:Static ScrollBar.LineRightCommand}" 
                                         BorderThickness="0 1 1 1">
                                     <Path x:Name="ArrowRight" Data="M 1.81,7 C1.81,7 0,7 0,7 0,7 3.18,3.5 3.18,3.5 3.18,3.5 0,0 0,0 0,0 1.81,0 1.81,0 1.81,0 5,3.5 5,3.5 5,3.5 1.81,7 1.81,7 z" Fill="{StaticResource ControlGlythColour}" Margin="3" Stretch="Uniform"/>
@@ -2190,7 +2190,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style x:Key="ScrollBarThumbHorizontal" TargetType="{x:Type Thumb}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="Background" Value="{StaticResource ControlBrightDefaultBackground}"/>
@@ -2201,7 +2201,7 @@
                 <ControlTemplate TargetType="{x:Type Thumb}">
                     <Grid Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
                         <Rectangle x:Name="rectangle" Fill="{TemplateBinding Background}" SnapsToDevicePixels="True"/>
-                        
+
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
