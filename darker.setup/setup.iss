@@ -30,6 +30,7 @@ VersionInfoProductVersion=1.1.0.0
 SourceDir=C:\Users\angel\source\repos\darker\darker.setup
 MinVersion=0,10.0.18362
 UninstallDisplayIcon={app}\darker.exe
+VersionInfoDescription=darker is a tray application for quick theme (dark/light mode) switching on Windows 10
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
@@ -43,6 +44,9 @@ Source: "C:\Users\angel\source\repos\darker\darker.app\bin\Release\netcoreapp3.1
 Source: "C:\Users\angel\source\repos\darker\darker.app\bin\Release\netcoreapp3.1\publish\NotifyIconWpf.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\angel\source\repos\darker\darker.app\bin\Release\netcoreapp3.1\publish\Onova.dll"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+Source: "..\darker.app\bin\Release\netcoreapp3.1\publish\ru-RU\darker.resources.dll"; DestDir: "{app}\ru-RU"; Flags: ignoreversion
+Source: "..\darker.app\bin\Release\netcoreapp3.1\fr-FR\darker.resources.dll"; DestDir: "{app}\fr-FR"; Flags: ignoreversion
+Source: "..\darker.app\bin\Release\netcoreapp3.1\uk-UA\darker.resources.dll"; DestDir: "{app}\uk-UA"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\darker"; Filename: "{app}\darker.exe"

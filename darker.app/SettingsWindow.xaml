@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:res="clr-namespace:darker.Properties"
         mc:Ignorable="d"
-        Title="{x:Static res:Resources.SettingsButton}" Height="450" Width="600" ResizeMode="NoResize"
+        Title="{x:Static res:Properties.SettingsButton}" Height="450" Width="600" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Loaded="Window_Loaded">
     <TabControl>

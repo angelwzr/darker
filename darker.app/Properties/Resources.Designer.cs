@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace darker.Properties {
+namespace darker.Properties
+{
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -22,202 +23,246 @@ namespace darker.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
-        
+    public class Resources
+    {
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal Resources()
+        {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
-            get {
-                if (object.ReferenceEquals(resourceMan, null)) {
+        public static global::System.Resources.ResourceManager ResourceManager
+        {
+            get
+            {
+                if (object.ReferenceEquals(resourceMan, null))
+                {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("darker.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
-            get {
+        public static global::System.Globalization.CultureInfo Culture
+        {
+            get
+            {
                 return resourceCulture;
             }
-            set {
+            set
+            {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
-        public static string AboutButton {
-            get {
+        public static string AboutButton
+        {
+            get
+            {
                 return ResourceManager.GetString("AboutButton", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to darker.
         /// </summary>
-        public static string AppName {
-            get {
+        public static string AppName
+        {
+            get
+            {
                 return ResourceManager.GetString("AppName", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Application.
         /// </summary>
-        public static string AppSetHeader {
-            get {
+        public static string AppSetHeader
+        {
+            get
+            {
                 return ResourceManager.GetString("AppSetHeader", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Roman Linev.
         /// </summary>
-        public static string AuthorText {
-            get {
+        public static string AuthorText
+        {
+            get
+            {
                 return ResourceManager.GetString("AuthorText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Run at startup.
         /// </summary>
-        public static string AutoSButton {
-            get {
+        public static string AutoSButton
+        {
+            get
+            {
                 return ResourceManager.GetString("AutoSButton", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Allow automatic updates.
         /// </summary>
-        public static string AutoUButton {
-            get {
+        public static string AutoUButton
+        {
+            get
+            {
                 return ResourceManager.GetString("AutoUButton", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to On icon click:.
         /// </summary>
-        public static string BehaveHeader {
-            get {
+        public static string BehaveHeader
+        {
+            get
+            {
                 return ResourceManager.GetString("BehaveHeader", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Change both system and app theme.
         /// </summary>
-        public static string ChangeBothRadio {
-            get {
+        public static string ChangeBothRadio
+        {
+            get
+            {
                 return ResourceManager.GetString("ChangeBothRadio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Change only apps.
         /// </summary>
-        public static string ChangeOnlyARadio {
-            get {
+        public static string ChangeOnlyARadio
+        {
+            get
+            {
                 return ResourceManager.GetString("ChangeOnlyARadio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Change only system.
         /// </summary>
-        public static string ChangeOnlySRadio {
-            get {
+        public static string ChangeOnlySRadio
+        {
+            get
+            {
                 return ResourceManager.GetString("ChangeOnlySRadio", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
-        public static string ExitButton {
-            get {
+        public static string ExitButton
+        {
+            get
+            {
                 return ResourceManager.GetString("ExitButton", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
-        public static string GeneralTab {
-            get {
+        public static string GeneralTab
+        {
+            get
+            {
                 return ResourceManager.GetString("GeneralTab", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to This app is designed for Windows 10 only. Please consider upgrading your OS..
         /// </summary>
-        public static string OSVersionMessage {
-            get {
+        public static string OSVersionMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("OSVersionMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Reset theme.
         /// </summary>
-        public static string ResetButton {
-            get {
+        public static string ResetButton
+        {
+            get
+            {
                 return ResourceManager.GetString("ResetButton", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to This program is already running..
         /// </summary>
-        public static string RunningAppMessage {
-            get {
+        public static string RunningAppMessage
+        {
+            get
+            {
                 return ResourceManager.GetString("RunningAppMessage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        public static string SettingsButton {
-            get {
+        public static string SettingsButton
+        {
+            get
+            {
                 return ResourceManager.GetString("SettingsButton", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Theme settings.
         /// </summary>
-        public static string SysThemeControlLink {
-            get {
+        public static string SysThemeControlLink
+        {
+            get
+            {
                 return ResourceManager.GetString("SysThemeControlLink", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Visit the project page on.
         /// </summary>
-        public static string VisitText {
-            get {
+        public static string VisitText
+        {
+            get
+            {
                 return ResourceManager.GetString("VisitText", resourceCulture);
             }
         }
