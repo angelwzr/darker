@@ -4,10 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:res="clr-namespace:darker.Properties"
-        mc:Ignorable="d"
-        Title="{x:Static res:Properties.SettingsButton}" Height="450" Width="600" ResizeMode="NoResize"
+        mc:Ignorable="d" Height="450" Width="600" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Loaded="Window_Loaded">
+        Title="{x:Static res:Resources.SettingsButton}"
+        Loaded="Window_Loaded" Icon="/Resources/icon.ico">
     <TabControl>
         <TabItem Header="{x:Static res:Resources.GeneralTab}" IsSelected="True">
             <Grid Margin="5">
