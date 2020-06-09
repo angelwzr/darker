@@ -1,8 +1,11 @@
 ﻿using darker.Helpers;
 using darker.Models;
+using NHotkey;
+using NHotkey.Wpf;
 using System;
 using System.Linq;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace darker
@@ -17,6 +20,15 @@ namespace darker
 
             if (AppSettings.Default.IsAutoUpdateEnabled)
                 UpdateHelper.CheckForUpdates();
+
+            HotkeyManager.Current.AddOrReplace("Switch", Key.D, ModifierKeys.Control | ModifierKeys.Alt, OnHotKey);
+
+        }
+
+        private void OnHotKey(object sender, HotkeyEventArgs e)
+        {
+            //throw new NotImplementedException();
+            TrayIconClick(sender, null);
         }
 
         private void TrayIconClick(object sender, RoutedEventArgs e)
