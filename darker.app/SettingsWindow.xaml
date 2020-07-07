@@ -47,13 +47,13 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
-            <TabItem Header="Schedule">
+            <!--<TabItem Header="Schedule">
                 <Grid Margin="5">
                     <StackPanel>
                         <TextBlock Text="Content goes here"/>
                     </StackPanel>
                 </Grid>
-            </TabItem>
+            </TabItem>-->
             <TabItem Header="{x:Static res:Resources.AboutButton}">
                 <Grid Margin="5">
                     <StackPanel>

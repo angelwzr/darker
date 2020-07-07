@@ -1,7 +1,10 @@
 ﻿using darker.Models;
+using System;
 using System.IO;
 using System.Reflection;
+using System.Resources;
 using System.Text.Json;
+using System.Windows;
 
 namespace darker
 {
@@ -17,7 +20,7 @@ namespace darker
 
         private AppSettings()
         {
-            // marked as private to prevent outside classes from creating new.
+            // Marked as private to prevent outside classes from creating new.
         }
 
         public SettingsThemeMode ThemeMode { get; set; } = SettingsThemeMode.Both;
@@ -33,8 +36,17 @@ namespace darker
 
                 if (File.Exists(_settingsPath))
                 {
-                    var json = File.ReadAllText(_settingsPath);
-                    _appSettings = JsonSerializer.Deserialize<AppSettings>(json);
+                    try
+                    {
+                        var json = File.ReadAllText(_settingsPath);
+                        _appSettings = JsonSerializer.Deserialize<AppSettings>(json);
+                    }
+                    catch (Exception configreadaccessEx)
+                    {
+                        var resourceManager = new ResourceManager(typeof(Properties.Resources));
+                        MessageBox.Show(resourceManager.GetString("FileAccessErrorMessage"), resourceManager.GetString("AppName"));
+                    }
+
                 }
                 else
                 {
@@ -47,11 +59,20 @@ namespace darker
 
         public void Save()
         {
-            // open config file
+            // Open config file
             var json = JsonSerializer.Serialize(_appSettings);
 
-            //write string to file
-            File.WriteAllText(_settingsPath, json);
+            try
+            {
+                //Write string to file
+                File.WriteAllText(_settingsPath, json);
+            }
+            catch (Exception configwriteaccessEx)
+            {
+                var resourceManager = new ResourceManager(typeof(Properties.Resources));
+                MessageBox.Show(resourceManager.GetString("FileAccessErrorMessage"), resourceManager.GetString("AppName"));
+            }
+
         }
     }
 }

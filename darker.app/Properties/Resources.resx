@@ -171,4 +171,7 @@
   <data name="SysThemeControlLink" xml:space="preserve">
     <value>Theme settings</value>
   </data>
+  <data name="FileAccessErrorMessage" xml:space="preserve">
+    <value>Configuration file is not accessible. Please consider moving the app to another directory.</value>
+  </data>
 </root>

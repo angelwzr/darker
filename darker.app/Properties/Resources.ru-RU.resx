@@ -171,4 +171,7 @@
   <data name="SysThemeControlLink" xml:space="preserve">
     <value>Настройки темы</value>
   </data>
+  <data name="FileAccessErrorMessage" xml:space="preserve">
+    <value>Файл конфигурации недоступен. Перенесите приложение в другую директорию.</value>
+  </data>
 </root>
