@@ -18,11 +18,11 @@
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Uid="ContextMenu">
                     <MenuItem x:Uid="ResetButton" Header="{x:Static res:Resources.ResetButton}"
-                              Click="Reset_Click" Template="{DynamicResource SingleDropDownMenuItem}"/>
-                    <Separator Template="{DynamicResource Separator}"/>
+                              Click="Reset_Click"/>
+                    <Separator/>
                     <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}"
-                              Click="Settings_Click" Template="{DynamicResource SingleDropDownMenuItem}" />
-                    <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" Click="Exit_Click" Template="{DynamicResource SingleDropDownMenuItem}"/>
+                              Click="Settings_Click"/>
+                    <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" Click="Exit_Click"/>
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>
