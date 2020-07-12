@@ -75,6 +75,13 @@ namespace darker
             }
         }
 
+        //Debug menu item
+        private void DebugW_Click(object sender, RoutedEventArgs e)
+        {
+            NavWindow navWindow = new NavWindow();
+            navWindow.Show();
+        }
+
         //Exit menu item
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
