@@ -1,10 +1,7 @@
 ﻿using ModernWpf.Controls;
-using ModernWpf.Media.Animation;
 using System;
-using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace darker
 {
@@ -18,44 +15,52 @@ namespace darker
             InitializeComponent();
         }
 
+
         private void NavView_Loaded(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Content = "SettingsGeneral";
-        }
-
-        private NavigationViewItem _lastItem;
-
-        private void NavigationView_OnItemInvoked(
-            NavigationView sender,
-            NavigationViewItemInvokedEventArgs args)
-        {
-            var item = args.InvokedItemContainer as NavigationViewItem;
-            if (item == null || item == _lastItem)
-                return;
-            var clickedView = item.Tag.ToString();
-            if (!NavigateToView(clickedView)) return;
-            _lastItem = item;
-        }
-
-        private bool NavigateToView(string clickedView)
-        {
-            var view = clickedView;
-
-            if (string.IsNullOrWhiteSpace(clickedView) || view == null)
+            // set the initial SelectedItem
+            foreach (NavigationViewItemBase item in NavigationViewControl.MenuItems)
             {
-                return false;
+                if (item is NavigationViewItem && item.Tag.ToString() == "SettingsGeneral")
+                {
+                    NavigationViewControl.SelectedItem = item;
+                    break;
+                }
             }
-
-            ContentFrame.Navigate(view, new EntranceNavigationTransitionInfo());
-            return true;
+            ContentFrame.Navigate(new Uri("Views/SettingsGeneral.xaml", UriKind.RelativeOrAbsolute));
         }
 
-        private void NavView_OnBackRequested(
-            NavigationView sender,
-            NavigationViewBackRequestedEventArgs args)
+        private void Nav_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            if (ContentFrame.CanGoBack)
-                ContentFrame.GoBack();
+
         }
+
+        private void Nav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+            TextBlock ItemContent = args.InvokedItem as TextBlock;
+            if (ItemContent != null)
+            {
+                switch (ItemContent.Tag)
+                {
+                    case "NavHome":
+                        ContentFrame.Navigate(new Uri("Views/SettingsGeneral.xaml", UriKind.RelativeOrAbsolute));
+                        break;
+
+                    case "NavScheduler":
+                        ContentFrame.Navigate(new Uri("Views/SettingsScheduler.xaml", UriKind.RelativeOrAbsolute));
+                        break;
+
+                    case "NavAdvanced":
+                        ContentFrame.Navigate(new Uri("Views/SettingsAdvanced.xaml", UriKind.RelativeOrAbsolute));
+                        break;
+
+                    case "NavAbout":
+                        ContentFrame.Navigate(new Uri("Views/SettingsAbout.xaml", UriKind.RelativeOrAbsolute));
+                        break;
+
+                }
+            }
+        }
+
     }
 }

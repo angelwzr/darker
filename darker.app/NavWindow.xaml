@@ -1,9 +1,9 @@
 ﻿<Window x:Class="darker.NavWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:res="clr-namespace:darker.Properties"
         mc:Ignorable="d"
         MinWidth="800" MinHeight="600"
@@ -16,29 +16,39 @@
         Title="{x:Static res:Resources.SettingsButton}">
     <Grid>
         <ui:NavigationView x:Name="NavigationViewControl"
+                           IsBackButtonVisible="Collapsed"
+                           IsPaneToggleButtonVisible="False"
                            PaneDisplayMode="Auto"
                            IsSettingsVisible="False"
                            Loaded="NavView_Loaded"
-                           ItemInvoked="NavigationView_OnItemInvoked"
-                           BackRequested="NavView_OnBackRequested"
-                           IsBackEnabled="{Binding ElementName=ContentFrame, Path=CanGoBack}">
+                           SelectionChanged="Nav_SelectionChanged"
+                           ItemInvoked="Nav_ItemInvoked"
+                           IsTabStop="False">
             <ui:NavigationView.MenuItems>
-                <ui:NavigationViewItem Icon="Home" Content="{x:Static res:Resources.GeneralTab}" x:Name="Main" Tag="SettingsGeneral"/>
-                <ui:NavigationViewItem Content="Schedule" x:Name="Scheduler" >
+                <ui:NavigationViewItem Icon="Home" x:Name="Main" Tag="SettingsGeneral">
+                    <TextBlock Text="{x:Static res:Resources.GeneralTab}" Tag="NavHome"/>
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="Scheduler" Tag="SettingsScheduler">
+                    <ui:NavigationViewItem.Content>
+                        <TextBlock Tag="NavScheduler">Schedule</TextBlock>
+                    </ui:NavigationViewItem.Content>
                     <ui:NavigationViewItem.Icon>
-                        <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEC92;"/>
+                        <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEC92;" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem Icon="Repair" Content="Advanced" x:Name="C" />
+                <ui:NavigationViewItem Icon="Repair" x:Name="Advanced" Tag="SettingsAdvanced">
+                    <TextBlock Tag="NavAdvanced">Advanced</TextBlock>
+                </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="AppInfo" Tag="SettingsAbout">
+                    <ui:NavigationViewItem.Content>
+                        <TextBlock Text="{x:Static res:Resources.AboutButton}" Tag="NavAbout"></TextBlock>
+                    </ui:NavigationViewItem.Content>
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;" />
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
-            <ui:NavigationView.PaneFooter>
-                <ui:NavigationViewItem Content="{x:Static res:Resources.AboutButton}" x:Name="AppInfo" Tag="SettingsAbout">
-                    <ui:NavigationViewItem.Icon>
-                        <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;"/>
-                    </ui:NavigationViewItem.Icon>
-                </ui:NavigationViewItem>
-            </ui:NavigationView.PaneFooter>
-            <Frame x:Name="ContentFrame" Padding="12,0,12,24" IsTabStop="True" />
+            <Frame x:Name="ContentFrame" Padding="12,0,12,24" NavigationUIVisibility="Hidden" />
         </ui:NavigationView>
     </Grid>
 </Window>
