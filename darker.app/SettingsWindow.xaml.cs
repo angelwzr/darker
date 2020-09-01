@@ -117,13 +117,13 @@ namespace darker
         //Handle system theme settings page link navigation
         private void ThemeSettings_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(new ProcessStartInfo("ms-settings:colors") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("ms-settings:colors") {UseShellExecute = true});
         }
 
         //Handle GH link navigation
         private void Link_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) {UseShellExecute = true});
             e.Handled = true;
         }
     }

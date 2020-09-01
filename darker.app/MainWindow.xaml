@@ -22,14 +22,11 @@
             TrayLeftMouseDown="TrayIconClick">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Uid="ContextMenu" ui:ThemeManager.RequestedTheme="Dark">
-                    <MenuItem x:Uid="ResetButton" Header="{x:Static res:Resources.ResetButton}"
-                              Click="Reset_Click"/>
-                    <Separator/>
                     <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}"
-                              Click="Settings_Click"/>
-                    <MenuItem x:Uid="DebugButton" Header="Debug window"
-                              Click="DebugW_Click"/>
-                    <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" Click="Exit_Click"/>
+                              Click="Settings_Click" />
+                    <MenuItem x:Uid="DebugButton" Header="Old settings"
+                              Click="DebugW_Click" />
+                    <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" Click="Exit_Click" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>

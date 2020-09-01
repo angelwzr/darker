@@ -20,34 +20,34 @@
             <TabItem Header="{x:Static res:Resources.GeneralTab}" IsSelected="True">
                 <Grid Margin="5">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="19*"/>
-                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="19*" />
+                        <RowDefinition Height="1*" />
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
                         <Label FontWeight="Bold" Content="{x:Static res:Resources.BehaveHeader}" />
                         <RadioButton x:Name="Both" GroupName="ThemeModeSel" Checked="Both_OnChecked"
-                                 Content="{x:Static res:Resources.ChangeBothRadio}" />
+                                     Content="{x:Static res:Resources.ChangeBothRadio}" />
                         <RadioButton x:Name="SysOnly" GroupName="ThemeModeSel" Checked="SysOnly_OnChecked"
-                                 Content="{x:Static res:Resources.ChangeOnlySRadio}" />
+                                     Content="{x:Static res:Resources.ChangeOnlySRadio}" />
                         <RadioButton x:Name="AppsOnly" GroupName="ThemeModeSel" Checked="AppsOnly_OnChecked"
-                                 Content="{x:Static res:Resources.ChangeOnlyARadio}" />
+                                     Content="{x:Static res:Resources.ChangeOnlyARadio}" />
                         <Label FontWeight="Bold" Content="{x:Static res:Resources.AppSetHeader}" />
                         <CheckBox x:Uid="AutoU" x:Name="AutoU" Content="{x:Static res:Resources.AutoUButton}"
-                              Checked="AutoU_OnChecked" Unchecked="AutoU_OnUnchecked" />
+                                  Checked="AutoU_OnChecked" Unchecked="AutoU_OnUnchecked" />
                         <CheckBox x:Uid="AutoS" x:Name="AutoS" Content="{x:Static res:Resources.AutoSButton}"
-                              Checked="AutoS_Checked" Unchecked="AutoS_Unchecked" />
+                                  Checked="AutoS_Checked" Unchecked="AutoS_Unchecked" />
                     </StackPanel>
                     <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right">
                         <TextBlock>
-                        <Hyperlink Click="ThemeSettings_Click">
-                            <Hyperlink.Inlines>
-                                <Run Text="{x:Static res:Resources.SysThemeControlLink}" />
-                            </Hyperlink.Inlines>
-                        </Hyperlink>
+                            <Hyperlink Click="ThemeSettings_Click">
+                                <Hyperlink.Inlines>
+                                    <Run Text="{x:Static res:Resources.SysThemeControlLink}" />
+                                </Hyperlink.Inlines>
+                            </Hyperlink>
                         </TextBlock>
                     </StackPanel>
                 </Grid>
@@ -65,13 +65,13 @@
                         <TextBlock x:Name="VersionText" Text="ver" />
                         <TextBlock x:Uid="AuthorText" Text="{x:Static res:Resources.AuthorText}" />
                         <TextBlock x:Uid="GHText">
-                        <Run x:Uid="VisitText" Text="{x:Static res:Resources.VisitText}" />
-                        <Hyperlink NavigateUri="https://github.com/angelwzr/darker"
-                                   RequestNavigate="Link_RequestNavigate">
-                            <Hyperlink.Inlines>
-                                <Run Text="GitHub" />
-                            </Hyperlink.Inlines>
-                        </Hyperlink>
+                            <Run x:Uid="VisitText" Text="{x:Static res:Resources.VisitText}" />
+                            <Hyperlink NavigateUri="https://github.com/angelwzr/darker"
+                                       RequestNavigate="Link_RequestNavigate">
+                                <Hyperlink.Inlines>
+                                    <Run Text="GitHub" />
+                                </Hyperlink.Inlines>
+                            </Hyperlink>
                         </TextBlock>
                     </StackPanel>
                 </Grid>

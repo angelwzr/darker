@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using darker.Helpers;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace darker.Views
 {
@@ -21,6 +13,18 @@ namespace darker.Views
         public SettingsAdvanced()
         {
             InitializeComponent();
+        }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            RegistryThemeHelper.ResetTheme();
+            //SetTrayIcon();
+        }
+
+        //Handle system theme settings page link navigation
+        private void ThemeSettings_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("ms-settings:colors") {UseShellExecute = true});
         }
     }
 }

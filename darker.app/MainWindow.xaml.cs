@@ -21,14 +21,13 @@ namespace darker
                 UpdateHelper.CheckForUpdates();
 
             //Implementing hotkeys
-            //HotkeyManager.Current.AddOrReplace("Switch", Key.D, ModifierKeys.Control | ModifierKeys.Alt, OnHotKey);
-
+            HotkeyManager.Current.AddOrReplace("Switch", Key.D, ModifierKeys.Control | ModifierKeys.Alt, OnHotKey);
         }
 
-        //private void OnHotKey(object sender, HotkeyEventArgs e)
-        //{
-            //TrayIconClick(sender, null);
-        //}
+        private void OnHotKey(object sender, HotkeyEventArgs e)
+        {
+            TrayIconClick(sender, null);
+        }
 
         private void TrayIconClick(object sender, RoutedEventArgs e)
         {
@@ -53,33 +52,26 @@ namespace darker
             }
         }
 
-        //Reset menu item
-        private void Reset_Click(object sender, RoutedEventArgs e)
-        {
-            RegistryThemeHelper.ResetTheme();
-            SetTrayIcon();
-        }
-
         //Settings menu item
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            var settingsWindow = Application.Current.Windows.OfType<SettingsWindow>().FirstOrDefault();
-            if (settingsWindow == null)
+            var navWindow = Application.Current.Windows.OfType<NavWindow>().FirstOrDefault();
+            if (navWindow == null)
             {
-                settingsWindow = new SettingsWindow();
-                settingsWindow.Show();
+                navWindow = new NavWindow();
+                navWindow.Show();
             }
             else
             {
-                settingsWindow.Focus();
+                navWindow.Focus();
             }
         }
 
         //Debug menu item
         private void DebugW_Click(object sender, RoutedEventArgs e)
         {
-            NavWindow navWindow = new NavWindow();
-            navWindow.Show();
+            var settingsWindow = new SettingsWindow();
+            settingsWindow.Show();
         }
 
         //Exit menu item
@@ -112,7 +104,7 @@ namespace darker
             }
             else
             {
-                var subWindow = (Window)Activator.CreateInstance(typeof(T));
+                var subWindow = (Window) Activator.CreateInstance(typeof(T));
                 subWindow.Show();
             }
         }
