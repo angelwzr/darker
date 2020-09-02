@@ -3,6 +3,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace darker
 {
@@ -21,10 +22,13 @@ namespace darker
             //Check for autostart with Windows key
             CheckForAutostart();
 
+            
+
             //ThemeMode radiobuttons check
             switch (AppSettings.Default.ThemeMode)
             {
                 case SettingsThemeMode.Both:
+                    
                     Both.IsChecked = true;
                     break;
 

@@ -21,21 +21,23 @@ namespace darker.Views
             //Check for autostart with Windows key
             CheckForAutostart();
 
-            //Theme mode combobox state
-            //switch (AppSettings.Default.ThemeMode)
-            //{
-            //case SettingsThemeMode.Both:
-            //Both.IsChecked = true;
-            //break;
+            //ThemeMode combobox state
+            switch (AppSettings.Default.ThemeMode)
+            {
+                case SettingsThemeMode.Both:
+                    ModeComboBox.SelectedItem = Both;
+                    break;
 
-            //case SettingsThemeMode.OnlySystem:
-            //SysOnly.IsChecked = true;
-            //break;
+                case SettingsThemeMode.OnlySystem:
+                    ModeComboBox.SelectedItem = SysOnly;
+                    break;
 
-            //case SettingsThemeMode.OnlyApps:
-            //AppsOnly.IsChecked = true;
-            //break;
-            //}
+                case SettingsThemeMode.OnlyApps:
+                    ModeComboBox.SelectedItem = AppsOnly;
+                    break;
+            }
+
+            
 
             //AutoUpadte toggle state
             switch (AppSettings.Default.IsAutoUpdateEnabled)
@@ -62,7 +64,7 @@ namespace darker.Views
             }
         }
 
-        private void AutoStart_Toggled(object sender, RoutedEventArgs e)
+    private void AutoStart_Toggled(object sender, RoutedEventArgs e)
         {
             if (AutoStartToggle.IsOn)
             {
