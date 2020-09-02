@@ -21,10 +21,10 @@
             </GroupBox>
             <GroupBox Header="Behavior">
                 <ui:SimpleStackPanel>
-                    <ComboBox Width="200" ui:ControlHelper.Header="{x:Static res:Resources.BehaveHeader}" ui:ControlHelper.PlaceholderText="Choose your mode" SelectionChanged="IconSwitchMode_SelectionChanged">
-                        <sys:String>Both</sys:String>
-                        <sys:String>Only system</sys:String>
-                        <sys:String>Only apps</sys:String>
+                    <ComboBox Width="300" ui:ControlHelper.Header="{x:Static res:Resources.BehaveHeader}" ui:ControlHelper.PlaceholderText="Choose your mode" SelectionChanged="IconSwitchMode_SelectionChanged">
+                        <ComboBoxItem x:Name="Both" Content="{x:Static res:Resources.ChangeBothRadio}"/>
+                        <ComboBoxItem x:Name="SysOnly" Content="{x:Static res:Resources.ChangeOnlySRadio}"/>
+                        <ComboBoxItem x:Name="AppsOnly" Content="{x:Static res:Resources.ChangeOnlyARadio}"/>
                     </ComboBox>
                     <!--<RadioButton x:Name="Both" GroupName="ThemeModeSel" Checked="Both_OnChecked"
                          Content="{x:Static res:Resources.ChangeBothRadio}" />

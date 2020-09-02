@@ -94,18 +94,20 @@ namespace darker.Views
 
         private void IconSwitchMode_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var modeName = e.AddedItems[0].ToString();
-            switch (modeName)
+            var comboBoxItem = e.AddedItems[0] as ComboBoxItem;
+            if (comboBoxItem == null) return;
+            var name = comboBoxItem.Name as string;
+            switch (name)
             {
                 case "Both":
                     AppSettings.Default.ThemeMode = SettingsThemeMode.Both;
                     AppSettings.Default.Save();
                     break;
-                case "Only system":
+                case "SysOnly":
                     AppSettings.Default.ThemeMode = SettingsThemeMode.OnlySystem;
                     AppSettings.Default.Save();
                     break;
-                case "Only apps":
+                case "AppsOnly":
                     AppSettings.Default.ThemeMode = SettingsThemeMode.OnlyApps;
                     AppSettings.Default.Save();
                     break;
