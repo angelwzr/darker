@@ -11,20 +11,20 @@
         ui:ThemeManager.IsThemeAware="True"
         Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
         Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
-        Title="{x:Static res:Resources.AppName}"
+        Title="{x:Static res:Resources.App_AppName}"
         Visibility="Hidden">
     <Grid>
         <tb:TaskbarIcon
             x:Name="darkerIcon"
-            ToolTipText="{x:Static res:Resources.AppName}"
+            ToolTipText="{x:Static res:Resources.App_AppName}"
             IconSource="pack://application:,,,/Resources/day_w.ico"
             Visibility="Visible"
             TrayLeftMouseDown="TrayIconClick">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu x:Uid="ContextMenu" ui:ThemeManager.RequestedTheme="Dark">
-                    <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}"
+                    <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.Main_MenuSettingsButton}"
                               Click="Settings_Click" />
-                    <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" Click="Exit_Click" />
+                    <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.Main_MenuExitButton}" Click="Exit_Click" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>
         </tb:TaskbarIcon>

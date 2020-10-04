@@ -117,61 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AuthorText" xml:space="preserve">
+  <data name="About_AuthorNameText" xml:space="preserve">
     <value>Роман Линев</value>
   </data>
-  <data name="AutoSButton" xml:space="preserve">
+  <data name="General_AppAutoStartToggleHeader" xml:space="preserve">
     <value>Запускать при старте системы</value>
   </data>
-  <data name="ExitButton" xml:space="preserve">
+  <data name="Main_MenuExitButton" xml:space="preserve">
     <value>Выход</value>
   </data>
-  <data name="SettingsButton" xml:space="preserve">
+  <data name="Main_MenuSettingsButton" xml:space="preserve">
     <value>Параметры</value>
   </data>
-  <data name="VisitText" xml:space="preserve">
+  <data name="About_VisitGHLinkText" xml:space="preserve">
     <value>Страница проекта на</value>
   </data>
-  <data name="AboutButton" xml:space="preserve">
+  <data name="Nav_AboutTab" xml:space="preserve">
     <value>О программе</value>
   </data>
-  <data name="AppName" xml:space="preserve">
+  <data name="App_AppName" xml:space="preserve">
     <value>darker</value>
   </data>
-  <data name="RunningAppMessage" xml:space="preserve">
+  <data name="Error_RunningAppMessage" xml:space="preserve">
     <value>Приложение уже запущено.</value>
   </data>
-  <data name="OSVersionMessage" xml:space="preserve">
+  <data name="Error_OSVersionMessage" xml:space="preserve">
     <value>Это приложение работает только в Windows 10. Задумайтесь об обновлении ОС.</value>
   </data>
-  <data name="ResetButton" xml:space="preserve">
+  <data name="Advanced_TroubleshootingThemeResetButton" xml:space="preserve">
     <value>Сброс темы</value>
   </data>
-  <data name="GeneralTab" xml:space="preserve">
+  <data name="Nav_GeneralTab" xml:space="preserve">
     <value>Основное</value>
   </data>
-  <data name="BehaveHeader" xml:space="preserve">
+  <data name="General_BehaveBoxHeader" xml:space="preserve">
     <value>При нажатии иконки:</value>
   </data>
-  <data name="AppSetHeader" xml:space="preserve">
+  <data name="General_AppSetingsGroupHeader" xml:space="preserve">
     <value>Приложение</value>
   </data>
-  <data name="ChangeBothRadio" xml:space="preserve">
+  <data name="General_BoxItemChangeBoth" xml:space="preserve">
     <value>Изменять вид системы и приложений</value>
   </data>
-  <data name="ChangeOnlyARadio" xml:space="preserve">
+  <data name="General_BoxItemChangeOnlyApp" xml:space="preserve">
     <value>Изменять вид только приложений</value>
   </data>
-  <data name="ChangeOnlySRadio" xml:space="preserve">
+  <data name="General_BoxItemChangeOnlySys" xml:space="preserve">
     <value>Изменять вид только системы</value>
   </data>
-  <data name="AutoUButton" xml:space="preserve">
+  <data name="General_AppAutoUpdateToggleHeader" xml:space="preserve">
     <value>Разрешить автоматическое обновление</value>
   </data>
-  <data name="SysThemeControlLink" xml:space="preserve">
+  <data name="Advanced_TroubleshootingThemeSettingsLink" xml:space="preserve">
     <value>Настройки темы</value>
   </data>
-  <data name="FileAccessErrorMessage" xml:space="preserve">
+  <data name="Error_FileAccessErrorMessage" xml:space="preserve">
     <value>Файл конфигурации недоступен. Перенесите приложение в другую директорию.</value>
+  </data>
+  <data name="Nav_AdvancedTab" xml:space="preserve">
+    <value>Дополнительно</value>
+  </data>
+  <data name="Nav_WindowTitle" xml:space="preserve">
+    <value>Параметры</value>
+  </data>
+  <data name="General_BehaveGroupHeader" xml:space="preserve">
+    <value>Поведение</value>
+  </data>
+  <data name="Advanced_HotKeyGroupHeader" xml:space="preserve">
+    <value>Сочетания клавиш</value>
+  </data>
+  <data name="Advanced_TrobleshootingGroupHeader" xml:space="preserve">
+    <value>Устранение проблем</value>
+  </data>
+  <data name="About_AboutGroupHeader" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="Advanced_HotKeyBoxHeader" xml:space="preserve">
+    <value>Используемое сочетание клавиш:</value>
+  </data>
+  <data name="Advanced_HotKeyToggleHeader" xml:space="preserve">
+    <value>Включить управление с клавиатуры</value>
   </data>
 </root>

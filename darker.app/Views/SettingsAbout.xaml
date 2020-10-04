@@ -10,12 +10,12 @@
       Title="SettingsAbout">
     <Grid>
         <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
-            <GroupBox Header="{x:Static res:Resources.AboutButton}">
+            <GroupBox Header="{x:Static res:Resources.About_AboutGroupHeader}">
                 <ui:SimpleStackPanel>
                     <TextBlock x:Name="VersionText" Text="ver" />
-                    <TextBlock x:Uid="AuthorText" Text="{x:Static res:Resources.AuthorText}" />
+                    <TextBlock x:Uid="AuthorText" Text="{x:Static res:Resources.About_AuthorNameText}" />
                     <TextBlock x:Uid="GHText">
-                        <Run x:Uid="VisitText" Text="{x:Static res:Resources.VisitText}" />
+                        <Run x:Uid="VisitText" Text="{x:Static res:Resources.About_VisitGHLinkText}" />
                         <Hyperlink NavigateUri="https://github.com/angelwzr/darker"
                                    RequestNavigate="Link_RequestNavigate">
                             <Hyperlink.Inlines>

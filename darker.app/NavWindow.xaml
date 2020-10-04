@@ -5,15 +5,16 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:res="clr-namespace:darker.Properties"
+        xmlns:windowStateHelper="clr-namespace:WindowStateHelper;assembly=WindowStateHelper"
+        windowStateHelper:WindowStateHelper.Active="true"
         mc:Ignorable="d"
         MinWidth="800" MinHeight="600"
         ui:WindowHelper.UseModernWindowStyle="True"
         ui:ThemeManager.IsThemeAware="True"
         Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
         Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
-        WindowStartupLocation="CenterScreen"
         Icon="/Resources/icon.ico"
-        Title="{x:Static res:Resources.SettingsButton}">
+        Title="{x:Static res:Resources.Nav_WindowTitle}">
     <Grid>
         <ui:NavigationView x:Name="NavigationViewControl"
                            IsBackButtonVisible="Collapsed"
@@ -26,7 +27,7 @@
                            IsTabStop="False">
             <ui:NavigationView.MenuItems>
                 <ui:NavigationViewItem Icon="Home" x:Name="Main" Tag="SettingsGeneral">
-                    <TextBlock Text="{x:Static res:Resources.GeneralTab}" Tag="NavHome" />
+                    <TextBlock Text="{x:Static res:Resources.Nav_GeneralTab}" Tag="NavHome" />
                 </ui:NavigationViewItem>
                 <!--<ui:NavigationViewItem x:Name="Scheduler" Tag="SettingsScheduler">
                     <ui:NavigationViewItem.Content>
@@ -37,11 +38,11 @@
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>-->
                 <ui:NavigationViewItem Icon="Repair" x:Name="Advanced" Tag="SettingsAdvanced">
-                    <TextBlock Tag="NavAdvanced">Advanced</TextBlock>
+                    <TextBlock Tag="NavAdvanced" Text="{x:Static res:Resources.Nav_AdvancedTab}"/>
                 </ui:NavigationViewItem>
                 <ui:NavigationViewItem x:Name="AppInfo" Tag="SettingsAbout">
                     <ui:NavigationViewItem.Content>
-                        <TextBlock Text="{x:Static res:Resources.AboutButton}" Tag="NavAbout" />
+                        <TextBlock Text="{x:Static res:Resources.Nav_AboutTab}" Tag="NavAbout" />
                     </ui:NavigationViewItem.Content>
                     <ui:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;" />

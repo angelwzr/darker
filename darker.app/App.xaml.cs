@@ -24,7 +24,7 @@ namespace darker
             _mutex = new Mutex(true, MutexName, out _createdNew);
             if (_createdNew) return;
             var resourceManager = new ResourceManager(typeof(Resources));
-            MessageBox.Show(resourceManager.GetString("RunningAppMessage"), resourceManager.GetString("AppName"));
+            MessageBox.Show(resourceManager.GetString("Error_RunningAppMessage"), resourceManager.GetString("App_AppName"));
             Current.Shutdown(0);
         }
 
@@ -40,7 +40,7 @@ namespace darker
         {
             if (Environment.OSVersion.Version.Major >= 10 || Environment.OSVersion.Version.Minor <= 0) return;
             var resourceManager = new ResourceManager(typeof(Resources));
-            MessageBox.Show(resourceManager.GetString("OSVersionMessage"), resourceManager.GetString("AppName"));
+            MessageBox.Show(resourceManager.GetString("Error_OSVersionMessage"), resourceManager.GetString("App_AppName"));
             Current.Shutdown();
         }
     }

@@ -47,8 +47,8 @@ namespace darker
                     catch (Exception configreadaccessEx)
                     {
                         var resourceManager = new ResourceManager(typeof(Resources));
-                        MessageBox.Show(resourceManager.GetString("FileAccessErrorMessage"),
-                            resourceManager.GetString("AppName"));
+                        MessageBox.Show(resourceManager.GetString("Error_FileAccessErrorMessage"),
+                            resourceManager.GetString("App_AppName"));
                     }
                 else
                     _appSettings = new AppSettings();
@@ -70,8 +70,8 @@ namespace darker
             catch (Exception configwriteaccessEx)
             {
                 var resourceManager = new ResourceManager(typeof(Resources));
-                MessageBox.Show(resourceManager.GetString("FileAccessErrorMessage"),
-                    resourceManager.GetString("AppName"));
+                MessageBox.Show(resourceManager.GetString("Error_FileAccessErrorMessage"),
+                    resourceManager.GetString("App_AppName"));
             }
         }
     }

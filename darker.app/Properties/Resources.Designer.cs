@@ -63,171 +63,261 @@ namespace darker.Properties {
         /// <summary>
         ///   Looks up a localized string similar to About.
         /// </summary>
-        public static string AboutButton {
+        public static string About_AboutGroupHeader {
             get {
-                return ResourceManager.GetString("AboutButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to darker.
-        /// </summary>
-        public static string AppName {
-            get {
-                return ResourceManager.GetString("AppName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Application.
-        /// </summary>
-        public static string AppSetHeader {
-            get {
-                return ResourceManager.GetString("AppSetHeader", resourceCulture);
+                return ResourceManager.GetString("About_AboutGroupHeader", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Roman Linev.
         /// </summary>
-        public static string AuthorText {
+        public static string About_AuthorNameText {
             get {
-                return ResourceManager.GetString("AuthorText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Run at startup.
-        /// </summary>
-        public static string AutoSButton {
-            get {
-                return ResourceManager.GetString("AutoSButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Allow automatic updates.
-        /// </summary>
-        public static string AutoUButton {
-            get {
-                return ResourceManager.GetString("AutoUButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to On icon click:.
-        /// </summary>
-        public static string BehaveHeader {
-            get {
-                return ResourceManager.GetString("BehaveHeader", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change both system and app theme.
-        /// </summary>
-        public static string ChangeBothRadio {
-            get {
-                return ResourceManager.GetString("ChangeBothRadio", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change only apps.
-        /// </summary>
-        public static string ChangeOnlyARadio {
-            get {
-                return ResourceManager.GetString("ChangeOnlyARadio", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Change only system.
-        /// </summary>
-        public static string ChangeOnlySRadio {
-            get {
-                return ResourceManager.GetString("ChangeOnlySRadio", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Exit.
-        /// </summary>
-        public static string ExitButton {
-            get {
-                return ResourceManager.GetString("ExitButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Configuration file is not accessible. Please consider moving the app to another directory..
-        /// </summary>
-        public static string FileAccessErrorMessage {
-            get {
-                return ResourceManager.GetString("FileAccessErrorMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to General.
-        /// </summary>
-        public static string GeneralTab {
-            get {
-                return ResourceManager.GetString("GeneralTab", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This app is designed for Windows 10 only. Please consider upgrading your OS..
-        /// </summary>
-        public static string OSVersionMessage {
-            get {
-                return ResourceManager.GetString("OSVersionMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Reset theme.
-        /// </summary>
-        public static string ResetButton {
-            get {
-                return ResourceManager.GetString("ResetButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This program is already running..
-        /// </summary>
-        public static string RunningAppMessage {
-            get {
-                return ResourceManager.GetString("RunningAppMessage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Settings.
-        /// </summary>
-        public static string SettingsButton {
-            get {
-                return ResourceManager.GetString("SettingsButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Theme settings.
-        /// </summary>
-        public static string SysThemeControlLink {
-            get {
-                return ResourceManager.GetString("SysThemeControlLink", resourceCulture);
+                return ResourceManager.GetString("About_AuthorNameText", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Visit the project page on.
         /// </summary>
-        public static string VisitText {
+        public static string About_VisitGHLinkText {
             get {
-                return ResourceManager.GetString("VisitText", resourceCulture);
+                return ResourceManager.GetString("About_VisitGHLinkText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Here you can configure a way to switch a theme mode from keyboard. Custom hotkeys are disabled in this version, use the default one..
+        /// </summary>
+        public static string Advanced_HotKeyBodyText {
+            get {
+                return ResourceManager.GetString("Advanced_HotKeyBodyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom hotkey combination:.
+        /// </summary>
+        public static string Advanced_HotKeyBoxHeader {
+            get {
+                return ResourceManager.GetString("Advanced_HotKeyBoxHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keyboard shortcuts.
+        /// </summary>
+        public static string Advanced_HotKeyGroupHeader {
+            get {
+                return ResourceManager.GetString("Advanced_HotKeyGroupHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable hotkeys.
+        /// </summary>
+        public static string Advanced_HotKeyToggleHeader {
+            get {
+                return ResourceManager.GetString("Advanced_HotKeyToggleHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you find that some theme settings are off, you can use this button to reset everything to Windows 10 default theme..
+        /// </summary>
+        public static string Advanced_TrobleshootingBodyText {
+            get {
+                return ResourceManager.GetString("Advanced_TrobleshootingBodyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trobleshooting.
+        /// </summary>
+        public static string Advanced_TrobleshootingGroupHeader {
+            get {
+                return ResourceManager.GetString("Advanced_TrobleshootingGroupHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset theme.
+        /// </summary>
+        public static string Advanced_TroubleshootingThemeResetButton {
+            get {
+                return ResourceManager.GetString("Advanced_TroubleshootingThemeResetButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme settings.
+        /// </summary>
+        public static string Advanced_TroubleshootingThemeSettingsLink {
+            get {
+                return ResourceManager.GetString("Advanced_TroubleshootingThemeSettingsLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to darker.
+        /// </summary>
+        public static string App_AppName {
+            get {
+                return ResourceManager.GetString("App_AppName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configuration file is not accessible. Please consider moving the app to another directory..
+        /// </summary>
+        public static string Error_FileAccessErrorMessage {
+            get {
+                return ResourceManager.GetString("Error_FileAccessErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This app is designed for Windows 10 only. Please consider upgrading your OS..
+        /// </summary>
+        public static string Error_OSVersionMessage {
+            get {
+                return ResourceManager.GetString("Error_OSVersionMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This program is already running..
+        /// </summary>
+        public static string Error_RunningAppMessage {
+            get {
+                return ResourceManager.GetString("Error_RunningAppMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Run at startup.
+        /// </summary>
+        public static string General_AppAutoStartToggleHeader {
+            get {
+                return ResourceManager.GetString("General_AppAutoStartToggleHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Allow automatic updates.
+        /// </summary>
+        public static string General_AppAutoUpdateToggleHeader {
+            get {
+                return ResourceManager.GetString("General_AppAutoUpdateToggleHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        public static string General_AppSetingsGroupHeader {
+            get {
+                return ResourceManager.GetString("General_AppSetingsGroupHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On icon click:.
+        /// </summary>
+        public static string General_BehaveBoxHeader {
+            get {
+                return ResourceManager.GetString("General_BehaveBoxHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Behaviour.
+        /// </summary>
+        public static string General_BehaveGroupHeader {
+            get {
+                return ResourceManager.GetString("General_BehaveGroupHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change both system and app theme.
+        /// </summary>
+        public static string General_BoxItemChangeBoth {
+            get {
+                return ResourceManager.GetString("General_BoxItemChangeBoth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change only apps.
+        /// </summary>
+        public static string General_BoxItemChangeOnlyApp {
+            get {
+                return ResourceManager.GetString("General_BoxItemChangeOnlyApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change only system.
+        /// </summary>
+        public static string General_BoxItemChangeOnlySys {
+            get {
+                return ResourceManager.GetString("General_BoxItemChangeOnlySys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exit.
+        /// </summary>
+        public static string Main_MenuExitButton {
+            get {
+                return ResourceManager.GetString("Main_MenuExitButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Main_MenuSettingsButton {
+            get {
+                return ResourceManager.GetString("Main_MenuSettingsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string Nav_AboutTab {
+            get {
+                return ResourceManager.GetString("Nav_AboutTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Advanced.
+        /// </summary>
+        public static string Nav_AdvancedTab {
+            get {
+                return ResourceManager.GetString("Nav_AdvancedTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        public static string Nav_GeneralTab {
+            get {
+                return ResourceManager.GetString("Nav_GeneralTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Nav_WindowTitle {
+            get {
+                return ResourceManager.GetString("Nav_WindowTitle", resourceCulture);
             }
         }
     }

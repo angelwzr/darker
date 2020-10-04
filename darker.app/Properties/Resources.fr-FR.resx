@@ -117,58 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutButton" xml:space="preserve">
+  <data name="Nav_AboutTab" xml:space="preserve">
     <value>À propos</value>
   </data>
-  <data name="AuthorText" xml:space="preserve">
+  <data name="About_AuthorNameText" xml:space="preserve">
     <value>Roman Linev</value>
   </data>
-  <data name="AutoSButton" xml:space="preserve">
+  <data name="General_AppAutoStartToggleHeader" xml:space="preserve">
     <value>Lancer automatiquement au démarrage</value>
   </data>
-  <data name="ExitButton" xml:space="preserve">
+  <data name="Main_MenuExitButton" xml:space="preserve">
     <value>Quitter</value>
   </data>
-  <data name="SettingsButton" xml:space="preserve">
+  <data name="Main_MenuSettingsButton" xml:space="preserve">
     <value>Réglages</value>
   </data>
-  <data name="VisitText" xml:space="preserve">
+  <data name="About_VisitGHLinkText" xml:space="preserve">
     <value>Visiter la page du projet sur</value>
   </data>
-  <data name="OSVersionMessage" xml:space="preserve">
+  <data name="Error_OSVersionMessage" xml:space="preserve">
     <value>Ce logiciel est conçu uniquement pour Windows 10. Envisagez de mettre à jour votre OS.</value>
   </data>
-  <data name="RunningAppMessage" xml:space="preserve">
+  <data name="Error_RunningAppMessage" xml:space="preserve">
     <value>Ce logiciel est déjà en cours d'exécution.</value>
   </data>
-  <data name="AppName" xml:space="preserve">
+  <data name="App_AppName" xml:space="preserve">
     <value>darker</value>
   </data>
-  <data name="SysThemeControlLink" xml:space="preserve">
+  <data name="Advanced_TroubleshootingThemeSettingsLink" xml:space="preserve">
     <value>Réglages du thème</value>
   </data>
-  <data name="ResetButton" xml:space="preserve">
+  <data name="Advanced_TroubleshootingThemeResetButton" xml:space="preserve">
     <value>Réinitialiser le thème</value>
   </data>
-  <data name="GeneralTab" xml:space="preserve">
+  <data name="Nav_GeneralTab" xml:space="preserve">
     <value>Général</value>
   </data>
-  <data name="BehaveHeader" xml:space="preserve">
+  <data name="General_BehaveBoxHeader" xml:space="preserve">
     <value>Lorsque vous appuyez sur l'icône:</value>
   </data>
-  <data name="AppSetHeader" xml:space="preserve">
+  <data name="General_AppSetingsGroupHeader" xml:space="preserve">
     <value>Application</value>
   </data>
-  <data name="ChangeBothRadio" xml:space="preserve">
+  <data name="General_BoxItemChangeBoth" xml:space="preserve">
     <value>Changer l'apparence du système et des applications</value>
   </data>
-  <data name="ChangeOnlySRadio" xml:space="preserve">
+  <data name="General_BoxItemChangeOnlySys" xml:space="preserve">
     <value>Changer l'apparence du système uniquement</value>
   </data>
-  <data name="ChangeOnlyARadio" xml:space="preserve">
+  <data name="General_BoxItemChangeOnlyApp" xml:space="preserve">
     <value>Changer l'apparence des applications uniquement</value>
   </data>
-  <data name="AutoUButton" xml:space="preserve">
+  <data name="General_AppAutoUpdateToggleHeader" xml:space="preserve">
     <value>Activer les mises à jour automatiques</value>
+  </data>
+  <data name="Nav_WindowTitle" xml:space="preserve">
+    <value>Réglages</value>
+  </data>
+  <data name="About_AboutGroupHeader" xml:space="preserve">
+    <value>À propos</value>
   </data>
 </root>

@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using darker.Properties;
+using System.Diagnostics;
 using System.Reflection;
+using System.Resources;
 using System.Windows.Controls;
 
 namespace darker.Views
@@ -15,7 +17,8 @@ namespace darker.Views
             //Handle version text
             var assembly = Assembly.GetExecutingAssembly();
             var assemblyVersion = assembly.GetName().Version;
-            VersionText.Text = $"darker {assemblyVersion}";
+            var resourceManager = new ResourceManager(typeof(Resources));
+            VersionText.Text = resourceManager.GetString("App_AppName") + $" {assemblyVersion}";
         }
 
         //Handle GH link navigation

@@ -117,58 +117,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutButton" xml:space="preserve">
+  <data name="Nav_AboutTab" xml:space="preserve">
     <value>Про програму</value>
   </data>
-  <data name="AuthorText" xml:space="preserve">
+  <data name="About_AuthorNameText" xml:space="preserve">
     <value>Роман Лінев</value>
   </data>
-  <data name="AutoSButton" xml:space="preserve">
+  <data name="General_AppAutoStartToggleHeader" xml:space="preserve">
     <value>Запускати автоматично</value>
   </data>
-  <data name="ExitButton" xml:space="preserve">
+  <data name="Main_MenuExitButton" xml:space="preserve">
     <value>Вихід</value>
   </data>
-  <data name="SettingsButton" xml:space="preserve">
+  <data name="Main_MenuSettingsButton" xml:space="preserve">
     <value>Налаштування</value>
   </data>
-  <data name="VisitText" xml:space="preserve">
+  <data name="About_VisitGHLinkText" xml:space="preserve">
     <value>Сторінка проекту на</value>
   </data>
-  <data name="OSVersionMessage" xml:space="preserve">
+  <data name="Error_OSVersionMessage" xml:space="preserve">
     <value>Цей додаток працює лише на Windows 10. Задумайтесь щодо необхідності оновлення ОС.</value>
   </data>
-  <data name="RunningAppMessage" xml:space="preserve">
+  <data name="Error_RunningAppMessage" xml:space="preserve">
     <value>Додаток вже запущено.</value>
   </data>
-  <data name="AppName" xml:space="preserve">
+  <data name="App_AppName" xml:space="preserve">
     <value>darker</value>
   </data>
-  <data name="SysThemeControlLink" xml:space="preserve">
+  <data name="Advanced_TroubleshootingThemeSettingsLink" xml:space="preserve">
     <value>Налаштування теми</value>
   </data>
-  <data name="ResetButton" xml:space="preserve">
+  <data name="Advanced_TroubleshootingThemeResetButton" xml:space="preserve">
     <value>Скинути тему</value>
   </data>
-  <data name="GeneralTab" xml:space="preserve">
+  <data name="Nav_GeneralTab" xml:space="preserve">
     <value>Головне</value>
   </data>
-  <data name="BehaveHeader" xml:space="preserve">
+  <data name="General_BehaveBoxHeader" xml:space="preserve">
     <value>Якщо клацнути піктограму:</value>
   </data>
-  <data name="AppSetHeader" xml:space="preserve">
+  <data name="General_AppSetingsGroupHeader" xml:space="preserve">
     <value>Додаток</value>
   </data>
-  <data name="ChangeBothRadio" xml:space="preserve">
+  <data name="General_BoxItemChangeBoth" xml:space="preserve">
     <value>Змінювати вигляд системи і додатків</value>
   </data>
-  <data name="ChangeOnlySRadio" xml:space="preserve">
+  <data name="General_BoxItemChangeOnlySys" xml:space="preserve">
     <value>Змінювати вид тільки системи</value>
   </data>
-  <data name="ChangeOnlyARadio" xml:space="preserve">
+  <data name="General_BoxItemChangeOnlyApp" xml:space="preserve">
     <value>Змінювати вигляд тільки додатків</value>
   </data>
-  <data name="AutoUButton" xml:space="preserve">
+  <data name="General_AppAutoUpdateToggleHeader" xml:space="preserve">
     <value>Дозволити автоматичне оновлення</value>
+  </data>
+  <data name="Nav_WindowTitle" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="About_AboutGroupHeader" xml:space="preserve">
+    <value>Про програму</value>
   </data>
 </root>
