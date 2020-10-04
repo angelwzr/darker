@@ -1,12 +1,12 @@
-﻿using darker.Helpers;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using darker.Helpers;
 
 namespace darker.Views
 {
     /// <summary>
-    /// Interaction logic for SettingsAdvanced.xaml
+    ///     Interaction logic for SettingsAdvanced.xaml
     /// </summary>
     public partial class SettingsAdvanced : Page
     {

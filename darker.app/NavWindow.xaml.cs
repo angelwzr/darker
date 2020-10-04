@@ -1,12 +1,12 @@
-﻿using ModernWpf.Controls;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using ModernWpf.Controls;
 
 namespace darker
 {
     /// <summary>
-    /// Interaction logic for NavWindow.xaml
+    ///     Interaction logic for NavWindow.xaml
     /// </summary>
     public partial class NavWindow : Window
     {
@@ -44,8 +44,8 @@ namespace darker
                         break;
 
                     //case "NavScheduler":
-                        //ContentFrame.Navigate(new Uri("Views/SettingsScheduler.xaml", UriKind.RelativeOrAbsolute));
-                        //break;
+                    //ContentFrame.Navigate(new Uri("Views/SettingsScheduler.xaml", UriKind.RelativeOrAbsolute));
+                    //break;
 
                     case "NavAdvanced":
                         ContentFrame.Navigate(new Uri("Views/SettingsAdvanced.xaml", UriKind.RelativeOrAbsolute));

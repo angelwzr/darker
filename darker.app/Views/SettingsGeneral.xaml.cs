@@ -7,7 +7,7 @@ using Microsoft.Win32;
 namespace darker.Views
 {
     /// <summary>
-    /// Interaction logic for SettingsGeneral.xaml
+    ///     Interaction logic for SettingsGeneral.xaml
     /// </summary>
     public partial class SettingsGeneral : Page
     {
@@ -62,7 +62,7 @@ namespace darker.Views
             }
         }
 
-    private void AutoStart_Toggled(object sender, RoutedEventArgs e)
+        private void AutoStart_Toggled(object sender, RoutedEventArgs e)
         {
             if (AutoStartToggle.IsOn)
             {
@@ -96,7 +96,7 @@ namespace darker.Views
         {
             var comboBoxItem = e.AddedItems[0] as ComboBoxItem;
             if (comboBoxItem == null) return;
-            var name = comboBoxItem.Name as string;
+            var name = comboBoxItem.Name;
             switch (name)
             {
                 case "Both":

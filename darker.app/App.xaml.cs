@@ -2,18 +2,19 @@
 using System.Resources;
 using System.Threading;
 using System.Windows;
+using darker.Properties;
 
 namespace darker
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    ///     Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
         //Mutex
         private const string MutexName = "##||darker||##";
-        private readonly Mutex _mutex;
         private readonly bool _createdNew;
+        private readonly Mutex _mutex;
 
         public App()
         {
@@ -22,7 +23,7 @@ namespace darker
             //Allow single instance of the app only
             _mutex = new Mutex(true, MutexName, out _createdNew);
             if (_createdNew) return;
-            var resourceManager = new ResourceManager(typeof(Properties.Resources));
+            var resourceManager = new ResourceManager(typeof(Resources));
             MessageBox.Show(resourceManager.GetString("RunningAppMessage"), resourceManager.GetString("AppName"));
             Current.Shutdown(0);
         }
@@ -38,7 +39,7 @@ namespace darker
         private void CheckWin()
         {
             if (Environment.OSVersion.Version.Major >= 10 || Environment.OSVersion.Version.Minor <= 0) return;
-            var resourceManager = new ResourceManager(typeof(Properties.Resources));
+            var resourceManager = new ResourceManager(typeof(Resources));
             MessageBox.Show(resourceManager.GetString("OSVersionMessage"), resourceManager.GetString("AppName"));
             Current.Shutdown();
         }
