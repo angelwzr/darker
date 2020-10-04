@@ -25,7 +25,10 @@ namespace darker
 
         public SettingsThemeMode ThemeMode { get; set; } = SettingsThemeMode.Both;
 
+
         public bool IsAutoUpdateEnabled { get; set; } = true;
+
+        public bool IsHotKeyEnabled { get; set; } = true;
 
         public static AppSettings Default
         {

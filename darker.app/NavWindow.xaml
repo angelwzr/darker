@@ -28,14 +28,14 @@
                 <ui:NavigationViewItem Icon="Home" x:Name="Main" Tag="SettingsGeneral">
                     <TextBlock Text="{x:Static res:Resources.GeneralTab}" Tag="NavHome" />
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem x:Name="Scheduler" Tag="SettingsScheduler">
+                <!--<ui:NavigationViewItem x:Name="Scheduler" Tag="SettingsScheduler">
                     <ui:NavigationViewItem.Content>
                         <TextBlock Tag="NavScheduler">Schedule</TextBlock>
                     </ui:NavigationViewItem.Content>
                     <ui:NavigationViewItem.Icon>
                         <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEC92;" />
                     </ui:NavigationViewItem.Icon>
-                </ui:NavigationViewItem>
+                </ui:NavigationViewItem>-->
                 <ui:NavigationViewItem Icon="Repair" x:Name="Advanced" Tag="SettingsAdvanced">
                     <TextBlock Tag="NavAdvanced">Advanced</TextBlock>
                 </ui:NavigationViewItem>

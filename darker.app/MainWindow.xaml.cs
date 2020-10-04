@@ -21,7 +21,8 @@ namespace darker
                 UpdateHelper.CheckForUpdates();
 
             //Implementing hotkeys
-            HotkeyManager.Current.AddOrReplace("Switch", Key.D, ModifierKeys.Control | ModifierKeys.Alt, OnHotKey);
+            if (AppSettings.Default.IsHotKeyEnabled)
+                HotkeyManager.Current.AddOrReplace("Switch", Key.D, ModifierKeys.Control | ModifierKeys.Alt, OnHotKey);
         }
 
         private void OnHotKey(object sender, HotkeyEventArgs e)
@@ -65,13 +66,6 @@ namespace darker
             {
                 navWindow.Focus();
             }
-        }
-
-        //Debug menu item
-        private void DebugW_Click(object sender, RoutedEventArgs e)
-        {
-            var settingsWindow = new SettingsWindow();
-            settingsWindow.Show();
         }
 
         //Exit menu item

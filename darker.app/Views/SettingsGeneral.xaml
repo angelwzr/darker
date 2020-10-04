@@ -13,12 +13,6 @@
       Loaded="OnLoad">
     <Grid>
         <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
-            <GroupBox Header="{x:Static res:Resources.AppSetHeader}">
-                <ui:SimpleStackPanel>
-                <ui:ToggleSwitch x:Name="AutoStartToggle" Header="{x:Static res:Resources.AutoSButton}" Toggled="AutoStart_Toggled"/>
-                <ui:ToggleSwitch x:Name="AutoUpdateToggle" Header="{x:Static res:Resources.AutoUButton}" Toggled="AutoUpdate_Toggled" />
-            </ui:SimpleStackPanel>
-            </GroupBox>
             <GroupBox Header="Behavior">
                 <ui:SimpleStackPanel>
                     <ComboBox Width="300" x:Name="ModeComboBox" ui:ControlHelper.Header="{x:Static res:Resources.BehaveHeader}" ui:ControlHelper.PlaceholderText="Choose your mode" SelectionChanged="IconSwitchMode_SelectionChanged">
@@ -26,12 +20,12 @@
                         <ComboBoxItem x:Name="SysOnly" Content="{x:Static res:Resources.ChangeOnlySRadio}"/>
                         <ComboBoxItem x:Name="AppsOnly" Content="{x:Static res:Resources.ChangeOnlyARadio}"/>
                     </ComboBox>
-                    <!--<RadioButton x:Name="Both" GroupName="ThemeModeSel" Checked="Both_OnChecked"
-                         Content="{x:Static res:Resources.ChangeBothRadio}" />
-            <RadioButton x:Name="SysOnly" GroupName="ThemeModeSel" Checked="SysOnly_OnChecked"
-                         Content="{x:Static res:Resources.ChangeOnlySRadio}" />
-            <RadioButton x:Name="AppsOnly" GroupName="ThemeModeSel" Checked="AppsOnly_OnChecked"
-                         Content="{x:Static res:Resources.ChangeOnlyARadio}" />-->
+                </ui:SimpleStackPanel>
+            </GroupBox>
+            <GroupBox Header="{x:Static res:Resources.AppSetHeader}">
+                <ui:SimpleStackPanel>
+                    <ui:ToggleSwitch x:Name="AutoStartToggle" Header="{x:Static res:Resources.AutoSButton}" Toggled="AutoStart_Toggled"/>
+                    <ui:ToggleSwitch x:Name="AutoUpdateToggle" Header="{x:Static res:Resources.AutoUButton}" Toggled="AutoUpdate_Toggled" />
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

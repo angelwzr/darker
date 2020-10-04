@@ -43,9 +43,9 @@ namespace darker
                         ContentFrame.Navigate(new Uri("Views/SettingsGeneral.xaml", UriKind.RelativeOrAbsolute));
                         break;
 
-                    case "NavScheduler":
-                        ContentFrame.Navigate(new Uri("Views/SettingsScheduler.xaml", UriKind.RelativeOrAbsolute));
-                        break;
+                    //case "NavScheduler":
+                        //ContentFrame.Navigate(new Uri("Views/SettingsScheduler.xaml", UriKind.RelativeOrAbsolute));
+                        //break;
 
                     case "NavAdvanced":
                         ContentFrame.Navigate(new Uri("Views/SettingsAdvanced.xaml", UriKind.RelativeOrAbsolute));
@@ -55,11 +55,6 @@ namespace darker
                         ContentFrame.Navigate(new Uri("Views/SettingsAbout.xaml", UriKind.RelativeOrAbsolute));
                         break;
                 }
-        }
-
-        public static implicit operator NavWindow(SettingsWindow v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

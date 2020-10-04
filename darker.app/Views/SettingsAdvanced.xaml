@@ -8,12 +8,20 @@
       xmlns:local="clr-namespace:darker.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SettingsAdvanced">
+      Title="SettingsAdvanced"
+      Loaded="OnLoad">
     <Grid>
         <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
+            <GroupBox Header="Keyboard shortcuts">
+                <ui:SimpleStackPanel Spacing="12">
+                    <TextBlock TextWrapping="WrapWithOverflow" Width="350" Text="Here you can configure a way to switch a theme mode from keyboard. Custom hotkeys are disabled in this version, use the default one."/>
+                    <ui:ToggleSwitch x:Name="HotkeyToggle" Header="Enable hotkeys" Toggled="Hotkey_Toggled"/>
+                    <TextBox IsReadOnly="True" ui:ControlHelper.PlaceholderText="Ctrl+Alt+D" ui:ControlHelper.Header="Custom hotkey combination:"/>
+                </ui:SimpleStackPanel>
+            </GroupBox>
             <GroupBox Header="Trobleshooting">
                 <ui:SimpleStackPanel Spacing="12">
-                    <TextBlock TextWrapping="WrapWithOverflow" Width="300" Text="If you find that some theme settings are off, you can use this button to reset everything to Windows 10 default theme."/>
+                    <TextBlock TextWrapping="WrapWithOverflow" Width="350" Text="If you find that some theme settings are off, you can use this button to reset everything to Windows 10 default theme."/>
                     <Button Content="{x:Static res:Resources.ResetButton}" Click="Reset_Click"/>
                     <ui:HyperlinkButton Content="{x:Static res:Resources.SysThemeControlLink}" Click="ThemeSettings_Click"/>
                 </ui:SimpleStackPanel>

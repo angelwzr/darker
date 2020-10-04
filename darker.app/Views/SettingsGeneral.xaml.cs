@@ -37,8 +37,6 @@ namespace darker.Views
                     break;
             }
 
-            
-
             //AutoUpadte toggle state
             switch (AppSettings.Default.IsAutoUpdateEnabled)
             {

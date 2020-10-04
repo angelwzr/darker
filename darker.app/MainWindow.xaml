@@ -24,8 +24,6 @@
                 <ContextMenu x:Uid="ContextMenu" ui:ThemeManager.RequestedTheme="Dark">
                     <MenuItem x:Uid="SettingsButton" Header="{x:Static res:Resources.SettingsButton}"
                               Click="Settings_Click" />
-                    <MenuItem x:Uid="DebugButton" Header="Old settings"
-                              Click="DebugW_Click" />
                     <MenuItem x:Uid="ExitButton" Header="{x:Static res:Resources.ExitButton}" Click="Exit_Click" />
                 </ContextMenu>
             </tb:TaskbarIcon.ContextMenu>

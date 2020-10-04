@@ -76,7 +76,7 @@ namespace darker.Helpers
         {
             using var key = Registry.CurrentUser.CreateSubKey(RegistryKeyPathTheme);
 
-            key.SetValue(RegSysMode, "1", RegistryValueKind.DWord);
+            key.SetValue(RegSysMode, "0", RegistryValueKind.DWord);
             key.SetValue(RegAppMode, "1", RegistryValueKind.DWord);
             key.SetValue(RegColPMode, "0", RegistryValueKind.DWord);
             key.Close();
