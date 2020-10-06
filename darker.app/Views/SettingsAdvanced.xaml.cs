@@ -27,6 +27,19 @@ namespace darker.Views
                     HotkeyToggle.IsOn = false;
                     break;
             }
+
+            //AutoU checkbox
+            switch (AppSettings.Default.IsDebugEnabled)
+            {
+                case true:
+                    DebugCheckbox.IsChecked = true;
+                    break;
+
+                case false:
+                    DebugCheckbox.IsChecked = false;
+                    break;
+            }
+
         }
 
         private void Hotkey_Toggled(object sender, RoutedEventArgs e)
@@ -53,6 +66,18 @@ namespace darker.Views
         private void ThemeSettings_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("ms-settings:colors") {UseShellExecute = true});
+        }
+
+        private void DebugCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            AppSettings.Default.IsDebugEnabled = true;
+            AppSettings.Default.Save();
+        }
+
+        private void DebugCheckbox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            AppSettings.Default.IsDebugEnabled = false;
+            AppSettings.Default.Save();
         }
     }
 }
