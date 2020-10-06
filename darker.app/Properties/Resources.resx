@@ -187,7 +187,8 @@
     <value>Keyboard shortcuts</value>
   </data>
   <data name="Advanced_HotKeyBodyText" xml:space="preserve">
-    <value>Here you can configure a way to switch a theme mode from keyboard. Custom hotkeys are disabled in this version, use the default one.</value>
+    <value>Here you can configure a way to switch a theme mode from keyboard.
+</value>
   </data>
   <data name="Advanced_HotKeyToggleHeader" xml:space="preserve">
     <value>Enable hotkeys</value>
@@ -203,5 +204,23 @@
   </data>
   <data name="About_AboutGroupHeader" xml:space="preserve">
     <value>About</value>
+  </data>
+  <data name="Advanced_HotKeyNotImplementedText" xml:space="preserve">
+    <value>Custom hotkeys are disabled in this version, use the default one.</value>
+  </data>
+  <data name="General_BoxPlaceholderText" xml:space="preserve">
+    <value>Choose your mode</value>
+  </data>
+  <data name="General_BehaveBodyText" xml:space="preserve">
+    <value>Configure what clicking on the tray icon actually does. Try every option to choose the right one for you.</value>
+  </data>
+  <data name="About_AppGroupHeader" xml:space="preserve">
+    <value>Application</value>
+  </data>
+  <data name="About_SupportGroupHeader" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="About_SupportBodyText" xml:space="preserve">
+    <value>This application is completely free and open-source. </value>
   </data>
 </root>

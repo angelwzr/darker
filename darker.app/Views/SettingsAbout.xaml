@@ -6,17 +6,29 @@
       xmlns:ui="http://schemas.modernwpf.com/2019"
       xmlns:res="clr-namespace:darker.Properties"
       mc:Ignorable="d"
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="SettingsAbout">
+      d:DesignHeight="600" d:DesignWidth="800"
+      Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
+      Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}">
     <Grid>
         <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
-            <GroupBox Header="{x:Static res:Resources.About_AboutGroupHeader}">
-                <ui:SimpleStackPanel>
-                    <TextBlock x:Name="VersionText" Text="ver" />
-                    <TextBlock x:Uid="AuthorText" Text="{x:Static res:Resources.About_AuthorNameText}" />
+            <TextBlock
+                Text="{x:Static res:Resources.Nav_AboutTab}"
+                Style="{StaticResource TitleTextBlockStyle}"
+                FontSize="28"
+                Margin="0,8,0,12" />
+            <GroupBox Header="{x:Static res:Resources.About_AppGroupHeader}">
+                <ui:SimpleStackPanel Spacing="12">
+                    <TextBlock x:Name="VersionText" Text="ver" FontSize="14"/>
+                    <TextBlock x:Uid="AuthorText" Text="{x:Static res:Resources.About_AuthorNameText}" FontSize="14"/>
+                </ui:SimpleStackPanel>
+            </GroupBox>
+            <GroupBox Header="{x:Static res:Resources.About_SupportGroupHeader}">
+                <ui:SimpleStackPanel Spacing="12">
+                    <TextBlock TextWrapping="WrapWithOverflow" Width="350"
+                               Text="{x:Static res:Resources.About_SupportBodyText}" FontSize="14" />
                     <TextBlock x:Uid="GHText">
-                        <Run x:Uid="VisitText" Text="{x:Static res:Resources.About_VisitGHLinkText}" />
-                        <Hyperlink NavigateUri="https://github.com/angelwzr/darker"
+                        <Run x:Uid="VisitText" Text="{x:Static res:Resources.About_VisitGHLinkText}" FontSize="14"/>
+                        <Hyperlink FontSize="14" NavigateUri="https://github.com/angelwzr/darker"
                                    RequestNavigate="Link_RequestNavigate">
                             <Hyperlink.Inlines>
                                 <Run Text="GitHub" />

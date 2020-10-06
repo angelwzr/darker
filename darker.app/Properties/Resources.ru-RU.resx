@@ -198,4 +198,13 @@
   <data name="Advanced_HotKeyToggleHeader" xml:space="preserve">
     <value>Включить управление с клавиатуры</value>
   </data>
+  <data name="General_BoxPlaceholderText" xml:space="preserve">
+    <value>Выберите режим</value>
+  </data>
+  <data name="About_AppGroupHeader" xml:space="preserve">
+    <value>Приложение</value>
+  </data>
+  <data name="About_SupportGroupHeader" xml:space="preserve">
+    <value>Поддержка</value>
+  </data>
 </root>

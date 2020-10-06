@@ -11,8 +11,6 @@
         MinWidth="800" MinHeight="600"
         ui:WindowHelper.UseModernWindowStyle="True"
         ui:ThemeManager.IsThemeAware="True"
-        Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
-        Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
         Icon="/Resources/icon.ico"
         Title="{x:Static res:Resources.Nav_WindowTitle}">
     <Grid>
@@ -29,14 +27,6 @@
                 <ui:NavigationViewItem Icon="Home" x:Name="Main" Tag="SettingsGeneral">
                     <TextBlock Text="{x:Static res:Resources.Nav_GeneralTab}" Tag="NavHome" />
                 </ui:NavigationViewItem>
-                <!--<ui:NavigationViewItem x:Name="Scheduler" Tag="SettingsScheduler">
-                    <ui:NavigationViewItem.Content>
-                        <TextBlock Tag="NavScheduler">Schedule</TextBlock>
-                    </ui:NavigationViewItem.Content>
-                    <ui:NavigationViewItem.Icon>
-                        <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEC92;" />
-                    </ui:NavigationViewItem.Icon>
-                </ui:NavigationViewItem>-->
                 <ui:NavigationViewItem Icon="Repair" x:Name="Advanced" Tag="SettingsAdvanced">
                     <TextBlock Tag="NavAdvanced" Text="{x:Static res:Resources.Nav_AdvancedTab}"/>
                 </ui:NavigationViewItem>
@@ -48,8 +38,18 @@
                         <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
+                <ui:NavigationViewItem x:Name="Debug" Tag="SettingsDebug" IsEnabled="False">
+                    <ui:NavigationViewItem.Content>
+                        <TextBlock Tag="NavDebug" Text="Debug"/>
+                    </ui:NavigationViewItem.Content>
+                    <ui:NavigationViewItem.Icon>
+                        <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEBE8;" />
+                    </ui:NavigationViewItem.Icon>
+                </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
-            <Frame x:Name="ContentFrame" Padding="12,0,12,24" NavigationUIVisibility="Hidden" />
+            <ScrollViewer>
+            <ui:Frame x:Name="ContentFrame" Padding="12,0,12,24" NavigationUIVisibility="Hidden" />
+            </ScrollViewer>
         </ui:NavigationView>
     </Grid>
 </Window>

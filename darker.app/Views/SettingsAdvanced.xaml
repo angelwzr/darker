@@ -6,27 +6,36 @@
       xmlns:ui="http://schemas.modernwpf.com/2019"
       xmlns:res="clr-namespace:darker.Properties"
       mc:Ignorable="d"
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="SettingsAdvanced"
+      d:DesignHeight="600" d:DesignWidth="800"
+      Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
+      Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
       Loaded="OnLoad">
     <Grid>
         <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
+            <TextBlock
+                Text="{x:Static res:Resources.Nav_AdvancedTab}"
+                Style="{StaticResource TitleTextBlockStyle}"
+                FontSize="28"
+                Margin="0,8,0,12" />
             <GroupBox Header="{x:Static res:Resources.Advanced_HotKeyGroupHeader}">
                 <ui:SimpleStackPanel Spacing="12">
                     <TextBlock TextWrapping="WrapWithOverflow" Width="350"
-                               Text="{x:Static res:Resources.Advanced_HotKeyBodyText}" />
+                               Text="{x:Static res:Resources.Advanced_HotKeyBodyText}" FontSize="14" />
                     <ui:ToggleSwitch x:Name="HotkeyToggle" Header="{x:Static res:Resources.Advanced_HotKeyToggleHeader}" Toggled="Hotkey_Toggled" />
                     <TextBox IsReadOnly="True" ui:ControlHelper.PlaceholderText="Ctrl+Alt+D"
                              ui:ControlHelper.Header="{x:Static res:Resources.Advanced_HotKeyBoxHeader}" />
+                    <TextBlock TextWrapping="WrapWithOverflow" Width="350"
+                               Text="{x:Static res:Resources.Advanced_HotKeyNotImplementedText}" FontSize="14" Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
                 </ui:SimpleStackPanel>
             </GroupBox>
             <GroupBox Header="{x:Static res:Resources.Advanced_TrobleshootingGroupHeader}">
                 <ui:SimpleStackPanel Spacing="12">
                     <TextBlock TextWrapping="WrapWithOverflow" Width="350"
-                               Text="{x:Static res:Resources.Advanced_TrobleshootingBodyText}" />
+                               Text="{x:Static res:Resources.Advanced_TrobleshootingBodyText}" FontSize="14" />
                     <Button Content="{x:Static res:Resources.Advanced_TroubleshootingThemeResetButton}" Click="Reset_Click" />
                     <ui:HyperlinkButton Content="{x:Static res:Resources.Advanced_TroubleshootingThemeSettingsLink}"
                                         Click="ThemeSettings_Click" />
+                    <CheckBox x:Name="DebugCheckbox" Content="Enable debug page" Checked="DebugCheckbox_Checked" Unchecked="DebugCheckbox_Unchecked"/> 
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

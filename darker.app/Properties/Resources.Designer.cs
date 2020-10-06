@@ -70,11 +70,38 @@ namespace darker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        public static string About_AppGroupHeader {
+            get {
+                return ResourceManager.GetString("About_AppGroupHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Roman Linev.
         /// </summary>
         public static string About_AuthorNameText {
             get {
                 return ResourceManager.GetString("About_AuthorNameText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This application is completely free and open-source. .
+        /// </summary>
+        public static string About_SupportBodyText {
+            get {
+                return ResourceManager.GetString("About_SupportBodyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Support.
+        /// </summary>
+        public static string About_SupportGroupHeader {
+            get {
+                return ResourceManager.GetString("About_SupportGroupHeader", resourceCulture);
             }
         }
         
@@ -88,7 +115,8 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Here you can configure a way to switch a theme mode from keyboard. Custom hotkeys are disabled in this version, use the default one..
+        ///   Looks up a localized string similar to Here you can configure a way to switch a theme mode from keyboard.
+        ///.
         /// </summary>
         public static string Advanced_HotKeyBodyText {
             get {
@@ -111,6 +139,15 @@ namespace darker.Properties {
         public static string Advanced_HotKeyGroupHeader {
             get {
                 return ResourceManager.GetString("Advanced_HotKeyGroupHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom hotkeys are disabled in this version, use the default one..
+        /// </summary>
+        public static string Advanced_HotKeyNotImplementedText {
+            get {
+                return ResourceManager.GetString("Advanced_HotKeyNotImplementedText", resourceCulture);
             }
         }
         
@@ -223,6 +260,15 @@ namespace darker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Configure what clicking on the tray icon actually does. Try every option to choose the right one for you..
+        /// </summary>
+        public static string General_BehaveBodyText {
+            get {
+                return ResourceManager.GetString("General_BehaveBodyText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to On icon click:.
         /// </summary>
         public static string General_BehaveBoxHeader {
@@ -264,6 +310,15 @@ namespace darker.Properties {
         public static string General_BoxItemChangeOnlySys {
             get {
                 return ResourceManager.GetString("General_BoxItemChangeOnlySys", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose your mode.
+        /// </summary>
+        public static string General_BoxPlaceholderText {
+            get {
+                return ResourceManager.GetString("General_BoxPlaceholderText", resourceCulture);
             }
         }
         

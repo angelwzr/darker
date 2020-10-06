@@ -6,16 +6,23 @@
       xmlns:ui="http://schemas.modernwpf.com/2019"
       xmlns:res="clr-namespace:darker.Properties"
       mc:Ignorable="d"
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="SettingsGeneral"
+      d:DesignHeight="600" d:DesignWidth="800"
+      Background="{DynamicResource SystemControlPageBackgroundAltHighBrush}"
+      Foreground="{DynamicResource SystemControlPageTextBaseHighBrush}"
       Loaded="OnLoad">
     <Grid>
         <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left">
+            <TextBlock
+                Text="{x:Static res:Resources.Nav_GeneralTab}"
+                Style="{StaticResource TitleTextBlockStyle}"
+                FontSize="28"
+                Margin="0,8,0,12" />
             <GroupBox Header="{x:Static res:Resources.General_BehaveGroupHeader}">
-                <ui:SimpleStackPanel>
+                <ui:SimpleStackPanel Spacing="12">
+                    <TextBlock Text="{x:Static res:Resources.General_BehaveBodyText}" TextWrapping="WrapWithOverflow" Width="350" FontSize="14"/>
                     <ComboBox Width="300" x:Name="ModeComboBox"
                               ui:ControlHelper.Header="{x:Static res:Resources.General_BehaveBoxHeader}"
-                              ui:ControlHelper.PlaceholderText="Choose your mode"
+                              ui:ControlHelper.PlaceholderText="{x:Static res:Resources.General_BoxPlaceholderText}"
                               SelectionChanged="IconSwitchMode_SelectionChanged">
                         <ComboBoxItem x:Name="Both" Content="{x:Static res:Resources.General_BoxItemChangeBoth}" />
                         <ComboBoxItem x:Name="SysOnly" Content="{x:Static res:Resources.General_BoxItemChangeOnlySys}" />
@@ -24,7 +31,7 @@
                 </ui:SimpleStackPanel>
             </GroupBox>
             <GroupBox Header="{x:Static res:Resources.General_AppSetingsGroupHeader}">
-                <ui:SimpleStackPanel>
+                <ui:SimpleStackPanel Spacing="12">
                     <ui:ToggleSwitch x:Name="AutoStartToggle" Header="{x:Static res:Resources.General_AppAutoStartToggleHeader}"
                                      Toggled="AutoStart_Toggled" />
                     <ui:ToggleSwitch x:Name="AutoUpdateToggle" Header="{x:Static res:Resources.General_AppAutoUpdateToggleHeader}"
