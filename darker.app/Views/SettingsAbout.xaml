@@ -17,10 +17,21 @@
                 FontSize="28"
                 Margin="0,8,0,12" />
             <GroupBox Header="{x:Static res:Resources.About_AppGroupHeader}">
-                <ui:SimpleStackPanel Spacing="12">
-                    <TextBlock x:Name="VersionText" Text="ver" FontSize="14"/>
-                    <TextBlock x:Uid="AuthorText" Text="{x:Static res:Resources.About_AuthorNameText}" FontSize="14"/>
-                </ui:SimpleStackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ui:SimpleStackPanel Grid.Column="0" Spacing="12">
+                        <TextBlock x:Name="VersionHeader" Text="Version" FontSize="14"/>
+                        <TextBlock x:Name="AuthorHeader" Text="Author" FontSize="14"/>
+                    </ui:SimpleStackPanel>
+                    <ui:SimpleStackPanel Grid.Column="1" Spacing="12">
+                        <TextBlock x:Name="VersionText" Text="ver" FontSize="14"/>
+                        <TextBlock x:Name="AuthorText" Text="{x:Static res:Resources.About_AuthorNameText}" FontSize="14"/>
+                    </ui:SimpleStackPanel>
+                </Grid>
+             
             </GroupBox>
             <GroupBox Header="{x:Static res:Resources.About_SupportGroupHeader}">
                 <ui:SimpleStackPanel Spacing="12">
