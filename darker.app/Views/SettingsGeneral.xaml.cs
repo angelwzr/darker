@@ -130,7 +130,7 @@ namespace darker.Views
             }
         }
 
-        private async void ShowDialog_Click(object sender, RoutedEventArgs e)
+        private async void ShowSchedulerFrameButton_Click(object sender, RoutedEventArgs e)
         {
             SettingsSchedulerDialog dialog = new SettingsSchedulerDialog();
             var result = await dialog.ShowAsync();

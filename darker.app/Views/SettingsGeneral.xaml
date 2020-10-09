@@ -30,7 +30,7 @@
                     </ComboBox>
                     <ui:ToggleSwitch x:Name="AutoThemeChangingToggle" Header="Enable automatic theme switching"
                                      Toggled="AutoThemeChanging_Toggled" />
-                    <Button x:Name="ShowSchedulerFrameButton" Content="Show dialog" Click="ShowDialog_Click" IsEnabled="False"/>
+                    <Button x:Name="ShowSchedulerFrameButton" Content="Set up a schedule" Click="ShowSchedulerFrameButton_Click" IsEnabled="False"/>
                 </ui:SimpleStackPanel>
             </GroupBox>
             <GroupBox Header="{x:Static res:Resources.General_AppSetingsGroupHeader}">

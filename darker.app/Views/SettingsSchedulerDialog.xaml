@@ -4,13 +4,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 
-        Title="Set up automatic theme changing"
+        Title="Set up a schedule"
         PrimaryButtonText="Save"
         CloseButtonText="Cancel"
         DefaultButton="Primary">
 
     <ui:SimpleStackPanel Spacing="12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <TextBlock Text="Here you can set automatic theme switching on desired time. Here you can set automatic theme switching on desired time.Here you can set automatic theme switching on desired time.Here you can set automatic theme switching on desired time.Here you can set automatic theme switching on desired time.Here you can set automatic theme switching on desired time.Here you can set automatic theme switching on desired time.Here you can set automatic theme switching on desired time.Here you can set automatic theme switching on desired time."
+        <TextBlock Text="Here you can set automatic theme switching on desired time. Please note that darker should be running in that desired time for this function to work properly."
             TextWrapping="Wrap" />
         <TextBlock Text="Switch to the light theme on:"/>
         <TextBlock Text="Switch to the dark theme on:"/>
