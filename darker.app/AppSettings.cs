@@ -31,8 +31,6 @@ namespace darker
 
         public bool IsHotKeyEnabled { get; set; } = true;
 
-        public bool IsDebugEnabled { get; set; } = false;
-
         public static AppSettings Default
         {
             get

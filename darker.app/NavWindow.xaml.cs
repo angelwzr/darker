@@ -13,9 +13,6 @@ namespace darker
         public NavWindow()
         {
             InitializeComponent();
-
-            if (AppSettings.Default.IsDebugEnabled)
-                Debug.IsEnabled = true;
         }
 
 
@@ -48,10 +45,6 @@ namespace darker
 
                     case "NavAdvanced":
                         ContentFrame.Navigate(new Uri("Views/SettingsAdvanced.xaml", UriKind.RelativeOrAbsolute));
-                        break;
-
-                    case "NavDebug":
-                        ContentFrame.Navigate(new Uri("Views/SettingsDebug.xaml", UriKind.RelativeOrAbsolute));
                         break;
 
                     case "NavAbout":

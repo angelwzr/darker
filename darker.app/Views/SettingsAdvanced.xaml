@@ -35,7 +35,6 @@
                     <Button Content="{x:Static res:Resources.Advanced_TroubleshootingThemeResetButton}" Click="Reset_Click" />
                     <ui:HyperlinkButton Content="{x:Static res:Resources.Advanced_TroubleshootingThemeSettingsLink}"
                                         Click="ThemeSettings_Click" />
-                    <CheckBox x:Name="DebugCheckbox" Content="Enable debug page" Checked="DebugCheckbox_Checked" Unchecked="DebugCheckbox_Unchecked"/> 
                 </ui:SimpleStackPanel>
             </GroupBox>
         </StackPanel>

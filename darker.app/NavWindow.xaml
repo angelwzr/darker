@@ -38,14 +38,6 @@
                         <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE946;" />
                     </ui:NavigationViewItem.Icon>
                 </ui:NavigationViewItem>
-                <ui:NavigationViewItem x:Name="Debug" Tag="SettingsDebug" IsEnabled="False">
-                    <ui:NavigationViewItem.Content>
-                        <TextBlock Tag="NavDebug" Text="Debug"/>
-                    </ui:NavigationViewItem.Content>
-                    <ui:NavigationViewItem.Icon>
-                        <ui:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEBE8;" />
-                    </ui:NavigationViewItem.Icon>
-                </ui:NavigationViewItem>
             </ui:NavigationView.MenuItems>
             <ScrollViewer>
             <ui:Frame x:Name="ContentFrame" Padding="12,0,12,24" NavigationUIVisibility="Hidden" />
