@@ -17,6 +17,7 @@ namespace darker
             InitializeComponent();
             SetTrayIcon();
 
+            //Update cheker
             if (AppSettings.Default.IsAutoUpdateEnabled)
                 UpdateHelper.CheckForUpdates();
 

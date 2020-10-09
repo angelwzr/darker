@@ -151,7 +151,7 @@
     <value>Основное</value>
   </data>
   <data name="General_BehaveBoxHeader" xml:space="preserve">
-    <value>При нажатии иконки:</value>
+    <value>Поведение по умолчанию:</value>
   </data>
   <data name="General_AppSetingsGroupHeader" xml:space="preserve">
     <value>Приложение</value>

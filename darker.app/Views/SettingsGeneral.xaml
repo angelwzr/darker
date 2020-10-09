@@ -28,6 +28,9 @@
                         <ComboBoxItem x:Name="SysOnly" Content="{x:Static res:Resources.General_BoxItemChangeOnlySys}" />
                         <ComboBoxItem x:Name="AppsOnly" Content="{x:Static res:Resources.General_BoxItemChangeOnlyApp}" />
                     </ComboBox>
+                    <ui:ToggleSwitch x:Name="AutoThemeChangingToggle" Header="Enable automatic theme switching"
+                                     Toggled="AutoThemeChanging_Toggled" />
+                    <Button x:Name="ShowSchedulerFrameButton" Content="Show dialog" Click="ShowDialog_Click" IsEnabled="False"/>
                 </ui:SimpleStackPanel>
             </GroupBox>
             <GroupBox Header="{x:Static res:Resources.General_AppSetingsGroupHeader}">

@@ -26,6 +26,7 @@ namespace darker
 
         public SettingsThemeMode ThemeMode { get; set; } = SettingsThemeMode.Both;
 
+        public bool IsAutoThemeChangingEnabled { get; set; } = false;
 
         public bool IsAutoUpdateEnabled { get; set; } = true;
 

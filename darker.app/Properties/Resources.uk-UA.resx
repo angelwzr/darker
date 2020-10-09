@@ -153,9 +153,6 @@
   <data name="Nav_GeneralTab" xml:space="preserve">
     <value>Головне</value>
   </data>
-  <data name="General_BehaveBoxHeader" xml:space="preserve">
-    <value>Якщо клацнути піктограму:</value>
-  </data>
   <data name="General_AppSetingsGroupHeader" xml:space="preserve">
     <value>Додаток</value>
   </data>

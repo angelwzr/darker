@@ -22,7 +22,7 @@
                     <TextBlock TextWrapping="WrapWithOverflow" Width="350"
                                Text="{x:Static res:Resources.Advanced_HotKeyBodyText}" FontSize="14" />
                     <ui:ToggleSwitch x:Name="HotkeyToggle" Header="{x:Static res:Resources.Advanced_HotKeyToggleHeader}" Toggled="Hotkey_Toggled" />
-                    <TextBox IsReadOnly="True" ui:ControlHelper.PlaceholderText="Ctrl+Alt+D"
+                    <TextBox IsReadOnly="True" IsEnabled="False" ui:ControlHelper.PlaceholderText="Ctrl+Alt+D"
                              ui:ControlHelper.Header="{x:Static res:Resources.Advanced_HotKeyBoxHeader}" />
                     <TextBlock TextWrapping="WrapWithOverflow" Width="350"
                                Text="{x:Static res:Resources.Advanced_HotKeyNotImplementedText}" FontSize="14" Foreground="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />

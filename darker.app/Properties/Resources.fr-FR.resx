@@ -153,9 +153,6 @@
   <data name="Nav_GeneralTab" xml:space="preserve">
     <value>Général</value>
   </data>
-  <data name="General_BehaveBoxHeader" xml:space="preserve">
-    <value>Lorsque vous appuyez sur l'icône:</value>
-  </data>
   <data name="General_AppSetingsGroupHeader" xml:space="preserve">
     <value>Application</value>
   </data>

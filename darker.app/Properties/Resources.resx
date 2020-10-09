@@ -151,7 +151,7 @@
     <value>General</value>
   </data>
   <data name="General_BehaveBoxHeader" xml:space="preserve">
-    <value>On icon click:</value>
+    <value>Default behavior:</value>
   </data>
   <data name="General_AppSetingsGroupHeader" xml:space="preserve">
     <value>Application</value>

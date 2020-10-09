@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using darker.Models;
+using darker.Viewes;
 using Microsoft.Win32;
 
 namespace darker.Views
@@ -9,11 +10,14 @@ namespace darker.Views
     /// <summary>
     ///     Interaction logic for SettingsGeneral.xaml
     /// </summary>
-    public partial class SettingsGeneral : Page
+    public partial class SettingsGeneral : System.Windows.Controls.Page
     {
         public SettingsGeneral()
         {
             InitializeComponent();
+
+            if (AppSettings.Default.IsAutoThemeChangingEnabled)
+                ShowSchedulerFrameButton.IsEnabled = true;
         }
 
         private void OnLoad(object sender, RoutedEventArgs e)
@@ -34,6 +38,18 @@ namespace darker.Views
 
                 case SettingsThemeMode.OnlyApps:
                     ModeComboBox.SelectedItem = AppsOnly;
+                    break;
+            }
+
+            //AutoThemeChanging toggle state
+            switch (AppSettings.Default.IsAutoThemeChangingEnabled)
+            {
+                case true:
+                    AutoThemeChangingToggle.IsOn = true;
+                    break;
+
+                case false:
+                    AutoThemeChangingToggle.IsOn = false;
                     break;
             }
 
@@ -111,6 +127,28 @@ namespace darker.Views
                     AppSettings.Default.ThemeMode = SettingsThemeMode.OnlyApps;
                     AppSettings.Default.Save();
                     break;
+            }
+        }
+
+        private async void ShowDialog_Click(object sender, RoutedEventArgs e)
+        {
+            SettingsSchedulerDialog dialog = new SettingsSchedulerDialog();
+            var result = await dialog.ShowAsync();
+        }
+
+        private void AutoThemeChanging_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (AutoThemeChangingToggle.IsOn)
+            {
+                ShowSchedulerFrameButton.IsEnabled = true;
+                AppSettings.Default.IsAutoThemeChangingEnabled = true;
+                AppSettings.Default.Save();
+            }
+            else
+            {
+                ShowSchedulerFrameButton.IsEnabled = false;
+                AppSettings.Default.IsAutoThemeChangingEnabled = false;
+                AppSettings.Default.Save();
             }
         }
     }

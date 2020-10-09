@@ -269,7 +269,7 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On icon click:.
+        ///   Looks up a localized string similar to Default behavior:.
         /// </summary>
         public static string General_BehaveBoxHeader {
             get {
