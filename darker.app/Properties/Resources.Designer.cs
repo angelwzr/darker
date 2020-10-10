@@ -287,7 +287,7 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change both system and app theme.
+        ///   Looks up a localized string similar to System and apps.
         /// </summary>
         public static string General_BoxItemChangeBoth {
             get {
@@ -296,7 +296,7 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change only apps.
+        ///   Looks up a localized string similar to Only apps.
         /// </summary>
         public static string General_BoxItemChangeOnlyApp {
             get {
@@ -305,7 +305,7 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Change only system.
+        ///   Looks up a localized string similar to Only system.
         /// </summary>
         public static string General_BoxItemChangeOnlySys {
             get {

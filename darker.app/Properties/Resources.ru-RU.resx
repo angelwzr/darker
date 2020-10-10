@@ -157,13 +157,13 @@
     <value>Приложение</value>
   </data>
   <data name="General_BoxItemChangeBoth" xml:space="preserve">
-    <value>Изменять вид системы и приложений</value>
+    <value>Cистема и приложения</value>
   </data>
   <data name="General_BoxItemChangeOnlyApp" xml:space="preserve">
-    <value>Изменять вид только приложений</value>
+    <value>Только приложения</value>
   </data>
   <data name="General_BoxItemChangeOnlySys" xml:space="preserve">
-    <value>Изменять вид только системы</value>
+    <value>Только система</value>
   </data>
   <data name="General_AppAutoUpdateToggleHeader" xml:space="preserve">
     <value>Разрешить автоматическое обновление</value>

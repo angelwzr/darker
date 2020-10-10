@@ -157,13 +157,13 @@
     <value>Application</value>
   </data>
   <data name="General_BoxItemChangeBoth" xml:space="preserve">
-    <value>Change both system and app theme</value>
+    <value>System and apps</value>
   </data>
   <data name="General_BoxItemChangeOnlySys" xml:space="preserve">
-    <value>Change only system</value>
+    <value>Only system</value>
   </data>
   <data name="General_BoxItemChangeOnlyApp" xml:space="preserve">
-    <value>Change only apps</value>
+    <value>Only apps</value>
   </data>
   <data name="General_AppAutoUpdateToggleHeader" xml:space="preserve">
     <value>Allow automatic updates</value>

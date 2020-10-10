@@ -1,5 +1,7 @@
 using ModernWpf.Controls;
 using System;
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 
 namespace darker.Viewes
@@ -10,8 +12,10 @@ namespace darker.Viewes
         {
             InitializeComponent();
 
-            //TimePickerDark.Culture = CultureInfo.CurrentUICulture.Name.ToString;
-            //TimePickerLight.Culture = CultureInfo.CurrentUICulture.Name.ToString;
+            CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
+            TimePickerDark.Culture = currentCulture;
+            TimePickerLight.Culture = currentCulture;
+            TestControl.Content = currentCulture;
         }
 
         private void TimePickerLight_SelectedDateTimeChanged(object sender, RoutedPropertyChangedEventArgs<DateTime?> e)

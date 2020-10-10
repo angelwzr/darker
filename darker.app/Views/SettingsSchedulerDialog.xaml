@@ -14,7 +14,7 @@
             TextWrapping="Wrap" FontSize="15"/>
         <ui:SimpleTimePicker x:Name="TimePickerLight" Header="Switch to the light theme on:" SelectedDateTimeChanged="TimePickerLight_SelectedDateTimeChanged" />
         <ui:SimpleTimePicker x:Name="TimePickerDark" Header="Switch to the dark theme on:" SelectedDateTimeChanged="TimePickerDark_SelectedDateTimeChanged" />
-        <Label x:Name="TestControl" Content="Selected time"/>
+        <Label x:Name="TestControl" Content="debug info"/>
     </ui:SimpleStackPanel>
 
 </ui:ContentDialog>
