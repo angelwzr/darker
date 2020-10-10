@@ -207,4 +207,7 @@
   <data name="About_SupportGroupHeader" xml:space="preserve">
     <value>Поддержка</value>
   </data>
+  <data name="Error_PopupTitle" xml:space="preserve">
+    <value>Произошла ошибка</value>
+  </data>
 </root>

@@ -224,6 +224,15 @@ namespace darker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An error has occured.
+        /// </summary>
+        public static string Error_PopupTitle {
+            get {
+                return ResourceManager.GetString("Error_PopupTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This program is already running..
         /// </summary>
         public static string Error_RunningAppMessage {
@@ -278,7 +287,7 @@ namespace darker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Behaviour.
+        ///   Looks up a localized string similar to Behavior.
         /// </summary>
         public static string General_BehaveGroupHeader {
             get {

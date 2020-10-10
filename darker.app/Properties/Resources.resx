@@ -181,7 +181,7 @@
     <value>Settings</value>
   </data>
   <data name="General_BehaveGroupHeader" xml:space="preserve">
-    <value>Behaviour</value>
+    <value>Behavior</value>
   </data>
   <data name="Advanced_HotKeyGroupHeader" xml:space="preserve">
     <value>Keyboard shortcuts</value>
@@ -222,5 +222,8 @@
   </data>
   <data name="About_SupportBodyText" xml:space="preserve">
     <value>This application is completely free and open-source. </value>
+  </data>
+  <data name="Error_PopupTitle" xml:space="preserve">
+    <value>An error has occured</value>
   </data>
 </root>
