@@ -14,14 +14,13 @@ namespace darker.Helpers
         {
             using var updateManager = new UpdateManager(new GithubPackageResolver(REPO_OWNER, REPO_NAME, VERSION_PATTERN), new ZipPackageExtractor());
 
-
             try
             {
                 await updateManager.CheckPerformUpdateAsync();
             }
             catch (Exception updateEx)
             {
-                //MessageBox.Show("Error updating the app: " + updateEx);
+                updateManager.Dispose();
             }
             finally
             {

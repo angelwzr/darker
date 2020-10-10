@@ -3,9 +3,9 @@ using System.IO;
 using System.Reflection;
 using System.Resources;
 using System.Text.Json;
-using System.Windows;
 using darker.Models;
 using darker.Properties;
+using darker.Viewes;
 
 namespace darker
 {
@@ -47,9 +47,10 @@ namespace darker
                     }
                     catch (Exception configreadaccessEx)
                     {
+                        ErrorWindow errwindow = new ErrorWindow();
                         var resourceManager = new ResourceManager(typeof(Resources));
-                        MessageBox.Show(resourceManager.GetString("Error_FileAccessErrorMessage"),
-                            resourceManager.GetString("App_AppName"));
+                        errwindow.ErrorText.Text = resourceManager.GetString("Error_FileAccessErrorMessage");
+                        errwindow.ShowAsync();
                     }
                 else
                     _appSettings = new AppSettings();
@@ -70,9 +71,11 @@ namespace darker
             }
             catch (Exception configwriteaccessEx)
             {
+
+                ErrorWindow errwindow = new ErrorWindow();
                 var resourceManager = new ResourceManager(typeof(Resources));
-                MessageBox.Show(resourceManager.GetString("Error_FileAccessErrorMessage"),
-                    resourceManager.GetString("App_AppName"));
+                errwindow.ErrorText.Text = resourceManager.GetString("Error_FileAccessErrorMessage");
+                errwindow.ShowAsync();
             }
         }
     }

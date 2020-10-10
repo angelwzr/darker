@@ -1,0 +1,14 @@
+<ui:ContentDialog
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+        x:Class="darker.Viewes.ErrorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    
+        Title="An error has occured"
+        CloseButtonText="OK">
+
+    <ui:SimpleStackPanel Spacing="12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <TextBlock x:Name="ErrorText" TextWrapping="Wrap" FontSize="15"/>
+    </ui:SimpleStackPanel>
+
+</ui:ContentDialog>
