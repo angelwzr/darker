@@ -28,6 +28,12 @@ namespace darker
 
         public bool IsAutoThemeChangingEnabled { get; set; } = false;
 
+        public int ThemeChangingMorningHour { get; set; } = 00;
+        public int ThemeChangingMorningMin { get; set; } = 29;
+
+        public int ThemeChangingEveningHour { get; set; } = 20;
+        public int ThemeChangingEveningMin { get; set; } = 00;
+
         public bool IsAutoUpdateEnabled { get; set; } = true;
 
         public bool IsHotKeyEnabled { get; set; } = true;

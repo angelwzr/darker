@@ -1,8 +1,11 @@
 ﻿using darker.Helpers;
 using darker.Models;
+using FluentScheduler;
+using Hardcodet.Wpf.TaskbarNotification;
 using NHotkey;
 using NHotkey.Wpf;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -12,6 +15,7 @@ namespace darker
 {
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -24,6 +28,23 @@ namespace darker
             //Implementing hotkeys
             if (AppSettings.Default.IsHotKeyEnabled)
                 HotkeyManager.Current.AddOrReplace("Switch", Key.D, ModifierKeys.Control | ModifierKeys.Alt, OnHotKey);
+
+            if (AppSettings.Default.IsAutoThemeChangingEnabled)
+            {
+                var jobregistry = new FluentScheduler.Registry();
+                jobregistry.Schedule(() => Debug.WriteLine("Morning changing event fired")).ToRunEvery(1).Days().At(AppSettings.Default.ThemeChangingMorningHour, AppSettings.Default.ThemeChangingMorningMin);
+                JobManager.Initialize(jobregistry);
+            }
+
+            }
+
+        private void ShowDebugBalloon()
+        {
+            string title = "Debug notification";
+            string text = "This is a debug notification for timer work check";
+
+            //show balloon with built-in icon
+            darkerIcon.ShowBalloonTip(title, text, BalloonIcon.Error);
         }
 
         private void OnHotKey(object sender, HotkeyEventArgs e)
@@ -31,7 +52,7 @@ namespace darker
             TrayIconClick(sender, null);
         }
 
-        private void TrayIconClick(object sender, RoutedEventArgs e)
+        public void TrayIconClick(object sender, RoutedEventArgs e)
         {
             var themeSettings = AppSettings.Default.ThemeMode;
 

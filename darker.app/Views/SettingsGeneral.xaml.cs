@@ -147,6 +147,7 @@ namespace darker.Views
             else
             {
                 ShowSchedulerFrameButton.IsEnabled = false;
+                FluentScheduler.JobManager.StopAndBlock();
                 AppSettings.Default.IsAutoThemeChangingEnabled = false;
                 AppSettings.Default.Save();
             }

@@ -24,6 +24,7 @@
     <None Remove="Resources\night_b.ico" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FluentScheduler" Version="5.5.1" />
     <PackageReference Include="Hardcodet.Wpf.TaskbarNotification.Core" Version="2.0.0" />
     <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
     <PackageReference Include="ModernWpfUI" Version="0.9.2" />
