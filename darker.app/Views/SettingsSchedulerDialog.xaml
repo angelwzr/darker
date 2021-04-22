@@ -12,8 +12,8 @@
     <ui:SimpleStackPanel Spacing="12" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
         <TextBlock Text="Here you can set automatic theme switching on desired time. Please note that darker should be running in that desired time for this function to work properly."
             TextWrapping="Wrap" FontSize="15"/>
-        <ui:SimpleTimePicker x:Name="TimePickerLight" Header="Switch to the light theme on:" SelectedDateTimeChanged="TimePickerLight_SelectedDateTimeChanged" />
-        <ui:SimpleTimePicker x:Name="TimePickerDark" Header="Switch to the dark theme on:" SelectedDateTimeChanged="TimePickerDark_SelectedDateTimeChanged" />
+        <ui:SimpleTimePicker x:Name="TimePickerMorning" Header="Switch to the light theme on:" SelectedDateTimeChanged="TimePickerMorning_SelectedDateTimeChanged" />
+        <ui:SimpleTimePicker x:Name="TimePickerEvening" Header="Switch to the dark theme on:" SelectedDateTimeChanged="TimePickerEvening_SelectedDateTimeChanged" />
         <Label x:Name="TestControl" Content="debug info"/>
     </ui:SimpleStackPanel>
 

@@ -25,10 +25,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FluentScheduler" Version="5.5.1" />
-    <PackageReference Include="Hardcodet.Wpf.TaskbarNotification.Core" Version="2.0.0" />
-    <PackageReference Include="Microsoft.Win32.Registry" Version="4.7.0" />
-    <PackageReference Include="ModernWpfUI" Version="0.9.2" />
-    <PackageReference Include="ModernWpfUI.MahApps" Version="0.9.2" />
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.4" />
+    <PackageReference Include="ModernWpfUI.MahApps" Version="0.9.4" />
     <PackageReference Include="NHotkey.Wpf" Version="2.1.0" />
     <PackageReference Include="Onova" Version="2.6.2" />
     <PackageReference Include="WindowStateHelper" Version="1.1.0" />

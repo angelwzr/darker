@@ -32,11 +32,14 @@ namespace darker
             if (AppSettings.Default.IsAutoThemeChangingEnabled)
             {
                 var jobregistry = new FluentScheduler.Registry();
-                jobregistry.Schedule(() => Debug.WriteLine("Morning changing event fired")).ToRunEvery(1).Days().At(AppSettings.Default.ThemeChangingMorningHour, AppSettings.Default.ThemeChangingMorningMin);
+                jobregistry.Schedule(ShowDebugBalloon).ToRunEvery(1).Days().At(AppSettings.Default.ThemeChangingMorningHour, AppSettings.Default.ThemeChangingMorningMin);
+                jobregistry.Schedule(ShowDebugBalloon).ToRunEvery(1).Days().At(AppSettings.Default.ThemeChangingEveningHour, AppSettings.Default.ThemeChangingEveningMin);
+
                 JobManager.Initialize(jobregistry);
             }
 
             }
+
 
         private void ShowDebugBalloon()
         {
